@@ -17,6 +17,8 @@
 		AB88AD5429EAF72500FDF095 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5329EAF72500FDF095 /* UITableViewCell+.swift */; };
 		AB88AD5629EAF73F00FDF095 /* UICollectionViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5529EAF73F00FDF095 /* UICollectionViewCell+.swift */; };
 		AB88AD5829EAF7ED00FDF095 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5729EAF7ED00FDF095 /* UIColor+.swift */; };
+		AB88AD6E29EAFD2100FDF095 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AB88AD6D29EAFD2100FDF095 /* SnapKit */; };
+		AB88AD7129EAFD2B00FDF095 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = AB88AD7029EAFD2B00FDF095 /* Then */; };
 		AB88AD5D29EAFA9D00FDF095 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5C29EAFA9D00FDF095 /* HomeViewController.swift */; };
 		AB88AD5F29EAFBDB00FDF095 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5E29EAFBDB00FDF095 /* TabBarController.swift */; };
 		AB88AD6229EAFC0A00FDF095 /* TownLifeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD6129EAFC0A00FDF095 /* TownLifeViewController.swift */; };
@@ -51,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB88AD6E29EAFD2100FDF095 /* SnapKit in Frameworks */,
+				AB88AD7129EAFD2B00FDF095 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +213,10 @@
 			dependencies = (
 			);
 			name = DaangnMarket;
+			packageProductDependencies = (
+				AB88AD6D29EAFD2100FDF095 /* SnapKit */,
+				AB88AD7029EAFD2B00FDF095 /* Then */,
+			);
 			productName = DaangnMarket;
 			productReference = AB02A5B829EAF3DF0044AF79 /* DaangnMarket.app */;
 			productType = "com.apple.product-type.application";
@@ -237,6 +245,10 @@
 				Base,
 			);
 			mainGroup = AB02A5AF29EAF3DF0044AF79;
+			packageReferences = (
+				AB88AD6C29EAFD2100FDF095 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				AB88AD6F29EAFD2B00FDF095 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = AB02A5B929EAF3DF0044AF79 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -494,6 +506,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AB88AD6C29EAFD2100FDF095 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		AB88AD6F29EAFD2B00FDF095 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AB88AD6D29EAFD2100FDF095 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB88AD6C29EAFD2100FDF095 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		AB88AD7029EAFD2B00FDF095 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB88AD6F29EAFD2B00FDF095 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AB02A5B029EAF3DF0044AF79 /* Project object */;
 }

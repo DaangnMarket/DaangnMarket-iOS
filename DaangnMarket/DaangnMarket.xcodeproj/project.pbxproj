@@ -17,14 +17,14 @@
 		AB88AD5429EAF72500FDF095 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5329EAF72500FDF095 /* UITableViewCell+.swift */; };
 		AB88AD5629EAF73F00FDF095 /* UICollectionViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5529EAF73F00FDF095 /* UICollectionViewCell+.swift */; };
 		AB88AD5829EAF7ED00FDF095 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5729EAF7ED00FDF095 /* UIColor+.swift */; };
-		AB88AD6E29EAFD2100FDF095 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AB88AD6D29EAFD2100FDF095 /* SnapKit */; };
-		AB88AD7129EAFD2B00FDF095 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = AB88AD7029EAFD2B00FDF095 /* Then */; };
 		AB88AD5D29EAFA9D00FDF095 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5C29EAFA9D00FDF095 /* HomeViewController.swift */; };
 		AB88AD5F29EAFBDB00FDF095 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5E29EAFBDB00FDF095 /* TabBarController.swift */; };
 		AB88AD6229EAFC0A00FDF095 /* TownLifeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD6129EAFC0A00FDF095 /* TownLifeViewController.swift */; };
 		AB88AD6529EAFC4800FDF095 /* NearMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD6429EAFC4800FDF095 /* NearMeViewController.swift */; };
 		AB88AD6829EAFC8900FDF095 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD6729EAFC8900FDF095 /* ChatViewController.swift */; };
 		AB88AD6B29EAFCA500FDF095 /* MyDaangnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD6A29EAFCA500FDF095 /* MyDaangnViewController.swift */; };
+		AB88AD6E29EAFD2100FDF095 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AB88AD6D29EAFD2100FDF095 /* SnapKit */; };
+		AB88AD7129EAFD2B00FDF095 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = AB88AD7029EAFD2B00FDF095 /* Then */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,7 +111,7 @@
 		AB88AD4C29EAF67E00FDF095 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				AB88AD5929EAF98F00FDF095 /* Base */,
+				AB88AD5929EAF98F00FDF095 /* TabBar */,
 				AB88AD5A29EAFA7800FDF095 /* Home */,
 				AB88AD6029EAFBED00FDF095 /* TownLife */,
 				AB88AD6329EAFC0F00FDF095 /* NearMe */,
@@ -141,28 +141,20 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		AB88AD5929EAF98F00FDF095 /* Base */ = {
+		AB88AD5929EAF98F00FDF095 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
 				AB88AD5E29EAFBDB00FDF095 /* TabBarController.swift */,
 			);
-			path = Base;
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		AB88AD5A29EAFA7800FDF095 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				AB88AD5B29EAFA8E00FDF095 /* ViewController */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		AB88AD5B29EAFA8E00FDF095 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
 				AB88AD5C29EAFA9D00FDF095 /* HomeViewController.swift */,
 			);
-			path = ViewController;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		AB88AD6029EAFBED00FDF095 /* TownLife */ = {

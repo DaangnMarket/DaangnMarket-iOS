@@ -1,5 +1,5 @@
 //
-//  MyDaangnViewController.swift
+//  HomeViewController.swift
 //  DaangnMarket
 //
 //  Created by 김민 on 2023/04/16.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyDaangnViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     // MARK: - View Life Cycle
     
@@ -18,7 +18,7 @@ class MyDaangnViewController: UIViewController {
     }
 }
 
-extension MyDaangnViewController {
+extension HomeViewController {
     
     // MARK: - Custom Methods
     

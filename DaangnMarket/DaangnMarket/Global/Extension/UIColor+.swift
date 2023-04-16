@@ -13,3 +13,10 @@ extension UIColor {
         self.init(red: CGFloat(r)/255,green: CGFloat(g)/255, blue: CGFloat(b)/255, alpha: 1)
     }
 }
+
+extension UIColor {
+    
+    class var daangnOrange: UIColor {
+        return UIColor(r: 237, g: 119, b: 50)
+    }
+}

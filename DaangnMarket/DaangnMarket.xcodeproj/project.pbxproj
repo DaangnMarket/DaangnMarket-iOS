@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		AB02A5BC29EAF3DF0044AF79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02A5BB29EAF3DF0044AF79 /* AppDelegate.swift */; };
 		AB02A5BE29EAF3DF0044AF79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02A5BD29EAF3DF0044AF79 /* SceneDelegate.swift */; };
-		AB02A5C029EAF3DF0044AF79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02A5BF29EAF3DF0044AF79 /* ViewController.swift */; };
 		AB02A5C329EAF3DF0044AF79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB02A5C129EAF3DF0044AF79 /* Main.storyboard */; };
 		AB02A5C529EAF3E00044AF79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB02A5C429EAF3E00044AF79 /* Assets.xcassets */; };
 		AB02A5C829EAF3E00044AF79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB02A5C629EAF3E00044AF79 /* LaunchScreen.storyboard */; };
@@ -18,6 +17,12 @@
 		AB88AD5429EAF72500FDF095 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5329EAF72500FDF095 /* UITableViewCell+.swift */; };
 		AB88AD5629EAF73F00FDF095 /* UICollectionViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5529EAF73F00FDF095 /* UICollectionViewCell+.swift */; };
 		AB88AD5829EAF7ED00FDF095 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5729EAF7ED00FDF095 /* UIColor+.swift */; };
+		AB88AD5D29EAFA9D00FDF095 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5C29EAFA9D00FDF095 /* HomeViewController.swift */; };
+		AB88AD5F29EAFBDB00FDF095 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5E29EAFBDB00FDF095 /* TabBarController.swift */; };
+		AB88AD6229EAFC0A00FDF095 /* TownLifeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD6129EAFC0A00FDF095 /* TownLifeViewController.swift */; };
+		AB88AD6529EAFC4800FDF095 /* NearMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD6429EAFC4800FDF095 /* NearMeViewController.swift */; };
+		AB88AD6829EAFC8900FDF095 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD6729EAFC8900FDF095 /* ChatViewController.swift */; };
+		AB88AD6B29EAFCA500FDF095 /* MyDaangnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD6A29EAFCA500FDF095 /* MyDaangnViewController.swift */; };
 		AB88AD6E29EAFD2100FDF095 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AB88AD6D29EAFD2100FDF095 /* SnapKit */; };
 		AB88AD7129EAFD2B00FDF095 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = AB88AD7029EAFD2B00FDF095 /* Then */; };
 /* End PBXBuildFile section */
@@ -26,7 +31,6 @@
 		AB02A5B829EAF3DF0044AF79 /* DaangnMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaangnMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB02A5BB29EAF3DF0044AF79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB02A5BD29EAF3DF0044AF79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AB02A5BF29EAF3DF0044AF79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AB02A5C229EAF3DF0044AF79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB02A5C429EAF3E00044AF79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB02A5C729EAF3E00044AF79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +40,12 @@
 		AB88AD5329EAF72500FDF095 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
 		AB88AD5529EAF73F00FDF095 /* UICollectionViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+.swift"; sourceTree = "<group>"; };
 		AB88AD5729EAF7ED00FDF095 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		AB88AD5C29EAFA9D00FDF095 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AB88AD5E29EAFBDB00FDF095 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		AB88AD6129EAFC0A00FDF095 /* TownLifeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownLifeViewController.swift; sourceTree = "<group>"; };
+		AB88AD6429EAFC4800FDF095 /* NearMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeViewController.swift; sourceTree = "<group>"; };
+		AB88AD6729EAFC8900FDF095 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		AB88AD6A29EAFCA500FDF095 /* MyDaangnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDaangnViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +111,12 @@
 		AB88AD4C29EAF67E00FDF095 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				AB02A5BF29EAF3DF0044AF79 /* ViewController.swift */,
+				AB88AD5929EAF98F00FDF095 /* TabBar */,
+				AB88AD5A29EAFA7800FDF095 /* Home */,
+				AB88AD6029EAFBED00FDF095 /* TownLife */,
+				AB88AD6329EAFC0F00FDF095 /* NearMe */,
+				AB88AD6629EAFC5400FDF095 /* Chatting */,
+				AB88AD6929EAFC8D00FDF095 /* MyDaangn */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -124,6 +139,54 @@
 				AB88AD5729EAF7ED00FDF095 /* UIColor+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		AB88AD5929EAF98F00FDF095 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				AB88AD5E29EAFBDB00FDF095 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		AB88AD5A29EAFA7800FDF095 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AB88AD5C29EAFA9D00FDF095 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AB88AD6029EAFBED00FDF095 /* TownLife */ = {
+			isa = PBXGroup;
+			children = (
+				AB88AD6129EAFC0A00FDF095 /* TownLifeViewController.swift */,
+			);
+			path = TownLife;
+			sourceTree = "<group>";
+		};
+		AB88AD6329EAFC0F00FDF095 /* NearMe */ = {
+			isa = PBXGroup;
+			children = (
+				AB88AD6429EAFC4800FDF095 /* NearMeViewController.swift */,
+			);
+			path = NearMe;
+			sourceTree = "<group>";
+		};
+		AB88AD6629EAFC5400FDF095 /* Chatting */ = {
+			isa = PBXGroup;
+			children = (
+				AB88AD6729EAFC8900FDF095 /* ChatViewController.swift */,
+			);
+			path = Chatting;
+			sourceTree = "<group>";
+		};
+		AB88AD6929EAFC8D00FDF095 /* MyDaangn */ = {
+			isa = PBXGroup;
+			children = (
+				AB88AD6A29EAFCA500FDF095 /* MyDaangnViewController.swift */,
+			);
+			path = MyDaangn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,13 +268,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB88AD6229EAFC0A00FDF095 /* TownLifeViewController.swift in Sources */,
 				AB88AD5029EAF6D700FDF095 /* UIView+.swift in Sources */,
 				AB88AD5829EAF7ED00FDF095 /* UIColor+.swift in Sources */,
 				AB88AD5629EAF73F00FDF095 /* UICollectionViewCell+.swift in Sources */,
-				AB02A5C029EAF3DF0044AF79 /* ViewController.swift in Sources */,
+				AB88AD6529EAFC4800FDF095 /* NearMeViewController.swift in Sources */,
+				AB88AD5F29EAFBDB00FDF095 /* TabBarController.swift in Sources */,
 				AB88AD5229EAF6F800FDF095 /* UIStackView+.swift in Sources */,
+				AB88AD5D29EAFA9D00FDF095 /* HomeViewController.swift in Sources */,
 				AB88AD5429EAF72500FDF095 /* UITableViewCell+.swift in Sources */,
 				AB02A5BC29EAF3DF0044AF79 /* AppDelegate.swift in Sources */,
+				AB88AD6B29EAFCA500FDF095 /* MyDaangnViewController.swift in Sources */,
+				AB88AD6829EAFC8900FDF095 /* ChatViewController.swift in Sources */,
 				AB02A5BE29EAF3DF0044AF79 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

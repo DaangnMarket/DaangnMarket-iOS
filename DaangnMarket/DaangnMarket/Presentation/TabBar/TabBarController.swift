@@ -37,11 +37,19 @@ extension TabBarController {
         return tab
     }
     
+    private func setHomeNav() -> UINavigationController {
+        let homeVC = HomeViewController()
+        let nav = UINavigationController(rootViewController: homeVC)
+        nav.setNavigationBarHidden(false, animated: false)
+        
+        let homeTab = UITabBarItem(title: "홈", image: UIImage(named: "TabHome")!.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "TabHomeSelected")!.withRenderingMode(.alwaysOriginal))
+        nav.tabBarItem = homeTab
+        
+        return nav
+    }
+    
     private func setTabBar() {
-        let homeTab = makeTabBar(viewController: HomeViewController(),
-                                 title: "홈",
-                                 tabBarImage: UIImage(named: "TabHome")!,
-                                 tabBarImageSelected: UIImage(named: "TabHomeSelected")!)
+        let homeTab = setHomeNav()
         
         let townLifeTab = makeTabBar(viewController: TownLifeViewController(),
                                  title: "동네 생활",

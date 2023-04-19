@@ -19,6 +19,11 @@ class MyDaangnViewController: UIViewController {
         tableView.tableHeaderView = setTableViewHeader()
         return tableView
     }()
+    
+    // MARK: - Properties
+    
+    var myDaangnMenus: [[MyDaangnModel]] = MyDaangnModel.MyDaangnMenus()
+    var sectionMenus: [String] = ["나의 거래", "나의 동네생활", "나의 비즈니스", "기타"]
 
     // MARK: - View Life Cycle
     
@@ -97,15 +102,16 @@ extension MyDaangnViewController {
 extension MyDaangnViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        4
+        return sectionMenus.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return myDaangnMenus[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MyTableViewCell.cellIdentifier, for: indexPath) as! MyTableViewCell
+        cell.setDataBind(myDaangnMenus[indexPath.section][indexPath.row])
         return cell
     }
 }
@@ -115,7 +121,8 @@ extension MyDaangnViewController: UITableViewDataSource {
 extension MyDaangnViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: MySectionHeaderView.reuseIdentifier)
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: MySectionHeaderView.reuseIdentifier) as! MySectionHeaderView
+        header.setDataBind(sectionMenus[section])
         return header
     }
     
@@ -129,5 +136,9 @@ extension MyDaangnViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(50)
     }
 }

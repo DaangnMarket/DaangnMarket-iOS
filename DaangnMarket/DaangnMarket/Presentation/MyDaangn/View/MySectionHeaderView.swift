@@ -15,7 +15,6 @@ final class MySectionHeaderView: UITableViewHeaderFooterView {
     // MARK: - UI Components
     
     private let sectionLabel = UILabel().then {
-        $0.text = "나의 거래"
         $0.font = .systemFont(ofSize: 17, weight: .bold)
     }
     
@@ -38,7 +37,7 @@ extension MySectionHeaderView {
     // MARK: - Custom Methods
     
     private func setBackgroundColor() {
-        contentView.backgroundColor = .yellow
+        contentView.backgroundColor = .clear
     }
     
     private func setLayout() {
@@ -48,5 +47,9 @@ extension MySectionHeaderView {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().offset(15)
         }
+    }
+    
+    func setDataBind(_ name: String) {
+        sectionLabel.text = name
     }
 }

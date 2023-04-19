@@ -15,10 +15,11 @@ final class MyTableViewCell: UITableViewCell {
     // MARK: - UI Components
     
     private let menuImageView = UIImageView().then {
-        $0.backgroundColor = .yellow
+        $0.tintColor = .black
     }
     private let menuNameLabel = UILabel().then {
         $0.text = "test"
+        $0.font = .systemFont(ofSize: 15)
     }
 
     // MARK: - Initializer
@@ -49,12 +50,17 @@ extension MyTableViewCell {
         menuImageView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().offset(15)
-            $0.width.height.equalTo(30)
+            $0.width.height.equalTo(25)
         }
         
         menuNameLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.leading.equalTo(menuImageView.snp.trailing).offset(15)
+            $0.leading.equalTo(menuImageView.snp.trailing).offset(10)
         }
+    }
+    
+    func setDataBind(_ model: MyDaangnModel) {
+        menuImageView.image = UIImage(systemName: model.menuImageName)
+        menuNameLabel.text = model.menuName
     }
 }

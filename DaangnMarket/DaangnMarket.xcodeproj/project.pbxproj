@@ -14,6 +14,7 @@
 		AB02A5C329EAF3DF0044AF79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB02A5C129EAF3DF0044AF79 /* Main.storyboard */; };
 		AB02A5C529EAF3E00044AF79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB02A5C429EAF3E00044AF79 /* Assets.xcassets */; };
 		AB02A5C829EAF3E00044AF79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB02A5C629EAF3E00044AF79 /* LaunchScreen.storyboard */; };
+		AB519B8C29F01FC70097877D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B8B29F01FC70097877D /* SettingViewController.swift */; };
 		AB88AD5029EAF6D700FDF095 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD4F29EAF6D700FDF095 /* UIView+.swift */; };
 		AB88AD5229EAF6F800FDF095 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5129EAF6F800FDF095 /* UIStackView+.swift */; };
 		AB88AD5429EAF72500FDF095 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5329EAF72500FDF095 /* UITableViewCell+.swift */; };
@@ -39,6 +40,7 @@
 		AB02A5C429EAF3E00044AF79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB02A5C729EAF3E00044AF79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB02A5C929EAF3E00044AF79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB519B8B29F01FC70097877D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		AB88AD4F29EAF6D700FDF095 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		AB88AD5129EAF6F800FDF095 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		AB88AD5329EAF72500FDF095 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				AB88AD6A29EAFCA500FDF095 /* MyDaangnViewController.swift */,
+				AB519B8B29F01FC70097877D /* SettingViewController.swift */,
 			);
 			path = MyDaangn;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				AB88AD6229EAFC0A00FDF095 /* TownLifeViewController.swift in Sources */,
 				AB88AD5029EAF6D700FDF095 /* UIView+.swift in Sources */,
 				AB88AD5829EAF7ED00FDF095 /* UIColor+.swift in Sources */,
+				AB519B8C29F01FC70097877D /* SettingViewController.swift in Sources */,
 				AB88AD5629EAF73F00FDF095 /* UICollectionViewCell+.swift in Sources */,
 				16B4853C29ED2CC00009520B /* NoticeViewController.swift in Sources */,
 				AB88AD6529EAFC4800FDF095 /* NearMeViewController.swift in Sources */,

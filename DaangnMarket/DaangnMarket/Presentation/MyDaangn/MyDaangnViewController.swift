@@ -11,10 +11,17 @@ class MyDaangnViewController: UIViewController {
 
     // MARK: - View Life Cycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setTabBar()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setBackgroundColor()
+        setNavigationBar()
     }
 }
 
@@ -24,5 +31,22 @@ extension MyDaangnViewController {
     
     private func setBackgroundColor() {
         view.backgroundColor = .white
+    }
+    
+    private func setNavigationBar() {
+        let settingBarButton = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(settingButtonDidTap))
+        settingBarButton.tintColor = .black
+        navigationItem.rightBarButtonItem = settingBarButton
+    }
+    
+    private func setTabBar() {
+        tabBarController?.tabBar.isHidden = false
+    }
+    
+    // MARK: - @objc Methods
+    
+    @objc private func settingButtonDidTap() {
+        let settingVC = SettingViewController()
+        navigationController?.pushViewController(settingVC, animated: true)
     }
 }

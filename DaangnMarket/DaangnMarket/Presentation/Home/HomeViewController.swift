@@ -72,3 +72,27 @@ extension HomeViewController {
         self.navigationController?.pushViewController(searchVC, animated: true)
     }
 }
+
+
+//MARK: - Home Table View Dummy Data
+
+extension HomeViewController {
+    
+    //MARK: - Custom Methods
+    
+    private func fetchHomeTableViewData() -> [HomeTableViewModel] {
+        let dummyData1 = HomeTableViewModel(image: UIImage(systemName: "1.circle")!, title: "Title 1", location: "포항시 효자동", time: "1시간 전", price: 1000000, likeCount: 3, chattingCount: 4)
+        let dummyData2 = HomeTableViewModel(image: UIImage(systemName: "2.circle")!, title: "Title 2", location: "포항시 효자동", time: "1시간 전", price: 10000, likeCount: 3, chattingCount: 4)
+        let dummyData3 = HomeTableViewModel(image: UIImage(systemName: "3.circle")!, title: "Title 3", location: "포항시 효자동", time: "1시간 전", price: 230000, likeCount: 3, chattingCount: 4)
+        let dummyData4 = HomeTableViewModel(image: UIImage(systemName: "4.circle")!, title: "Title 4", location: "포항시 효자동", time: "1시간 전", price: 30000, likeCount: 3, chattingCount: 4)
+        let dummyData5 = HomeTableViewModel(image: UIImage(systemName: "5.circle")!, title: "Title 5", location: "포항시 효자동", time: "1시간 전", price: 5000, likeCount: 3, chattingCount: 4)
+        let dummyData6 = HomeTableViewModel(image: UIImage(systemName: "6.circle")!, title: "Title 6", location: "포항시 효자동", time: "1시간 전", price: 1200, likeCount: 3, chattingCount: 4)
+        let dummyData7 = HomeTableViewModel(image: UIImage(systemName: "7.circle")!, title: "Title 7", location: "포항시 효자동", time: "1시간 전", price: 10300, likeCount: 3, chattingCount: 4)
+        let dummyData8 = HomeTableViewModel(image: UIImage(systemName: "8.circle")!, title: "Title 8", location: "포항시 효자동", time: "1시간 전", price: 1000000, likeCount: 3, chattingCount: 4)
+        let dummyData9 = HomeTableViewModel(image: UIImage(systemName: "9.circle")!, title: "Title 9", location: "포항시 효자동", time: "1시간 전", price: 1200000, likeCount: 3, chattingCount: 4)
+        let dummyData10 = HomeTableViewModel(image: UIImage(systemName: "10.circle")!, title: "Title 10", location: "포항시 효자동", time: "1시간 전", price: 6000, likeCount: 3, chattingCount: 4)
+        
+        return [dummyData1, dummyData2, dummyData3, dummyData4, dummyData5, dummyData6, dummyData7, dummyData8, dummyData9, dummyData10]
+    }
+    
+}

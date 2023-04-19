@@ -18,7 +18,6 @@
 		AB519B9029F032A90097877D /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B8F29F032A90097877D /* MyTableViewCell.swift */; };
 		AB519B9229F034E50097877D /* MySectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B9129F034E50097877D /* MySectionHeaderView.swift */; };
 		AB519B9429F035570097877D /* UITableViewHeaderFooterView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B9329F035570097877D /* UITableViewHeaderFooterView+.swift */; };
-		AB519B9829F039D00097877D /* MyProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B9729F039D00097877D /* MyProfileHeaderView.swift */; };
 		AB88AD5029EAF6D700FDF095 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD4F29EAF6D700FDF095 /* UIView+.swift */; };
 		AB88AD5229EAF6F800FDF095 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5129EAF6F800FDF095 /* UIStackView+.swift */; };
 		AB88AD5429EAF72500FDF095 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5329EAF72500FDF095 /* UITableViewCell+.swift */; };
@@ -48,7 +47,6 @@
 		AB519B8F29F032A90097877D /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		AB519B9129F034E50097877D /* MySectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySectionHeaderView.swift; sourceTree = "<group>"; };
 		AB519B9329F035570097877D /* UITableViewHeaderFooterView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView+.swift"; sourceTree = "<group>"; };
-		AB519B9729F039D00097877D /* MyProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileHeaderView.swift; sourceTree = "<group>"; };
 		AB88AD4F29EAF6D700FDF095 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		AB88AD5129EAF6F800FDF095 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		AB88AD5329EAF72500FDF095 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 			children = (
 				AB519B8F29F032A90097877D /* MyTableViewCell.swift */,
 				AB519B9129F034E50097877D /* MySectionHeaderView.swift */,
-				AB519B9729F039D00097877D /* MyProfileHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -328,7 +325,6 @@
 				AB519B8C29F01FC70097877D /* SettingViewController.swift in Sources */,
 				AB88AD5629EAF73F00FDF095 /* UICollectionViewCell+.swift in Sources */,
 				16B4853C29ED2CC00009520B /* NoticeViewController.swift in Sources */,
-				AB519B9829F039D00097877D /* MyProfileHeaderView.swift in Sources */,
 				AB88AD6529EAFC4800FDF095 /* NearMeViewController.swift in Sources */,
 				AB519B9029F032A90097877D /* MyTableViewCell.swift in Sources */,
 				AB88AD5F29EAFBDB00FDF095 /* TabBarController.swift in Sources */,

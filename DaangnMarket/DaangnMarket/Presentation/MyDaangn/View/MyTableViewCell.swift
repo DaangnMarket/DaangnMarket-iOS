@@ -14,6 +14,9 @@ final class MyTableViewCell: UITableViewCell {
     
     // MARK: - UI Components
     
+    private let menuImageView = UIImageView().then {
+        $0.backgroundColor = .yellow
+    }
     private let menuNameLabel = UILabel().then {
         $0.text = "test"
     }
@@ -41,10 +44,17 @@ extension MyTableViewCell {
     }
     
     private func setLayout() {
-        contentView.addSubview(menuNameLabel)
+        contentView.addSubviews(menuImageView, menuNameLabel)
+        
+        menuImageView.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview().offset(15)
+            $0.width.height.equalTo(30)
+        }
         
         menuNameLabel.snp.makeConstraints {
-            $0.center.equalToSuperview()
+            $0.centerY.equalToSuperview()
+            $0.leading.equalTo(menuImageView.snp.trailing).offset(15)
         }
     }
 }

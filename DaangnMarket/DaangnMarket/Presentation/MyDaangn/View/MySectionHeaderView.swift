@@ -46,7 +46,7 @@ extension MySectionHeaderView {
         
         sectionLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.leading.equalToSuperview().offset(20)
+            $0.leading.equalToSuperview().offset(15)
         }
     }
 }

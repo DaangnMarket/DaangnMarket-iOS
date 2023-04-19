@@ -19,4 +19,8 @@ extension UIColor {
     class var daangnOrange: UIColor {
         return UIColor(r: 237, g: 119, b: 50)
     }
+    
+    class var daangnGray: UIColor {
+        return UIColor(r: 235, g: 236, b: 238)
+    }
 }

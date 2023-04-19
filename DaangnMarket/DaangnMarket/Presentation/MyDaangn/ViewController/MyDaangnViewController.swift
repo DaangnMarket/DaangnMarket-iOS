@@ -7,6 +7,9 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 class MyDaangnViewController: UIViewController {
     
     // MARK: - UI Components
@@ -16,6 +19,7 @@ class MyDaangnViewController: UIViewController {
         tableView.backgroundColor = .clear
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         tableView.tableHeaderView = setTableViewHeader()
         return tableView
     }()
@@ -87,6 +91,7 @@ extension MyDaangnViewController {
     private func register() {
         myTableView.register(MyTableViewCell.self, forCellReuseIdentifier: MyTableViewCell.cellIdentifier)
         myTableView.register(MySectionHeaderView.self, forHeaderFooterViewReuseIdentifier: MySectionHeaderView.reuseIdentifier)
+        myTableView.register(MyLineFooterView.self, forHeaderFooterViewReuseIdentifier: MyLineFooterView.reuseIdentifier)
     }
     
     // MARK: - @objc Methods
@@ -131,11 +136,16 @@ extension MyDaangnViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return UIView()
+        let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: MyLineFooterView.reuseIdentifier)
+        return footer
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0
+        if section == sectionMenus.count - 1 {
+            return CGFloat(0)
+        } else {
+            return CGFloat(5)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

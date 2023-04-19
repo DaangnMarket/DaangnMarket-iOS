@@ -19,6 +19,7 @@
 		AB519B9229F034E50097877D /* MySectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B9129F034E50097877D /* MySectionHeaderView.swift */; };
 		AB519B9429F035570097877D /* UITableViewHeaderFooterView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B9329F035570097877D /* UITableViewHeaderFooterView+.swift */; };
 		AB519B9E29F041A20097877D /* MyDaangnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B9D29F041A20097877D /* MyDaangnModel.swift */; };
+		AB519BA229F046A30097877D /* MyLineFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519BA129F046A30097877D /* MyLineFooterView.swift */; };
 		AB88AD5029EAF6D700FDF095 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD4F29EAF6D700FDF095 /* UIView+.swift */; };
 		AB88AD5229EAF6F800FDF095 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5129EAF6F800FDF095 /* UIStackView+.swift */; };
 		AB88AD5429EAF72500FDF095 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5329EAF72500FDF095 /* UITableViewCell+.swift */; };
@@ -49,6 +50,7 @@
 		AB519B9129F034E50097877D /* MySectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySectionHeaderView.swift; sourceTree = "<group>"; };
 		AB519B9329F035570097877D /* UITableViewHeaderFooterView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView+.swift"; sourceTree = "<group>"; };
 		AB519B9D29F041A20097877D /* MyDaangnModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDaangnModel.swift; sourceTree = "<group>"; };
+		AB519BA129F046A30097877D /* MyLineFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLineFooterView.swift; sourceTree = "<group>"; };
 		AB88AD4F29EAF6D700FDF095 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		AB88AD5129EAF6F800FDF095 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		AB88AD5329EAF72500FDF095 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				AB519B8F29F032A90097877D /* MyTableViewCell.swift */,
 				AB519B9129F034E50097877D /* MySectionHeaderView.swift */,
+				AB519BA129F046A30097877D /* MyLineFooterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				AB88AD5429EAF72500FDF095 /* UITableViewCell+.swift in Sources */,
 				AB519B9229F034E50097877D /* MySectionHeaderView.swift in Sources */,
 				AB02A5BC29EAF3DF0044AF79 /* AppDelegate.swift in Sources */,
+				AB519BA229F046A30097877D /* MyLineFooterView.swift in Sources */,
 				AB88AD6B29EAFCA500FDF095 /* MyDaangnViewController.swift in Sources */,
 				AB88AD6829EAFC8900FDF095 /* ChatViewController.swift in Sources */,
 				AB02A5BE29EAF3DF0044AF79 /* SceneDelegate.swift in Sources */,

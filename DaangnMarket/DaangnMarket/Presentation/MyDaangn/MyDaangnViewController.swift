@@ -8,6 +8,15 @@
 import UIKit
 
 class MyDaangnViewController: UIViewController {
+    
+    // MARK: - UI Components
+    
+    private let myTableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.backgroundColor = .yellow
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
 
     // MARK: - View Life Cycle
     
@@ -22,6 +31,7 @@ class MyDaangnViewController: UIViewController {
 
         setBackgroundColor()
         setNavigationBar()
+        setLayout()
     }
 }
 
@@ -41,6 +51,15 @@ extension MyDaangnViewController {
     
     private func setTabBar() {
         tabBarController?.tabBar.isHidden = false
+    }
+    
+    private func setLayout() {
+        view.addSubviews(myTableView)
+        
+        myTableView.snp.makeConstraints {
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalToSuperview()
+        }
     }
     
     // MARK: - @objc Methods

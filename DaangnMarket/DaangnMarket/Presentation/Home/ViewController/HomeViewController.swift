@@ -8,6 +8,12 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    var homeTableView = UITableView()
+    var homeData: [HomeTableViewModel] = []
+    struct Cells {
+        static let tableViewCell = "HomeTableViewCell"
+    }
 
     // MARK: - View Life Cycle
     
@@ -16,6 +22,8 @@ class HomeViewController: UIViewController {
 
         setBackgroundColor()
         homeNavigationBar()
+        homeData = fetchHomeTableViewData()
+        configureTableView()
     }
 }
 
@@ -52,6 +60,20 @@ extension HomeViewController {
         navigationItem.rightBarButtonItems = [notice, spacer, category, spacer, search]
     }
     
+    func configureTableView() {
+        view.addSubview(homeTableView)
+        setTableViewDelegate()
+        homeTableView.rowHeight = 150
+        homeTableView.register(HomeTableViewCell.self, forCellReuseIdentifier: Cells.tableViewCell)
+        homeTableView.pin(to: view)
+        
+    }
+    
+    func setTableViewDelegate() {
+        homeTableView.delegate = self
+        homeTableView.dataSource = self
+    }
+    
     //MARK: - @objc Methods
     
     @objc fileprivate func searchButtonDidTap() {
@@ -80,8 +102,8 @@ extension HomeViewController {
     
     //MARK: - Custom Methods
     
-    private func fetchHomeTableViewData() -> [HomeTableViewModel] {
-        let dummyData1 = HomeTableViewModel(image: UIImage(systemName: "1.circle")!, title: "Title 1", location: "포항시 효자동", time: "1시간 전", price: 1000000, likeCount: 3, chattingCount: 4)
+    func fetchHomeTableViewData() -> [HomeTableViewModel] {
+        let dummyData1 = HomeTableViewModel(image: UIImage(systemName: "1.circle")!, title: "Title 1입니다. 나ㅣ어ㅜㅁ너ㅏ룸나ㅣㄹasdaffwqdsad", location: "포항시 효자동", time: "1시간 전", price: 1000000, likeCount: 3, chattingCount: 4)
         let dummyData2 = HomeTableViewModel(image: UIImage(systemName: "2.circle")!, title: "Title 2", location: "포항시 효자동", time: "1시간 전", price: 10000, likeCount: 3, chattingCount: 4)
         let dummyData3 = HomeTableViewModel(image: UIImage(systemName: "3.circle")!, title: "Title 3", location: "포항시 효자동", time: "1시간 전", price: 230000, likeCount: 3, chattingCount: 4)
         let dummyData4 = HomeTableViewModel(image: UIImage(systemName: "4.circle")!, title: "Title 4", location: "포항시 효자동", time: "1시간 전", price: 30000, likeCount: 3, chattingCount: 4)
@@ -94,5 +116,31 @@ extension HomeViewController {
         
         return [dummyData1, dummyData2, dummyData3, dummyData4, dummyData5, dummyData6, dummyData7, dummyData8, dummyData9, dummyData10]
     }
+    
+}
+
+// MARK: - UITableViewDelegate
+
+extension HomeViewController: UITableViewDelegate {
+    
+}
+
+// MARK: - UITableViewDataSource
+
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return homeData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.tableViewCell) as! HomeTableViewCell
+        
+        let home = homeData[indexPath.row]
+        
+        cell.set(homeTableViewModel: home)
+        
+        return cell
+    }
+    
     
 }

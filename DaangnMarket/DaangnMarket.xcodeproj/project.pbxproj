@@ -14,6 +14,7 @@
 		AB02A5C329EAF3DF0044AF79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB02A5C129EAF3DF0044AF79 /* Main.storyboard */; };
 		AB02A5C529EAF3E00044AF79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB02A5C429EAF3E00044AF79 /* Assets.xcassets */; };
 		AB02A5C829EAF3E00044AF79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB02A5C629EAF3E00044AF79 /* LaunchScreen.storyboard */; };
+		AB105CC029F24066008A0C40 /* MyProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB105CBF29F24066008A0C40 /* MyProfileHeaderView.swift */; };
 		AB519B8C29F01FC70097877D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B8B29F01FC70097877D /* SettingViewController.swift */; };
 		AB519B9029F032A90097877D /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B8F29F032A90097877D /* MyTableViewCell.swift */; };
 		AB519B9229F034E50097877D /* MySectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B9129F034E50097877D /* MySectionHeaderView.swift */; };
@@ -45,6 +46,7 @@
 		AB02A5C429EAF3E00044AF79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB02A5C729EAF3E00044AF79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB02A5C929EAF3E00044AF79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB105CBF29F24066008A0C40 /* MyProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileHeaderView.swift; sourceTree = "<group>"; };
 		AB519B8B29F01FC70097877D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		AB519B8F29F032A90097877D /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		AB519B9129F034E50097877D /* MySectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySectionHeaderView.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				AB519B8F29F032A90097877D /* MyTableViewCell.swift */,
 				AB519B9129F034E50097877D /* MySectionHeaderView.swift */,
 				AB519BA129F046A30097877D /* MyLineFooterView.swift */,
+				AB105CBF29F24066008A0C40 /* MyProfileHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				AB88AD5829EAF7ED00FDF095 /* UIColor+.swift in Sources */,
 				AB519B8C29F01FC70097877D /* SettingViewController.swift in Sources */,
 				AB88AD5629EAF73F00FDF095 /* UICollectionViewCell+.swift in Sources */,
+				AB105CC029F24066008A0C40 /* MyProfileHeaderView.swift in Sources */,
 				16B4853C29ED2CC00009520B /* NoticeViewController.swift in Sources */,
 				AB88AD6529EAFC4800FDF095 /* NearMeViewController.swift in Sources */,
 				AB519B9029F032A90097877D /* MyTableViewCell.swift in Sources */,

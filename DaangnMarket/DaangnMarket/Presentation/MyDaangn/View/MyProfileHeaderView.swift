@@ -37,9 +37,14 @@ final class MyProfileHeaderView: UIView {
         config.attributedTitle = titleAttr
         config.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
 
-        
         $0.configuration = config
-        
+    }
+    
+    private let payView = UIView().then {
+        $0.backgroundColor = .clear
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor.daangnGray.cgColor
+        $0.layer.cornerRadius = 8
     }
 
     // MARK: - Initializer
@@ -65,7 +70,7 @@ extension MyProfileHeaderView {
     }
     
     private func setLayout() {
-        addSubviews(profileImageView, nickNameLabel, showProfileButton)
+        addSubviews(profileImageView, nickNameLabel, showProfileButton, payView)
         
         profileImageView.snp.makeConstraints {
             $0.width.height.equalTo(40)
@@ -81,6 +86,14 @@ extension MyProfileHeaderView {
         showProfileButton.snp.makeConstraints {
             $0.trailing.equalToSuperview().offset(-15)
             $0.centerY.equalTo(profileImageView)
+        }
+        
+        payView.snp.makeConstraints {
+            let width = UIScreen.main.bounds.width - 30
+            $0.width.equalTo(width)
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(profileImageView.snp.bottom).offset(15)
+            $0.bottom.equalToSuperview().offset(-5)
         }
     }
 }

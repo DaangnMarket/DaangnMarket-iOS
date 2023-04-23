@@ -67,6 +67,7 @@ extension TabBarController {
         self.setViewControllers(tabs, animated: false)
         
         tabBar.backgroundColor = .white
+        tabBar.isTranslucent = false
         tabBar.tintColor = .black
         tabBar.layer.borderWidth = 0.5
         tabBar.layer.borderColor = UIColor.lightGray.cgColor

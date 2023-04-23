@@ -1,13 +1,13 @@
 //
-//  MyDaangnViewController.swift
+//  SettingViewController.swift
 //  DaangnMarket
 //
-//  Created by 김민 on 2023/04/16.
+//  Created by 김민 on 2023/04/19.
 //
 
 import UIKit
 
-class MyDaangnViewController: UIViewController {
+final class SettingViewController: UIViewController {
 
     // MARK: - View Life Cycle
     
@@ -15,14 +15,19 @@ class MyDaangnViewController: UIViewController {
         super.viewDidLoad()
 
         setBackgroundColor()
+        hideTabBar()
     }
 }
 
-extension MyDaangnViewController {
+extension SettingViewController {
     
     // MARK: - Custom Methods
     
     private func setBackgroundColor() {
         view.backgroundColor = .white
+    }
+    
+    private func hideTabBar() {
+        tabBarController?.tabBar.isHidden = true
     }
 }

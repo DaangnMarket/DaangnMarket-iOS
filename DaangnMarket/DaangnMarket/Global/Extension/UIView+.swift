@@ -13,6 +13,10 @@ extension UIView {
         views.forEach { self.addSubview($0) }
     }
     
+    func getScreenWidth() -> CGFloat {
+        return UIScreen.main.bounds.width
+    }
+    
     //모든 모서리에 pin을 꽂음
     func pin(to superView: UIView) {
         translatesAutoresizingMaskIntoConstraints = false   //스토리보드 없을 때 추가해야 함 (크기 이상해짐)

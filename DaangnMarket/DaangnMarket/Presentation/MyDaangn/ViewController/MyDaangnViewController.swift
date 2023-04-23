@@ -59,7 +59,11 @@ extension MyDaangnViewController {
     private func setNavigationBar() {
         let settingBarButton = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(settingButtonDidTap))
         settingBarButton.tintColor = .black
+        
         navigationItem.rightBarButtonItem = settingBarButton
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.isTranslucent = true
     }
     
     private func setTabBar() {

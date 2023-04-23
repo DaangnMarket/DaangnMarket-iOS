@@ -61,9 +61,19 @@ extension MyDaangnViewController {
         settingBarButton.tintColor = .black
         
         navigationItem.rightBarButtonItem = settingBarButton
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: setNavigationTitle())
+        navigationItem.leftBarButtonItem?.isHidden = true
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.isTranslucent = true
+    }
+    
+    private func setNavigationTitle() -> UILabel {
+        let titleLabel = UILabel()
+        titleLabel.text = "나의 당근"
+        titleLabel.font = .systemFont(ofSize: 20, weight: .bold)
+        titleLabel.textColor = .black
+        return titleLabel
     }
     
     private func setTabBar() {
@@ -153,5 +163,20 @@ extension MyDaangnViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(50)
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+
+extension MyDaangnViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let remainingTopSpacing = abs(scrollView.contentOffset.y)
+        if scrollView.contentOffset.y > 0 {
+            navigationItem.leftBarButtonItem?.isHidden = false
+            navigationItem.leftBarButtonItem?.customView?.alpha = remainingTopSpacing / 10
+        } else {
+            navigationItem.leftBarButtonItem?.isHidden = true
+        }
     }
 }

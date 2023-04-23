@@ -69,7 +69,7 @@ extension MyDaangnViewController {
     private func setTableViewHeader() -> UIView {
         let header = MyProfileHeaderView()
         let width = UIScreen.main.bounds.width
-        header.frame = CGRect(x: 0, y: 0, width: width, height: 150)
+        header.frame = CGRect(x: 0, y: 0, width: width, height: 180)
         return header
     }
     

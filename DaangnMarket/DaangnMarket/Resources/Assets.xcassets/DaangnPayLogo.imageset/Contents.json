@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "스크린샷 2023-04-23 오후 9.02.48.png",
+      "filename" : "DaangnPayLogo.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "DaangnPayLogo@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "DaangnPayLogo@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

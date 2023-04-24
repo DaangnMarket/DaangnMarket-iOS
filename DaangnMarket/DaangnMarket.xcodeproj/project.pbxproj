@@ -85,7 +85,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		163305C629F6995500115E8B /* Model */ = {
+
+		1640722D29F03EDB006DED01 /* Model */ = {
+
 			isa = PBXGroup;
 			children = (
 				1640722E29F03F50006DED01 /* HomeTableViewModel.swift */,
@@ -248,7 +250,9 @@
 		AB88AD5A29EAFA7800FDF095 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				163305C629F6995500115E8B /* Model */,
+
+				1640722D29F03EDB006DED01 /* Model */,
+
 				1640723129F04B89006DED01 /* View */,
 				1640723029F04B7F006DED01 /* ViewController */,
 			);

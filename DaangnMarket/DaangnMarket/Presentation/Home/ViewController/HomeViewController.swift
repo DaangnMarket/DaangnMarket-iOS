@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     
     var homeTableView = UITableView()
     var homeData: [HomeTableViewModel] = []
-    var cityData: [HomeCityName] = []
+    var homeCityData = HomeCityName(cityName: ["효자동", "삼성동"])
     
     struct Cells {
         static let tableViewCell = "HomeTableViewCell"
@@ -26,6 +26,7 @@ class HomeViewController: UIViewController {
 
         setBackgroundColor()
         homeNavigationRightBar()
+        homeNavigationLeftBar()
         homeData = fetchHomeTableViewData()
         configureTableView()
     }
@@ -67,6 +68,15 @@ extension HomeViewController {
     private func homeNavigationLeftBar() {
         let chevronDown = UIImage(systemName: "chevron.down")?.withTintColor(.black, renderingMode: .alwaysOriginal)
         let cityButton = UIButton()
+        cityButton.setTitle("\(homeCityData.cityName.first!) ", for: .normal)
+        cityButton.setTitleColor(.black, for: .normal)
+        cityButton.setImage(chevronDown, for: .normal)
+        cityButton.semanticContentAttribute = .forceRightToLeft // 타이틀과 이미지의 위치를 바꾸기 위한 설정
+        cityButton.addTarget(self, action: #selector(cityButtonDidTap), for: .touchUpInside)
+        
+        let city = UIBarButtonItem(customView: cityButton)
+        
+        navigationItem.leftBarButtonItem = city
         
     }
     
@@ -102,6 +112,12 @@ extension HomeViewController {
         print("goToSearchVC() called")
         let searchVC = NoticeViewController()
         self.navigationController?.pushViewController(searchVC, animated: true)
+    }
+    
+    @objc fileprivate func cityButtonDidTap() {
+        print("cityButtonDidTap() called")
+//        let searchVC = SearchViewController()
+//        self.navigationController?.pushViewController(searchVC, animated: true)
     }
 }
 

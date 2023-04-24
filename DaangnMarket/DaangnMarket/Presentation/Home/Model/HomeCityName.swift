@@ -8,9 +8,5 @@
 import UIKit
 
 struct HomeCityName {
-    var cityName: String
-    
-    static func fetchCityName() -> [HomeCityName] {
-        return HomeCityName(cityName: "효자동")
-    }
+    var cityName: [String]
 }

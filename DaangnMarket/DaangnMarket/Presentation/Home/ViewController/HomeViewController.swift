@@ -9,8 +9,12 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    //MARK: - UI Components
+    
     var homeTableView = UITableView()
     var homeData: [HomeTableViewModel] = []
+    var homeCityData = HomeCityName(cityName: ["효자동", "삼성동"])
+    
     struct Cells {
         static let tableViewCell = "HomeTableViewCell"
     }
@@ -21,7 +25,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         setBackgroundColor()
-        homeNavigationBar()
+        homeNavigationRightBar()
+        homeNavigationLeftBar()
         homeData = fetchHomeTableViewData()
         configureTableView()
     }
@@ -35,7 +40,7 @@ extension HomeViewController {
         view.backgroundColor = .white
     }
     
-    private func homeNavigationBar() {
+    private func homeNavigationRightBar() {
         let noticeImage = UIImage(systemName: "bell")?.withTintColor(.black, renderingMode: .alwaysOriginal)
         let noticeButton = UIButton()
         noticeButton.setImage(noticeImage, for: .normal)
@@ -58,6 +63,21 @@ extension HomeViewController {
         spacer.width = 16
         
         navigationItem.rightBarButtonItems = [notice, spacer, category, spacer, search]
+    }
+    
+    private func homeNavigationLeftBar() {
+        let chevronDown = UIImage(systemName: "chevron.down")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        let cityButton = UIButton()
+        cityButton.setTitle("\(homeCityData.cityName.first!) ", for: .normal)
+        cityButton.setTitleColor(.black, for: .normal)
+        cityButton.setImage(chevronDown, for: .normal)
+        cityButton.semanticContentAttribute = .forceRightToLeft // 타이틀과 이미지의 위치를 바꾸기 위한 설정
+        cityButton.addTarget(self, action: #selector(cityButtonDidTap), for: .touchUpInside)
+        
+        let city = UIBarButtonItem(customView: cityButton)
+        
+        navigationItem.leftBarButtonItem = city
+        
     }
     
     func configureTableView() {
@@ -92,6 +112,12 @@ extension HomeViewController {
         print("goToSearchVC() called")
         let searchVC = NoticeViewController()
         self.navigationController?.pushViewController(searchVC, animated: true)
+    }
+    
+    @objc fileprivate func cityButtonDidTap() {
+        print("cityButtonDidTap() called")
+//        let searchVC = SearchViewController()
+//        self.navigationController?.pushViewController(searchVC, animated: true)
     }
 }
 
@@ -141,6 +167,4 @@ extension HomeViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    
 }

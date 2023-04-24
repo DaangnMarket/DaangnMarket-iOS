@@ -72,11 +72,11 @@ extension HomeTableViewCell {
     func set(homeTableViewModel: HomeTableViewModel) {
         homeImageView.image = homeTableViewModel.image
         homeTitle.text = homeTableViewModel.title
-        homeLocation.text = homeTableViewModel.location
-        homeTime.text = " · \(homeTableViewModel.time)"
+        homeLocation.text = homeTableViewModel.address
+        homeTime.text = " · \(homeTableViewModel.createdAt)"
         homePrice.text = "\(homeTableViewModel.price)원"
-        homeLikeCount.text = "\(homeTableViewModel.likeCount)"
-        homeChattingCount.text = "\(homeTableViewModel.chattingCount)"
+        homeLikeCount.text = "\(homeTableViewModel.likes)"
+        homeChattingCount.text = "\(homeTableViewModel.numberOfChat)"
     }
     
     func configureHomeImageView() {

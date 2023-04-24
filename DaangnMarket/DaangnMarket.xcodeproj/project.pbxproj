@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		163305C829F69ACB00115E8B /* HomeCityName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163305C729F69ACB00115E8B /* HomeCityName.swift */; };
 		1640722F29F03F50006DED01 /* HomeTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1640722E29F03F50006DED01 /* HomeTableViewModel.swift */; };
 		1640723329F04BB8006DED01 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1640723229F04BB8006DED01 /* HomeTableViewCell.swift */; };
 		16B4853929ED1B7D0009520B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B4853829ED1B7D0009520B /* SearchViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		163305C729F69ACB00115E8B /* HomeCityName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCityName.swift; sourceTree = "<group>"; };
 		1640722E29F03F50006DED01 /* HomeTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewModel.swift; sourceTree = "<group>"; };
 		1640723229F04BB8006DED01 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		16B4853829ED1B7D0009520B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -83,10 +85,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+
 		1640722D29F03EDB006DED01 /* Model */ = {
+
 			isa = PBXGroup;
 			children = (
 				1640722E29F03F50006DED01 /* HomeTableViewModel.swift */,
+				163305C729F69ACB00115E8B /* HomeCityName.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,7 +250,9 @@
 		AB88AD5A29EAFA7800FDF095 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+
 				1640722D29F03EDB006DED01 /* Model */,
+
 				1640723129F04B89006DED01 /* View */,
 				1640723029F04B7F006DED01 /* ViewController */,
 			);
@@ -370,6 +377,7 @@
 				AB519B9E29F041A20097877D /* MyDaangnModel.swift in Sources */,
 				AB519B9429F035570097877D /* UITableViewHeaderFooterView+.swift in Sources */,
 				AB88AD5829EAF7ED00FDF095 /* UIColor+.swift in Sources */,
+				163305C829F69ACB00115E8B /* HomeCityName.swift in Sources */,
 				AB519B8C29F01FC70097877D /* SettingViewController.swift in Sources */,
 				AB88AD5629EAF73F00FDF095 /* UICollectionViewCell+.swift in Sources */,
 				AB105CC029F24066008A0C40 /* MyProfileHeaderView.swift in Sources */,

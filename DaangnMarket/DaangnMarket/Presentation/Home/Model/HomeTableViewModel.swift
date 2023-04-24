@@ -16,4 +16,5 @@ struct HomeTableViewModel {
     var price: Int
     var likes: Int
     var numberOfChat: Int
+
 }

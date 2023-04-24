@@ -62,7 +62,7 @@ extension MyDaangnViewController {
         
         navigationItem.rightBarButtonItem = settingBarButton
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: setNavigationTitle())
-        navigationItem.leftBarButtonItem?.isHidden = true
+        navigationItem.leftBarButtonItem?.customView?.alpha = 0
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.isTranslucent = true
@@ -173,10 +173,9 @@ extension MyDaangnViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let remainingTopSpacing = abs(scrollView.contentOffset.y)
         if scrollView.contentOffset.y > 0 {
-            navigationItem.leftBarButtonItem?.isHidden = false
             navigationItem.leftBarButtonItem?.customView?.alpha = remainingTopSpacing / 10
         } else {
-            navigationItem.leftBarButtonItem?.isHidden = true
+            navigationItem.leftBarButtonItem?.customView?.alpha = 0
         }
     }
 }

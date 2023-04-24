@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     
     var homeTableView = UITableView()
     var homeData: [HomeTableViewModel] = []
-
+    var cityData: [HomeCityName] = []
     
     struct Cells {
         static let tableViewCell = "HomeTableViewCell"

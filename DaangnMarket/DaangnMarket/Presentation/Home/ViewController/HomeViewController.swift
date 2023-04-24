@@ -9,8 +9,12 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    //MARK: - UI Components
+    
     var homeTableView = UITableView()
     var homeData: [HomeTableViewModel] = []
+
+    
     struct Cells {
         static let tableViewCell = "HomeTableViewCell"
     }
@@ -21,7 +25,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         setBackgroundColor()
-        homeNavigationBar()
+        homeNavigationRightBar()
         homeData = fetchHomeTableViewData()
         configureTableView()
     }
@@ -35,7 +39,7 @@ extension HomeViewController {
         view.backgroundColor = .white
     }
     
-    private func homeNavigationBar() {
+    private func homeNavigationRightBar() {
         let noticeImage = UIImage(systemName: "bell")?.withTintColor(.black, renderingMode: .alwaysOriginal)
         let noticeButton = UIButton()
         noticeButton.setImage(noticeImage, for: .normal)
@@ -58,6 +62,12 @@ extension HomeViewController {
         spacer.width = 16
         
         navigationItem.rightBarButtonItems = [notice, spacer, category, spacer, search]
+    }
+    
+    private func homeNavigationLeftBar() {
+        let chevronDown = UIImage(systemName: "chevron.down")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        let cityButton = UIButton()
+        
     }
     
     func configureTableView() {
@@ -141,6 +151,4 @@ extension HomeViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    
 }

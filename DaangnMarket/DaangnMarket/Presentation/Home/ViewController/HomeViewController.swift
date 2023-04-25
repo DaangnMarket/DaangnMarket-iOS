@@ -26,9 +26,15 @@ class HomeViewController: UIViewController {
 
         setBackgroundColor()
         homeNavigationRightBar()
-        homeNavigationLeftBar()
+//        homeNavigationLeftBar()
         homeData = fetchHomeTableViewData()
         configureTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        homeNavigationLeftBar()
+        
     }
 }
 
@@ -66,18 +72,23 @@ extension HomeViewController {
     }
     
     private func homeNavigationLeftBar() {
-        let chevronDown = UIImage(systemName: "chevron.down")?.withTintColor(.black, renderingMode: .alwaysOriginal)
         let cityButton = UIButton()
         cityButton.setTitle("\(homeCityData.cityName.first!) ", for: .normal)
         cityButton.setTitleColor(.black, for: .normal)
-        cityButton.setImage(chevronDown, for: .normal)
-        cityButton.semanticContentAttribute = .forceRightToLeft // 타이틀과 이미지의 위치를 바꾸기 위한 설정
+        cityButton.setImage(UIImage(systemName: "chevron.down")?.withTintColor(.black, renderingMode: .alwaysOriginal), for: .normal)
+        
+        // 수동으로 레이아웃 구성
+        let imageSize = cityButton.imageView?.image?.size ?? .zero
+        let titleSize = cityButton.titleLabel?.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)) ?? .zero
+        let spacing: CGFloat = 8
+        cityButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: -imageSize.width - spacing/2, bottom: 0, right: imageSize.width + spacing/2)
+        cityButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: titleSize.width + spacing/2, bottom: 0, right: -titleSize.width - spacing/2)
+        
         cityButton.addTarget(self, action: #selector(cityButtonDidTap), for: .touchUpInside)
         
         let city = UIBarButtonItem(customView: cityButton)
         
         navigationItem.leftBarButtonItem = city
-        
     }
     
     func configureTableView() {

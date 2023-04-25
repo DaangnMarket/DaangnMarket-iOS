@@ -158,13 +158,20 @@ extension HomeViewController: UITableViewDataSource {
         return homeData.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let productId = homeData[indexPath.row].id
+        let productController = ProductViewController()
+        productController.homeData = productId
+        
+        navigationController?.pushViewController(productController, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cells.tableViewCell) as! HomeTableViewCell
         
         let home = homeData[indexPath.row]
         
         cell.set(homeTableViewModel: home)
-        
         return cell
     }
 }

@@ -36,12 +36,14 @@ extension ProductViewController {
         let backButtonImage = UIImage(systemName: "chevron.left")?.withTintColor(.white, renderingMode: .alwaysOriginal)
         let backButton = UIButton()
         backButton.setImage(backButtonImage, for: .normal)
+        backButton.semanticContentAttribute = .forceRightToLeft
         backButton.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
         let back = UIBarButtonItem(customView: backButton)
         
         let homeButtonImage = UIImage(named: "TabHome")
         let homeButton = UIButton()
         homeButton.setImage(homeButtonImage, for: .normal)
+        homeButton.semanticContentAttribute = .forceRightToLeft
         homeButton.addTarget(self, action: #selector(homeButtonDidTap), for: .touchUpInside)
         let home = UIBarButtonItem(customView: homeButton)
         

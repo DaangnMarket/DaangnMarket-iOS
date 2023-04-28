@@ -13,6 +13,11 @@ class MyAddressViewController: UIViewController {
     
     private var mapView = UIView()
     private var myAddressView = UIView()
+    private var addressTitle = UILabel()
+    private var firstButton = UIButton()
+    private var secondButton = UIButton()
+    private var homeCityData = HomeCityName(cityName: ["효자동"])
+
     
     // MARK: - View Life Cycle
     
@@ -27,7 +32,6 @@ class MyAddressViewController: UIViewController {
         setMyAddressView()
     }
 }
-
 extension MyAddressViewController {
     
     // MARK: - Custom Methods
@@ -70,8 +74,7 @@ extension MyAddressViewController {
     
     private func setMyAddressView() {
         myAddressView.translatesAutoresizingMaskIntoConstraints = false
-        myAddressView.backgroundColor = .blue
-
+        
         view.addSubview(myAddressView)
         
         NSLayoutConstraint.activate([
@@ -80,7 +83,61 @@ extension MyAddressViewController {
             myAddressView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         mapView.bottomAnchor.constraint(equalTo: myAddressView.topAnchor).isActive = true
-
+        
+        setAddressView()
+    }
+    
+    private func setAddressView() {
+        addressTitle.text = "내 동네"
+        addressTitle.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        addressTitle.translatesAutoresizingMaskIntoConstraints = false
+        addressTitle.tintColor = .black
+        
+        
+        
+        setupButton()
+        
+        
+        myAddressView.addSubview(addressTitle)
+        myAddressView.addSubview(firstButton)
+        myAddressView.addSubview(secondButton)
+        
+        NSLayoutConstraint.activate([
+            addressTitle.topAnchor.constraint(equalTo: myAddressView.topAnchor, constant: 20),
+            addressTitle.leadingAnchor.constraint(equalTo: myAddressView.leadingAnchor, constant: 12),
+            firstButton.topAnchor.constraint(equalTo: addressTitle.bottomAnchor, constant: 12),
+            firstButton.leadingAnchor.constraint(equalTo: myAddressView.leadingAnchor, constant: 12),
+            firstButton.heightAnchor.constraint(equalToConstant: 50),
+            secondButton.topAnchor.constraint(equalTo: addressTitle.bottomAnchor, constant: 12),
+            secondButton.leadingAnchor.constraint(equalTo: firstButton.trailingAnchor, constant: 8),
+            secondButton.trailingAnchor.constraint(equalTo: myAddressView.trailingAnchor, constant: -12),
+            secondButton.widthAnchor.constraint(equalTo: firstButton.widthAnchor),
+            secondButton.heightAnchor.constraint(equalTo: firstButton.heightAnchor)
+        ])
+        
+    }
+    
+    private func setupButton() {
+        
+        firstButton.configuration = .filled()
+        firstButton.configuration?.baseBackgroundColor = .orange
+        firstButton.configuration?.title = homeCityData.cityName[0]
+        firstButton.configuration?.titleAlignment = .leading // title을 leading으로 정렬
+        firstButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        if homeCityData.cityName.count == 1 {
+            secondButton.configuration = .filled()
+            secondButton.configuration?.title = "+"
+            secondButton.configuration?.baseForegroundColor = .black
+            secondButton.configuration?.baseBackgroundColor = .systemGray5
+            secondButton.translatesAutoresizingMaskIntoConstraints = false
+        } else if homeCityData.cityName.count == 2 {
+            secondButton.configuration = .filled()
+            secondButton.configuration?.baseBackgroundColor = .orange
+            secondButton.configuration?.title = homeCityData.cityName[1]
+            secondButton.configuration?.titleAlignment = .leading // title을 leading으로 정렬
+            secondButton.translatesAutoresizingMaskIntoConstraints = false
+        }
     }
     
     //MARK: - @objc Methods

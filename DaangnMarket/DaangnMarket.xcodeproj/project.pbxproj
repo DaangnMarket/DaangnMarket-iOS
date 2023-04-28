@@ -23,7 +23,6 @@
 		AB519B9429F035570097877D /* UITableViewHeaderFooterView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B9329F035570097877D /* UITableViewHeaderFooterView+.swift */; };
 		AB519B9E29F041A20097877D /* MyDaangnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B9D29F041A20097877D /* MyDaangnModel.swift */; };
 		AB519BA229F046A30097877D /* MyLineFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519BA129F046A30097877D /* MyLineFooterView.swift */; };
-		AB56598D29FA704800A359A8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB56598C29FA704800A359A8 /* ProfileViewController.swift */; };
 		AB56598F29FB994F00A359A8 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB56598E29FB994F00A359A8 /* UIViewController+.swift */; };
 		AB88AD5029EAF6D700FDF095 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD4F29EAF6D700FDF095 /* UIView+.swift */; };
 		AB88AD5229EAF6F800FDF095 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5129EAF6F800FDF095 /* UIStackView+.swift */; };
@@ -38,6 +37,7 @@
 		AB88AD6B29EAFCA500FDF095 /* MyDaangnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD6A29EAFCA500FDF095 /* MyDaangnViewController.swift */; };
 		AB88AD6E29EAFD2100FDF095 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AB88AD6D29EAFD2100FDF095 /* SnapKit */; };
 		AB88AD7129EAFD2B00FDF095 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = AB88AD7029EAFD2B00FDF095 /* Then */; };
+		ABB2136229FBDBF4008672A2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136129FBDBF4008672A2 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +59,6 @@
 		AB519B9329F035570097877D /* UITableViewHeaderFooterView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView+.swift"; sourceTree = "<group>"; };
 		AB519B9D29F041A20097877D /* MyDaangnModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDaangnModel.swift; sourceTree = "<group>"; };
 		AB519BA129F046A30097877D /* MyLineFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLineFooterView.swift; sourceTree = "<group>"; };
-		AB56598C29FA704800A359A8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AB56598E29FB994F00A359A8 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		AB88AD4F29EAF6D700FDF095 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		AB88AD5129EAF6F800FDF095 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		AB88AD6429EAFC4800FDF095 /* NearMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeViewController.swift; sourceTree = "<group>"; };
 		AB88AD6729EAFC8900FDF095 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		AB88AD6A29EAFCA500FDF095 /* MyDaangnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDaangnViewController.swift; sourceTree = "<group>"; };
+		ABB2136129FBDBF4008672A2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +170,7 @@
 			children = (
 				AB88AD6A29EAFCA500FDF095 /* MyDaangnViewController.swift */,
 				AB519B8B29F01FC70097877D /* SettingViewController.swift */,
-				AB56598C29FA704800A359A8 /* ProfileViewController.swift */,
+				ABB2136129FBDBF4008672A2 /* ProfileViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -390,6 +390,7 @@
 				AB105CC029F24066008A0C40 /* MyProfileHeaderView.swift in Sources */,
 				16B4853C29ED2CC00009520B /* NoticeViewController.swift in Sources */,
 				AB88AD6529EAFC4800FDF095 /* NearMeViewController.swift in Sources */,
+				ABB2136229FBDBF4008672A2 /* ProfileViewController.swift in Sources */,
 				AB519B9029F032A90097877D /* MyTableViewCell.swift in Sources */,
 				AB88AD5F29EAFBDB00FDF095 /* TabBarController.swift in Sources */,
 				AB88AD5229EAF6F800FDF095 /* UIStackView+.swift in Sources */,
@@ -403,7 +404,6 @@
 				AB88AD6B29EAFCA500FDF095 /* MyDaangnViewController.swift in Sources */,
 				AB88AD6829EAFC8900FDF095 /* ChatViewController.swift in Sources */,
 				AB56598F29FB994F00A359A8 /* UIViewController+.swift in Sources */,
-				AB56598D29FA704800A359A8 /* ProfileViewController.swift in Sources */,
 				1640723329F04BB8006DED01 /* HomeTableViewCell.swift in Sources */,
 				AB02A5BE29EAF3DF0044AF79 /* SceneDelegate.swift in Sources */,
 			);

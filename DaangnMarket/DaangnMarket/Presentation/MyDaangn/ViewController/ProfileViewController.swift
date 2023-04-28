@@ -29,7 +29,7 @@ extension ProfileViewController {
     // MARK: - Custom Methods
     
     private func setBackgroundColor() {
-        view.backgroundColor = .yellow
+        view.backgroundColor = .white 
     }
     
     private func setLayout() {

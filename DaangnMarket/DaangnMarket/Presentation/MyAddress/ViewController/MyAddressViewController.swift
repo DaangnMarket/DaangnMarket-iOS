@@ -8,13 +8,23 @@
 import UIKit
 
 class MyAddressViewController: UIViewController {
-
+    
+    //MARK: - UI Components
+    
+    private var mapView = UIView()
+    private var myAddressView = UIView()
+    
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackgroundColor()
         setNavigationLeftBar()
         setNavigationTitle()
         setNavigationRightBar()
+        
+        setMapView()
+        setMyAddressView()
     }
 }
 
@@ -41,6 +51,36 @@ extension MyAddressViewController {
         let questionButton = UIBarButtonItem(image: UIImage(systemName: "questionmark.circle"), style: .plain, target: self, action: #selector(questionButtonDidTap))
         questionButton.tintColor = .black
         navigationItem.rightBarButtonItem = questionButton
+    }
+    
+    private func setMapView() {
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        mapView.backgroundColor = .red
+        
+        view.addSubview(mapView)
+        
+        NSLayoutConstraint.activate([
+            mapView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            mapView.heightAnchor.constraint(equalToConstant: view.bounds.height * 0.6)
+        ])
+
+    }
+    
+    private func setMyAddressView() {
+        myAddressView.translatesAutoresizingMaskIntoConstraints = false
+        myAddressView.backgroundColor = .blue
+
+        view.addSubview(myAddressView)
+        
+        NSLayoutConstraint.activate([
+            myAddressView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            myAddressView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            myAddressView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        mapView.bottomAnchor.constraint(equalTo: myAddressView.topAnchor).isActive = true
+
     }
     
     //MARK: - @objc Methods

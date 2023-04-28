@@ -64,8 +64,7 @@ extension MyDaangnViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: setNavigationTitle())
         navigationItem.leftBarButtonItem?.customView?.alpha = 0
         
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.isTranslucent = true
+        setNavigationBackground()
     }
     
     private func setNavigationTitle() -> UILabel {

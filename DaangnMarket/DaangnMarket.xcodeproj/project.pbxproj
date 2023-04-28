@@ -24,6 +24,7 @@
 		AB519B9E29F041A20097877D /* MyDaangnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B9D29F041A20097877D /* MyDaangnModel.swift */; };
 		AB519BA229F046A30097877D /* MyLineFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519BA129F046A30097877D /* MyLineFooterView.swift */; };
 		AB56598D29FA704800A359A8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB56598C29FA704800A359A8 /* ProfileViewController.swift */; };
+		AB56598F29FB994F00A359A8 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB56598E29FB994F00A359A8 /* UIViewController+.swift */; };
 		AB88AD5029EAF6D700FDF095 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD4F29EAF6D700FDF095 /* UIView+.swift */; };
 		AB88AD5229EAF6F800FDF095 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5129EAF6F800FDF095 /* UIStackView+.swift */; };
 		AB88AD5429EAF72500FDF095 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD5329EAF72500FDF095 /* UITableViewCell+.swift */; };
@@ -59,6 +60,7 @@
 		AB519B9D29F041A20097877D /* MyDaangnModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDaangnModel.swift; sourceTree = "<group>"; };
 		AB519BA129F046A30097877D /* MyLineFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLineFooterView.swift; sourceTree = "<group>"; };
 		AB56598C29FA704800A359A8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		AB56598E29FB994F00A359A8 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		AB88AD4F29EAF6D700FDF095 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		AB88AD5129EAF6F800FDF095 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		AB88AD5329EAF72500FDF095 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				AB88AD5529EAF73F00FDF095 /* UICollectionViewCell+.swift */,
 				AB88AD5729EAF7ED00FDF095 /* UIColor+.swift */,
 				AB519B9329F035570097877D /* UITableViewHeaderFooterView+.swift */,
+				AB56598E29FB994F00A359A8 /* UIViewController+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				AB519BA229F046A30097877D /* MyLineFooterView.swift in Sources */,
 				AB88AD6B29EAFCA500FDF095 /* MyDaangnViewController.swift in Sources */,
 				AB88AD6829EAFC8900FDF095 /* ChatViewController.swift in Sources */,
+				AB56598F29FB994F00A359A8 /* UIViewController+.swift in Sources */,
 				AB56598D29FA704800A359A8 /* ProfileViewController.swift in Sources */,
 				1640723329F04BB8006DED01 /* HomeTableViewCell.swift in Sources */,
 				AB02A5BE29EAF3DF0044AF79 /* SceneDelegate.swift in Sources */,

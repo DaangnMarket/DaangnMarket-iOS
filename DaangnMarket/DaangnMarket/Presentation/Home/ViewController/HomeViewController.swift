@@ -128,11 +128,11 @@ extension HomeViewController {
     @objc fileprivate func cityButtonDidTap() {
         print("cityButtonDidTap() called")
         if homeCityData.cityName.count == 1 {
-            print("1111")
             let myAddressVC = MyAddressViewController()
-            myAddressVC.modalPresentationStyle = .fullScreen
-            present(myAddressVC, animated: true)
-            
+            let navigationController = UINavigationController(rootViewController: myAddressVC)
+            navigationController.modalPresentationStyle = .fullScreen
+            navigationController.modalTransitionStyle = .coverVertical
+            self.present(navigationController, animated: true, completion: nil)
         } else if homeCityData.cityName.count == 2 {
             print("2222222")
         }

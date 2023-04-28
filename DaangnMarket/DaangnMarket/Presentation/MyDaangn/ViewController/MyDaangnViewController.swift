@@ -82,6 +82,7 @@ extension MyDaangnViewController {
     
     private func setTableViewHeader() -> UIView {
         let header = MyProfileHeaderView()
+        header.delegate = self
         let width = UIScreen.main.bounds.width
         header.frame = CGRect(x: 0, y: 0, width: width, height: 180)
         return header
@@ -177,5 +178,15 @@ extension MyDaangnViewController: UIScrollViewDelegate {
         } else {
             navigationItem.leftBarButtonItem?.customView?.alpha = 0
         }
+    }
+}
+
+// MARK: - ProfileActionProtocol
+
+extension MyDaangnViewController: ProfileActionProtocol {
+    
+    func viewProfileButtonDidTap() {
+        let profileVC = ProfileViewController()
+        navigationController?.pushViewController(profileVC, animated: true)
     }
 }

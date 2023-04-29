@@ -41,9 +41,18 @@ final class ProfileHeaderView: UIView {
         $0.configuration = config
     }
     
-    private let mannerButton = UIButton().then {
-        $0.setTitle("매너온도", for: .normal)
-        $0.backgroundColor = .black
+    private let mannerLabel = UILabel().then {
+        let text = "매너온도"
+        let attributedString = NSMutableAttributedString.init(string: text)
+        let font = UIFont.boldSystemFont(ofSize: 15)
+        attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: 1, range: NSRange.init(location: 0, length: attributedString.length))
+        attributedString.addAttribute(.font, value: font, range: NSRange.init(location: 0, length: attributedString.length))
+        $0.attributedText = attributedString
+    }
+    
+    private let infoImageView = UIImageView().then {
+        $0.image = UIImage(systemName: "info.circle")
+        $0.tintColor = .black
     }
     
     private let temperatureProgressView = UIProgressView().then {
@@ -106,7 +115,7 @@ extension ProfileHeaderView {
     }
     
     private func setLayout() {
-        addSubviews(profileImageView, nickNameLabel, idLabel, modifyProfileButton, mannerButton, temperatureProgressView, temperatureImageView,temperatureLabel, firstTemperatureStackView)
+        addSubviews(profileImageView, nickNameLabel, idLabel, modifyProfileButton, mannerLabel, temperatureProgressView, temperatureImageView,temperatureLabel, firstTemperatureStackView, infoImageView)
         firstTemperatureStackView.addArrangedSubViews(firsetTemperatureLabel, arrowImageView)
         
         profileImageView.snp.makeConstraints {
@@ -132,9 +141,15 @@ extension ProfileHeaderView {
             $0.height.equalTo(40)
         }
         
-        mannerButton.snp.makeConstraints {
+        mannerLabel.snp.makeConstraints {
             $0.top.equalTo(modifyProfileButton.snp.bottom).offset(20)
             $0.leading.equalTo(modifyProfileButton.snp.leading)
+        }
+        
+        infoImageView.snp.makeConstraints {
+            $0.centerY.equalTo(mannerLabel)
+            $0.leading.equalTo(mannerLabel.snp.trailing).offset(3)
+            $0.width.height.equalTo(20)
         }
         
         temperatureLabel.snp.makeConstraints {
@@ -149,7 +164,7 @@ extension ProfileHeaderView {
         
         temperatureImageView.snp.makeConstraints {
             $0.trailing.equalToSuperview().offset(-15)
-            $0.top.equalTo(mannerButton.snp.bottom).offset(5)
+            $0.top.equalTo(mannerLabel.snp.bottom).offset(5)
             $0.width.height.equalTo(30)
         }
         

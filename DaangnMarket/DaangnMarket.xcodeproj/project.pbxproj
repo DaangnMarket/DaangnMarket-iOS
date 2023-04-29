@@ -38,6 +38,8 @@
 		AB88AD6E29EAFD2100FDF095 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AB88AD6D29EAFD2100FDF095 /* SnapKit */; };
 		AB88AD7129EAFD2B00FDF095 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = AB88AD7029EAFD2B00FDF095 /* Then */; };
 		ABB2136229FBDBF4008672A2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136129FBDBF4008672A2 /* ProfileViewController.swift */; };
+		ABB2136929FD7075008672A2 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136829FD7075008672A2 /* ProfileHeaderView.swift */; };
+		ABB2136B29FD75FE008672A2 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136A29FD75FE008672A2 /* UIButton+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		AB88AD6729EAFC8900FDF095 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		AB88AD6A29EAFCA500FDF095 /* MyDaangnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDaangnViewController.swift; sourceTree = "<group>"; };
 		ABB2136129FBDBF4008672A2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		ABB2136829FD7075008672A2 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		ABB2136A29FD75FE008672A2 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +174,6 @@
 			children = (
 				AB88AD6A29EAFCA500FDF095 /* MyDaangnViewController.swift */,
 				AB519B8B29F01FC70097877D /* SettingViewController.swift */,
-				ABB2136129FBDBF4008672A2 /* ProfileViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				AB88AD6329EAFC0F00FDF095 /* NearMe */,
 				AB88AD6629EAFC5400FDF095 /* Chatting */,
 				AB88AD6929EAFC8D00FDF095 /* MyDaangn */,
+				ABB2136429FC002D008672A2 /* Profile */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -246,6 +250,7 @@
 				AB88AD5729EAF7ED00FDF095 /* UIColor+.swift */,
 				AB519B9329F035570097877D /* UITableViewHeaderFooterView+.swift */,
 				AB56598E29FB994F00A359A8 /* UIViewController+.swift */,
+				ABB2136A29FD75FE008672A2 /* UIButton+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -299,6 +304,31 @@
 				AB519B8D29F032250097877D /* ViewController */,
 			);
 			path = MyDaangn;
+			sourceTree = "<group>";
+		};
+		ABB2136429FC002D008672A2 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				ABB2136729FD705F008672A2 /* View */,
+				ABB2136629FC003C008672A2 /* ViewController */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		ABB2136629FC003C008672A2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ABB2136129FBDBF4008672A2 /* ProfileViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		ABB2136729FD705F008672A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABB2136829FD7075008672A2 /* ProfileHeaderView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,6 +425,7 @@
 				AB88AD5F29EAFBDB00FDF095 /* TabBarController.swift in Sources */,
 				AB88AD5229EAF6F800FDF095 /* UIStackView+.swift in Sources */,
 				1640722F29F03F50006DED01 /* HomeTableViewModel.swift in Sources */,
+				ABB2136B29FD75FE008672A2 /* UIButton+.swift in Sources */,
 				AB88AD5D29EAFA9D00FDF095 /* HomeViewController.swift in Sources */,
 				16B4853929ED1B7D0009520B /* SearchViewController.swift in Sources */,
 				AB88AD5429EAF72500FDF095 /* UITableViewCell+.swift in Sources */,
@@ -402,6 +433,7 @@
 				AB02A5BC29EAF3DF0044AF79 /* AppDelegate.swift in Sources */,
 				AB519BA229F046A30097877D /* MyLineFooterView.swift in Sources */,
 				AB88AD6B29EAFCA500FDF095 /* MyDaangnViewController.swift in Sources */,
+				ABB2136929FD7075008672A2 /* ProfileHeaderView.swift in Sources */,
 				AB88AD6829EAFC8900FDF095 /* ChatViewController.swift in Sources */,
 				AB56598F29FB994F00A359A8 /* UIViewController+.swift in Sources */,
 				1640723329F04BB8006DED01 /* HomeTableViewCell.swift in Sources */,

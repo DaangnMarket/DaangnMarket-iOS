@@ -12,6 +12,8 @@ class ProductViewController: UIViewController {
     //MARK: - UI Components
     
     var homeData: Int = 0
+//    var productCollectionView = UICollectionView()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,10 @@ class ProductViewController: UIViewController {
         setBackgroundColor()
         navigationLeftBar()
         navigationRightBar()
+        print(homeData)
+        
+        fetchProductData()
+        print(fetchProductData())
     }
     
 
@@ -94,4 +100,15 @@ extension ProductViewController {
         print("shareButtonDidTap() called")
     }
 
+}
+
+//MARK: - Product Collection View Dummy Data
+
+extension ProductViewController {
+    
+    func fetchProductData() -> ProductModel {
+        var productData = ProductModel(id: 1, profileImage: UIImage(systemName: "person") ?? UIImage(systemName: "person")!, nickname: "효자동 쿨거래남", address: "효자동", mannerTemp: 46, title: "자전거 급하게 팝니다", category: "중고", createdAt: "한 시간 전", contents: "급한 사정으로 급하게 자전거 급처분합니다. 관심있으신 분들은 얼른 연락주세요", numberOfChat: 3, numberOfInterest: 4, numberOfView: 23, price: 50000)
+        
+        return productData
+    }
 }

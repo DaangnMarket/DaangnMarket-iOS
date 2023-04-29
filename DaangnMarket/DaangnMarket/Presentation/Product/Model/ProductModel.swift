@@ -14,7 +14,7 @@ struct ProductModel {
     var profileImage: UIImage
     var nickname: String
     var address: String
-    var mannerTemp: String
+    var mannerTemp: Int
     var title: String
     var category: String
     var createdAt: String

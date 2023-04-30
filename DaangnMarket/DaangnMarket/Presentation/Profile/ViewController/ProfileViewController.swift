@@ -55,7 +55,7 @@ extension ProfileViewController {
     private func setTableViewHeader() -> UIView {
         let header = ProfileHeaderView()
         let width = UIScreen.main.bounds.width
-        header.frame = CGRect(x: 0, y: 0, width: width, height: 250)
+        header.frame = CGRect(x: 0, y: 0, width: width, height: 310)
         return header
     }
     

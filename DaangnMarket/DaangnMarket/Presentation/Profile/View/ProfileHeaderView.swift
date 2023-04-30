@@ -16,6 +16,7 @@ final class ProfileHeaderView: UIView {
     
     private let profileImageView = UIImageView().then {
         $0.backgroundColor = .daangnGray
+        $0.layer.cornerRadius = 35
     }
     
     private let nickNameLabel = UILabel().then {
@@ -39,6 +40,7 @@ final class ProfileHeaderView: UIView {
         
         $0.backgroundColor = .daangnGray
         $0.configuration = config
+        $0.layer.cornerRadius = 5
     }
     
     private let mannerLabel = UILabel().then {
@@ -91,6 +93,47 @@ final class ProfileHeaderView: UIView {
         $0.alignment = .center
         $0.spacing = 5
     }
+    
+    private let percentStackView = UIStackView().then {
+        $0.distribution = .fillEqually
+    }
+    
+    private let redealingContainerView = UIView()
+    private let responseContainerView = UIView()
+    
+    private let heartImageView = UIImageView().then {
+        $0.image = UIImage(systemName: "heart")
+        $0.tintColor = .black
+    }
+    
+    private let redealingLabel = UILabel().then {
+        $0.text = "재거래희망률 -%"
+        $0.font = .systemFont(ofSize: 14)
+    }
+    
+    private let redealingDescriptionLabel = UILabel().then {
+        $0.numberOfLines = 0
+        $0.text = "표시될 만큼 충분히 거래하지\n않았어요."
+        $0.font = .systemFont(ofSize: 13)
+        $0.textColor = .lightGray
+    }
+    
+    private let bubbleImageView = UIImageView().then {
+        $0.image = UIImage(systemName: "bubble.right")
+        $0.tintColor = .black
+    }
+    
+    private let responseLabel = UILabel().then {
+        $0.text = "응답률 -%"
+        $0.font = .systemFont(ofSize: 14)
+    }
+    
+    private let responseDescriptionLabel = UILabel().then {
+        $0.numberOfLines = 0
+        $0.text = "표시될 만큼 충분히 채팅하지\n않았어요."
+        $0.font = .systemFont(ofSize: 13)
+        $0.textColor = .lightGray
+    }
 
     // MARK: - Initializer
     
@@ -115,8 +158,11 @@ extension ProfileHeaderView {
     }
     
     private func setLayout() {
-        addSubviews(profileImageView, nickNameLabel, idLabel, modifyProfileButton, mannerLabel, temperatureProgressView, temperatureImageView,temperatureLabel, firstTemperatureStackView, infoImageView)
+        addSubviews(profileImageView, nickNameLabel, idLabel, modifyProfileButton, mannerLabel, temperatureProgressView, temperatureImageView,temperatureLabel, firstTemperatureStackView, infoImageView, percentStackView)
         firstTemperatureStackView.addArrangedSubViews(firsetTemperatureLabel, arrowImageView)
+        percentStackView.addArrangedSubViews(redealingContainerView, responseContainerView)
+        redealingContainerView.addSubviews(heartImageView, redealingLabel, redealingDescriptionLabel)
+        responseContainerView.addSubviews(bubbleImageView, responseLabel, responseDescriptionLabel)
         
         profileImageView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(15)
@@ -177,6 +223,45 @@ extension ProfileHeaderView {
         
         arrowImageView.snp.makeConstraints {
             $0.width.height.equalTo(10)
+        }
+        
+        percentStackView.snp.makeConstraints {
+            $0.top.equalTo(temperatureProgressView.snp.bottom).offset(10)
+            $0.width.equalTo(getScreenWidth()-30)
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
+        
+        heartImageView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(5)
+            $0.leading.equalToSuperview()
+            $0.width.height.equalTo(20)
+        }
+        
+        redealingLabel.snp.makeConstraints {
+            $0.centerY.equalTo(heartImageView)
+            $0.leading.equalTo(heartImageView.snp.trailing).offset(5)
+        }
+        
+        redealingDescriptionLabel.snp.makeConstraints {
+            $0.top.equalTo(redealingLabel.snp.bottom).offset(5)
+            $0.leading.equalTo(redealingLabel)
+        }
+        
+        bubbleImageView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(5)
+            $0.leading.equalToSuperview()
+            $0.width.height.equalTo(20)
+        }
+        
+        responseLabel.snp.makeConstraints {
+            $0.centerY.equalTo(bubbleImageView)
+            $0.leading.equalTo(bubbleImageView.snp.trailing).offset(5)
+        }
+        
+        responseDescriptionLabel.snp.makeConstraints {
+            $0.top.equalTo(responseLabel.snp.bottom).offset(5)
+            $0.leading.equalTo(responseLabel)
         }
     }
     

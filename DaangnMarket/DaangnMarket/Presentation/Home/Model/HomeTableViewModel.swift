@@ -8,11 +8,13 @@
 import UIKit
 
 struct HomeTableViewModel {
-    var image: UIImage
+    var id: Int
     var title: String
-    var location: String
-    var time: String
+    var image: UIImage
+    var address: String
+    var createdAt: String
     var price: Int
-    var likeCount: Int
-    var chattingCount: Int
+    var likes: Int
+    var numberOfChat: Int
+
 }

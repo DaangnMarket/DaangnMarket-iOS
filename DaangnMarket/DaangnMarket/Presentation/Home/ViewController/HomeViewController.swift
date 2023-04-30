@@ -21,9 +21,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         setBackgroundColor()
-//        homeNavigationBar()
-//        homeData = fetchHomeTableViewData()
-//        configureTableView()
+        homeNavigationBar()
+        homeData = fetchHomeTableViewData()
+        configureTableView()
     }
 }
 

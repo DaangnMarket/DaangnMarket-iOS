@@ -40,6 +40,7 @@
 		ABB2136229FBDBF4008672A2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136129FBDBF4008672A2 /* ProfileViewController.swift */; };
 		ABB2136929FD7075008672A2 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136829FD7075008672A2 /* ProfileHeaderView.swift */; };
 		ABB2136B29FD75FE008672A2 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136A29FD75FE008672A2 /* UIButton+.swift */; };
+		ABB2136D29FE4E37008672A2 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136C29FE4E37008672A2 /* ProfileTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		ABB2136129FBDBF4008672A2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		ABB2136829FD7075008672A2 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		ABB2136A29FD75FE008672A2 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		ABB2136C29FE4E37008672A2 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				ABB2136829FD7075008672A2 /* ProfileHeaderView.swift */,
+				ABB2136C29FE4E37008672A2 /* ProfileTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				AB519B9229F034E50097877D /* MySectionHeaderView.swift in Sources */,
 				AB02A5BC29EAF3DF0044AF79 /* AppDelegate.swift in Sources */,
 				AB519BA229F046A30097877D /* MyLineFooterView.swift in Sources */,
+				ABB2136D29FE4E37008672A2 /* ProfileTableViewCell.swift in Sources */,
 				AB88AD6B29EAFCA500FDF095 /* MyDaangnViewController.swift in Sources */,
 				ABB2136929FD7075008672A2 /* ProfileHeaderView.swift in Sources */,
 				AB88AD6829EAFC8900FDF095 /* ChatViewController.swift in Sources */,

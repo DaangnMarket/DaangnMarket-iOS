@@ -18,11 +18,15 @@ final class ProfileViewController: UIViewController {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundColor = .clear
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.separatorStyle = .none
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tableView.showsVerticalScrollIndicator = false
         tableView.tableHeaderView = setTableViewHeader()
         return tableView
     }()
+    
+    // MARK: - Properties
+    
+    let categoryNames = ["활동 배지 9개", "판매상품 0개", "받은 매너 평가", "받은 거래 후기 0"]
 
     // MARK: - View Life Cycle
     
@@ -32,6 +36,8 @@ final class ProfileViewController: UIViewController {
         setBackgroundColor()
         setLayout()
         setNavigationBar()
+        setDelegate()
+        register()
     }
 }
 
@@ -69,9 +75,42 @@ extension ProfileViewController {
         navigationController?.navigationBar.tintColor = .black
     }
     
+    private func setDelegate() {
+        profileTableView.dataSource = self
+        profileTableView.delegate = self
+    }
+    
+    private func register() {
+        profileTableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: ProfileTableViewCell.cellIdentifier)
+    }
+    
     // MARK: - @objc Methods
     
     @objc private func backButtonDidTap() {
         navigationController?.popViewController(animated: true)
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension ProfileViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.cellIdentifier, for: indexPath) as! ProfileTableViewCell
+        cell.setDataBind(categoryNames[indexPath.row])
+        return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension ProfileViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }

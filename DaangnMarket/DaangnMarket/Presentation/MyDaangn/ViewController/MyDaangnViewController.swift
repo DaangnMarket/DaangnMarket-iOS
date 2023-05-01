@@ -31,12 +31,6 @@ class MyDaangnViewController: UIViewController {
 
     // MARK: - View Life Cycle
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        setTabBar()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -64,8 +58,7 @@ extension MyDaangnViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: setNavigationTitle())
         navigationItem.leftBarButtonItem?.customView?.alpha = 0
         
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.isTranslucent = true
+        setNavigationBackground()
     }
     
     private func setNavigationTitle() -> UILabel {
@@ -75,13 +68,10 @@ extension MyDaangnViewController {
         titleLabel.textColor = .black
         return titleLabel
     }
-    
-    private func setTabBar() {
-        tabBarController?.tabBar.isHidden = false
-    }
-    
+
     private func setTableViewHeader() -> UIView {
         let header = MyProfileHeaderView()
+        header.delegate = self
         let width = UIScreen.main.bounds.width
         header.frame = CGRect(x: 0, y: 0, width: width, height: 180)
         return header
@@ -111,6 +101,7 @@ extension MyDaangnViewController {
     
     @objc private func settingButtonDidTap() {
         let settingVC = SettingViewController()
+        settingVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(settingVC, animated: true)
     }
 }
@@ -177,5 +168,16 @@ extension MyDaangnViewController: UIScrollViewDelegate {
         } else {
             navigationItem.leftBarButtonItem?.customView?.alpha = 0
         }
+    }
+}
+
+// MARK: - ProfileActionProtocol
+
+extension MyDaangnViewController: ProfileActionProtocol {
+    
+    func viewProfileButtonDidTap() {
+        let profileVC = ProfileViewController()
+        profileVC.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(profileVC, animated: true)
     }
 }

@@ -15,7 +15,6 @@ final class SettingViewController: UIViewController {
         super.viewDidLoad()
 
         setBackgroundColor()
-        hideTabBar()
     }
 }
 
@@ -25,9 +24,5 @@ extension SettingViewController {
     
     private func setBackgroundColor() {
         view.backgroundColor = .white
-    }
-    
-    private func hideTabBar() {
-        tabBarController?.tabBar.isHidden = true
     }
 }

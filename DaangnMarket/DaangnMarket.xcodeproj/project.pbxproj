@@ -44,6 +44,7 @@
 		ABB2136929FD7075008672A2 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136829FD7075008672A2 /* ProfileHeaderView.swift */; };
 		ABB2136B29FD75FE008672A2 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136A29FD75FE008672A2 /* UIButton+.swift */; };
 		ABB2136D29FE4E37008672A2 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136C29FE4E37008672A2 /* ProfileTableViewCell.swift */; };
+		B268CF0729FF995A007C9425 /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF0629FF995A007C9425 /* NoticeTableViewCell.swift */; };
 		B268CF0929FF9C27007C9425 /* NoticeTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF0829FF9C27007C9425 /* NoticeTableViewModel.swift */; };
 /* End PBXBuildFile section */
 

@@ -10,7 +10,7 @@ import UIKit
 struct ProductModel {
     
     var id: Int
-    var images: [UIImage]?
+    var images: [String]
     var profileImage: UIImage
     var nickname: String
     var address: String

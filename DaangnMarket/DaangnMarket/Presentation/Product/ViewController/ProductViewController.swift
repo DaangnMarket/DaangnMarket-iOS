@@ -92,7 +92,7 @@ extension ProductViewController {
         scrollView.isPagingEnabled = true
         scrollView.backgroundColor = .red
         scrollView.contentInsetAdjustmentBehavior = .never
-//        scrollView.delegate = self
+        scrollView.delegate = self
         scrollView.contentSize = scrollView.frame.size
         view.addSubview(scrollView)
         setProductImageView()
@@ -100,7 +100,7 @@ extension ProductViewController {
     }
     
     private func setProductImageView() {
-        productImageView = UIView(frame: CGRect(x: 0, y: 0, width: scrollView.frame.width, height: 200))
+        productImageView = UIView(frame: CGRect(x: 0, y: 0, width: scrollView.frame.width, height: 300))
         productImageView.backgroundColor = .gray
         
         let productData = fetchProductData()
@@ -124,10 +124,10 @@ extension ProductViewController {
         let productData = fetchProductData()
         let imageCount = productData.images.count
         
-        pageControl = UIPageControl(frame: CGRect(x: 0, y: productImageView.frame.maxY + 10, width: scrollView.frame.width, height: 50))
+        pageControl = UIPageControl(frame: CGRect(x: 0, y: productImageView.frame.maxY - 50, width: scrollView.frame.width, height: 50))
         pageControl.numberOfPages = imageCount
         pageControl.currentPage = 0
-        scrollView.addSubview(pageControl)
+        view.addSubview(pageControl)
     }
     
     //MARK: - @objc Methods
@@ -161,3 +161,11 @@ extension ProductViewController {
     }
 }
 
+extension ProductViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pageWidth = scrollView.frame.width
+        let currentPage = Int((scrollView.contentOffset.x + pageWidth / 2) / pageWidth)
+        pageControl.currentPage = currentPage
+    }
+    
+}

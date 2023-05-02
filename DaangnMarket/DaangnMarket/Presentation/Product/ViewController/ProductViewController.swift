@@ -314,6 +314,17 @@ extension ProductViewController {
             chattingLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20)
         ])
         
+        let interestLabel = UILabel()
+        interestLabel.text = "·  관심 \(productData.numberOfInterest)"
+        interestLabel.font = .systemFont(ofSize: 12, weight: .regular)
+        interestLabel.textColor = .systemGray5
+        interestLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(interestLabel)
+        NSLayoutConstraint.activate([
+            interestLabel.leadingAnchor.constraint(equalTo: chattingLabel.trailingAnchor, constant: 8),
+            interestLabel.centerYAnchor.constraint(equalTo: chattingLabel.centerYAnchor)
+        ])
+        
         
         contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         contentView.heightAnchor.constraint(lessThanOrEqualTo: scrollView.heightAnchor).isActive = true

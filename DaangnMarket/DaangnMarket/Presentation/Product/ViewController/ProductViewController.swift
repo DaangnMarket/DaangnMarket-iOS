@@ -276,7 +276,7 @@ extension ProductViewController {
         contentView.addSubview(categoryLabel)
         NSLayoutConstraint.activate([
             categoryLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            categoryLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8)
+            categoryLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 14)
         ])
         
         let createdLabel = UILabel()
@@ -298,11 +298,21 @@ extension ProductViewController {
         contentView.addSubview(descriptionLabel)
         NSLayoutConstraint.activate([
             descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            descriptionLabel.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 16),
+            descriptionLabel.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 20),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
         ])
         
+        let chattingLabel = UILabel()
+        chattingLabel.text = "채팅 \(productData.numberOfChat)"
+        chattingLabel.font = .systemFont(ofSize: 12, weight: .regular)
+        chattingLabel.textColor = .systemGray5
+        chattingLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(chattingLabel)
+        NSLayoutConstraint.activate([
+            chattingLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            chattingLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20)
+        ])
         
         
         contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true

@@ -173,7 +173,7 @@ extension MyDaangnViewController: UIScrollViewDelegate {
 
 // MARK: - ProfileActionProtocol
 
-extension MyDaangnViewController: ProfileActionProtocol {
+extension MyDaangnViewController: MyDaangnActionProtocol {
     
     func viewProfileButtonDidTap() {
         let profileVC = ProfileViewController()

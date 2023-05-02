@@ -10,6 +10,10 @@ import UIKit
 import SnapKit
 import Then
 
+protocol ProfileActionProtocol {
+    func modifyProfileButtonDidTap()
+}
+
 final class ProfileHeaderView: UIView {
     
     // MARK: - UI Components
@@ -134,6 +138,10 @@ final class ProfileHeaderView: UIView {
         $0.font = .systemFont(ofSize: 13)
         $0.textColor = .lightGray
     }
+    
+    // MARK: - Properties
+    
+    var delegate: ProfileActionProtocol?
 
     // MARK: - Initializer
     
@@ -142,6 +150,7 @@ final class ProfileHeaderView: UIView {
         
         setBackgroundColor()
         setLayout()
+        setAddTarget()
     }
     
     required init?(coder: NSCoder) {
@@ -269,5 +278,15 @@ extension ProfileHeaderView {
         let progressViewWidth = getScreenWidth() - 30
         let firstProgress = progressViewWidth * 0.365
         return firstProgress
+    }
+    
+    private func setAddTarget() {
+        modifyProfileButton.addTarget(self, action: #selector(modifyProfileButtonDidTap), for: .touchUpInside)
+    }
+    
+    // MARK: - @objc Methods
+    
+    @objc private func modifyProfileButtonDidTap() {
+        delegate?.modifyProfileButtonDidTap()
     }
 }

@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 import Then
 
+protocol 
+
 final class ProfileHeaderView: UIView {
     
     // MARK: - UI Components

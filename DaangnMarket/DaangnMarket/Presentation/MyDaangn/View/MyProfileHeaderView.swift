@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-protocol ProfileActionProtocol {
+protocol MyDaangnActionProtocol {
     func viewProfileButtonDidTap()
 }
 
@@ -77,7 +77,7 @@ final class MyProfileHeaderView: UIView {
     
     // MARK: - Properties
     
-    var delegate: ProfileActionProtocol?
+    var delegate: MyDaangnActionProtocol?
 
     // MARK: - Initializer
     

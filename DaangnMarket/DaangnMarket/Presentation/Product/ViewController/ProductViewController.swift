@@ -17,6 +17,7 @@ class ProductViewController: UIViewController {
     var pageControl: UIPageControl!
     var imageContainerView = UIView()
     var imageScrollView: UIScrollView!
+    var profileView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,7 +95,7 @@ extension ProductViewController {
         scrollView.backgroundColor = .red
         scrollView.contentInsetAdjustmentBehavior = .never
         scrollView.delegate = self
-        scrollView.contentSize = scrollView.frame.size
+        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: scrollView.frame.height + 300)
         view.addSubview(scrollView)
         
         setImageContainer()
@@ -116,6 +117,7 @@ extension ProductViewController {
         imageScrollView.contentSize = imageScrollView.frame.size
         imageContainerView.addSubview(imageScrollView)
         setProductImageView()
+        setProfileView()
     }
     
     private func setProductImageView() {
@@ -145,7 +147,55 @@ extension ProductViewController {
         pageControl = UIPageControl(frame: CGRect(x: 0, y: productImageView.frame.maxY - 50, width: scrollView.frame.width, height: 50))
         pageControl.numberOfPages = imageCount
         pageControl.currentPage = 0
-        view.addSubview(pageControl)
+        imageContainerView.addSubview(pageControl)
+    }
+    
+    private func setProfileView() {
+        profileView = UIView(frame: CGRect(x: 0, y: productImageView.frame.maxY, width: view.frame.width, height: 80))
+        profileView.backgroundColor = .white
+        scrollView.addSubview(profileView)
+        
+        setProfileComponent()
+    }
+    
+    private func setProfileComponent() {
+        let productData = fetchProductData()
+        let profileImageView = UIImageView()
+        profileImageView.translatesAutoresizingMaskIntoConstraints = false
+        profileImageView.image = productData.profileImage
+        profileImageView.backgroundColor = .systemGray5
+        profileImageView.layer.cornerRadius = 24
+        profileImageView.layer.masksToBounds = true
+        profileView.addSubview(profileImageView)
+        NSLayoutConstraint.activate([
+            profileImageView.centerYAnchor.constraint(equalTo: profileView.centerYAnchor),
+            profileImageView.leadingAnchor.constraint(equalTo: profileView.leadingAnchor, constant: 8),
+            profileImageView.widthAnchor.constraint(equalToConstant: 50),
+            profileImageView.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        let nameLabel = UILabel()
+        nameLabel.text = productData.nickname
+        nameLabel.font = .systemFont(ofSize: 14, weight: .medium)
+        nameLabel.textColor = .black
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        profileView.addSubview(nameLabel)
+        NSLayoutConstraint.activate([
+            nameLabel.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 8),
+            nameLabel.topAnchor.constraint(equalTo: profileImageView.topAnchor, constant: 4)
+        ])
+        
+        let addressLabel = UILabel()
+        addressLabel.text = productData.address
+        addressLabel.font = .systemFont(ofSize: 12, weight: .thin)
+        addressLabel.textColor = .gray
+        addressLabel.translatesAutoresizingMaskIntoConstraints = false
+        profileView.addSubview(addressLabel)
+        NSLayoutConstraint.activate([
+            addressLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 6),
+            addressLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
+        ])
+        
     }
     
     //MARK: - @objc Methods

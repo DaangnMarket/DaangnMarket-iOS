@@ -11,7 +11,7 @@ import SnapKit
 import Then
 
 protocol ProfileActionProtocol {
-    func modifyNicknameButtonDidTap()
+    func modifyProfileButtonDidTap()
 }
 
 final class ProfileHeaderView: UIView {
@@ -281,12 +281,12 @@ extension ProfileHeaderView {
     }
     
     private func setAddTarget() {
-        modifyProfileButton.addTarget(self, action: #selector(modifyNicknameButtonDidTap), for: .touchUpInside)
+        modifyProfileButton.addTarget(self, action: #selector(modifyProfileButtonDidTap), for: .touchUpInside)
     }
     
     // MARK: - @objc Methods
     
-    @objc private func modifyNicknameButtonDidTap() {
-        delegate?.modifyNicknameButtonDidTap()
+    @objc private func modifyProfileButtonDidTap() {
+        delegate?.modifyProfileButtonDidTap()
     }
 }

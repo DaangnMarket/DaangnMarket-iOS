@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class ModifyNicknameViewController: UIViewController {
+final class ModifyProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

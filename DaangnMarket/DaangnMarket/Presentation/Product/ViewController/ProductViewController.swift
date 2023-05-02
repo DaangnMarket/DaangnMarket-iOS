@@ -15,7 +15,8 @@ class ProductViewController: UIViewController {
     var scrollView: UIScrollView!
     var productImageView = UIView()
     var pageControl: UIPageControl!
-    
+    var imageContainerView = UIView()
+    var imageScrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,13 +96,30 @@ extension ProductViewController {
         scrollView.delegate = self
         scrollView.contentSize = scrollView.frame.size
         view.addSubview(scrollView)
-        setProductImageView()
         
+        setImageContainer()
+    }
+    
+    private func setImageContainer() {
+        imageContainerView = UIView(frame: CGRect(x: 0, y: 0, width: scrollView.frame.width, height: 300))
+        scrollView.addSubview(imageContainerView)
+        setImageScrollView()
+    }
+    
+    private func setImageScrollView() {
+        imageScrollView = UIScrollView()
+        imageScrollView.frame = imageContainerView.frame
+        imageScrollView.isPagingEnabled = true
+        imageScrollView.showsHorizontalScrollIndicator = false
+        imageScrollView.backgroundColor = .blue
+        imageScrollView.delegate = self
+        imageScrollView.contentSize = imageScrollView.frame.size
+        imageContainerView.addSubview(imageScrollView)
+        setProductImageView()
     }
     
     private func setProductImageView() {
-        productImageView = UIView(frame: CGRect(x: 0, y: 0, width: scrollView.frame.width, height: 300))
-        productImageView.backgroundColor = .gray
+        productImageView = UIView(frame: CGRect(x: 0, y: 0, width: imageScrollView.frame.width, height: imageScrollView.frame.height))
         
         let productData = fetchProductData()
         let imageCount = productData.images.count
@@ -113,8 +131,8 @@ extension ProductViewController {
             productImageView.addSubview(imageView)
         }
         
-        scrollView.addSubviews(productImageView)
-        scrollView.contentSize = CGSize(width: productImageView.frame.width * CGFloat(imageCount), height: productImageView.frame.height)
+        imageScrollView.addSubviews(productImageView)
+        imageScrollView.contentSize = CGSize(width: productImageView.frame.width * CGFloat(imageCount), height: productImageView.frame.height)
         
         setPageControl()
         

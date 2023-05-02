@@ -155,7 +155,16 @@ extension ProductViewController {
         profileView.backgroundColor = .white
         scrollView.addSubview(profileView)
         
+        setProfileViewBorder()
         setProfileComponent()
+    }
+    
+    private func setProfileViewBorder() {
+        let borderLayer = CALayer()
+        borderLayer.frame = profileView.bounds
+        borderLayer.borderWidth = 2.0
+        borderLayer.borderColor = UIColor.systemGray5.cgColor
+        profileView.layer.addSublayer(borderLayer)
     }
     
     private func setProfileComponent() {

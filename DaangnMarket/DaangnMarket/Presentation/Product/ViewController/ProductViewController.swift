@@ -241,15 +241,11 @@ extension ProductViewController {
             mannerProgress.bottomAnchor.constraint(equalTo: tempImage.bottomAnchor),
             mannerProgress.widthAnchor.constraint(equalToConstant: 50)
         ])
-        
-        
-        
     }
     
     private func setContentContainer() {
         scrollView.addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.backgroundColor = .purple
         NSLayoutConstraint.activate([
             contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             contentView.topAnchor.constraint(equalTo: profileView.bottomAnchor),
@@ -260,13 +256,24 @@ extension ProductViewController {
         let productData = fetchProductData()
         let titleLabel = UILabel()
         titleLabel.text = productData.title
-        titleLabel.font = .systemFont(ofSize: 18, weight: .bold)
+        titleLabel.font = .systemFont(ofSize: 20, weight: .bold)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(titleLabel)
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 16)
+        ])
+        
+        let categoryLabel = UILabel()
+        categoryLabel.text = productData.category
+        categoryLabel.font = .systemFont(ofSize: 12, weight: .thin)
+        categoryLabel.textColor = .systemGray5
+        categoryLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(categoryLabel)
+        NSLayoutConstraint.activate([
+            categoryLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            categoryLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8)
         ])
         
         let descriptionLabel = UILabel()

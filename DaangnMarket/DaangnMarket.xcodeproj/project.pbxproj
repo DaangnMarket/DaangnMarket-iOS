@@ -93,6 +93,9 @@
 		B268CF0629FF995A007C9425 /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		B268CF0829FF9C27007C9425 /* NoticeTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewModel.swift; sourceTree = "<group>"; };
 		B268CF0A29FFFC99007C9425 /* KeywordHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordHeaderView.swift; sourceTree = "<group>"; };
+		B268CF0F2A001F3B007C9425 /* RecentSearchesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesCollectionViewCell.swift; sourceTree = "<group>"; };
+		B268CF112A0020A1007C9425 /* RecentSearchesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesHeaderView.swift; sourceTree = "<group>"; };
+		B268CF132A002334007C9425 /* RecentSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,7 +203,9 @@
 		16B4853729ED1B6D0009520B /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				16B4853829ED1B7D0009520B /* SearchViewController.swift */,
+				B268CF0C2A000F79007C9425 /* Model */,
+				B268CF0E2A000F8E007C9425 /* View */,
+				B268CF0D2A000F87007C9425 /* ViewController */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -208,9 +213,9 @@
 		16B4853A29ED2CB40009520B /* Notice */ = {
 			isa = PBXGroup;
 			children = (
-				B268CF0529FF98A6007C9425 /* ViewController */,
-				B268CF0429FF98A2007C9425 /* View */,
 				B268CF0329FF989A007C9425 /* Model */,
+				B268CF0429FF98A2007C9425 /* View */,
+				B268CF0529FF98A6007C9425 /* ViewController */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -434,6 +439,31 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		B268CF0C2A000F79007C9425 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B268CF132A002334007C9425 /* RecentSearch.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B268CF0D2A000F87007C9425 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				16B4853829ED1B7D0009520B /* SearchViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B268CF0E2A000F8E007C9425 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B268CF0F2A001F3B007C9425 /* RecentSearchesCollectionViewCell.swift */,
+				B268CF112A0020A1007C9425 /* RecentSearchesHeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -531,6 +561,7 @@
 				AB88AD5F29EAFBDB00FDF095 /* TabBarController.swift in Sources */,
 				AB88AD5229EAF6F800FDF095 /* UIStackView+.swift in Sources */,
 				1640722F29F03F50006DED01 /* HomeTableViewModel.swift in Sources */,
+				B268CF122A0020A1007C9425 /* RecentSearchesHeaderView.swift in Sources */,
 				ABB2136B29FD75FE008672A2 /* UIButton+.swift in Sources */,
 				AB88AD5D29EAFA9D00FDF095 /* HomeViewController.swift in Sources */,
 				16B4853929ED1B7D0009520B /* SearchViewController.swift in Sources */,
@@ -542,8 +573,10 @@
 				ABB2136D29FE4E37008672A2 /* ProfileTableViewCell.swift in Sources */,
 				B268CF0729FF995A007C9425 /* NoticeTableViewCell.swift in Sources */,
 				AB88AD6B29EAFCA500FDF095 /* MyDaangnViewController.swift in Sources */,
+				B268CF142A002334007C9425 /* RecentSearch.swift in Sources */,
 				ABB2136929FD7075008672A2 /* ProfileHeaderView.swift in Sources */,
 				B268CF0929FF9C27007C9425 /* NoticeTableViewModel.swift in Sources */,
+				B268CF102A001F3B007C9425 /* RecentSearchesCollectionViewCell.swift in Sources */,
 				AB88AD6829EAFC8900FDF095 /* ChatViewController.swift in Sources */,
 				AB56598F29FB994F00A359A8 /* UIViewController+.swift in Sources */,
 				1640723329F04BB8006DED01 /* HomeTableViewCell.swift in Sources */,

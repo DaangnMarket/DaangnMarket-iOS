@@ -18,6 +18,10 @@ class ProductViewController: UIViewController {
     var imageContainerView = UIView()
     var imageScrollView: UIScrollView!
     var profileView = UIView()
+    var contentView = UIView()
+    let imageContainerHeight: CGFloat = 300
+    let profileContainerHeight: CGFloat = 80
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +29,6 @@ class ProductViewController: UIViewController {
         setBackgroundColor()
         navigationLeftBar()
         navigationRightBar()
-        setNavigationStyle()
 
         setScrollView()
     }
@@ -83,28 +86,25 @@ extension ProductViewController {
         
     }
     
-    private func setNavigationStyle() {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-    }
-    
     private func setScrollView() {
         scrollView = UIScrollView()
         scrollView.frame = view.safeAreaLayoutGuide.layoutFrame // safe area에 맞게 배치
-        scrollView.isPagingEnabled = true
+        scrollView.isPagingEnabled = false
         scrollView.backgroundColor = .red
         scrollView.contentInsetAdjustmentBehavior = .never
         scrollView.delegate = self
-        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: scrollView.frame.height + 300)
+        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: scrollView.frame.height)
         view.addSubview(scrollView)
         
         setImageContainer()
         setProfileContainer()
+        setContentContainer()
     }
     
     private func setImageContainer() {
-        imageContainerView = UIView(frame: CGRect(x: 0, y: 0, width: scrollView.frame.width, height: 300))
+        imageContainerView = UIView(frame: CGRect(x: 0, y: 0, width: scrollView.frame.width, height: imageContainerHeight))
         scrollView.addSubview(imageContainerView)
+        
         setImageScrollView()
     }
     
@@ -151,7 +151,7 @@ extension ProductViewController {
     }
     
     private func setProfileContainer() {
-        profileView = UIView(frame: CGRect(x: 0, y: productImageView.frame.maxY, width: view.frame.width, height: 80))
+        profileView = UIView(frame: CGRect(x: 0, y: productImageView.frame.maxY, width: view.frame.width, height: profileContainerHeight))
         profileView.backgroundColor = .white
         scrollView.addSubview(profileView)
         
@@ -204,6 +204,62 @@ extension ProductViewController {
             addressLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 6),
             addressLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
         ])
+        
+        
+        let tempImage = UIImageView()
+        tempImage.image = UIImage(systemName: "face.smiling")
+        tempImage.translatesAutoresizingMaskIntoConstraints = false
+        profileView.addSubview(tempImage)
+        NSLayoutConstraint.activate([
+            tempImage.trailingAnchor.constraint(equalTo: profileView.trailingAnchor, constant: -8),
+            tempImage.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor),
+            tempImage.widthAnchor.constraint(equalToConstant: 30),
+            tempImage.heightAnchor.constraint(equalToConstant: 30)
+        ])
+        
+        
+        
+    }
+    
+    private func setContentContainer() {
+        scrollView.addSubview(contentView)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.backgroundColor = .purple
+        NSLayoutConstraint.activate([
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.topAnchor.constraint(equalTo: profileView.bottomAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -16) // 1
+        ])
+  
+        let productData = fetchProductData()
+        let titleLabel = UILabel()
+        titleLabel.text = productData.title
+        titleLabel.font = .systemFont(ofSize: 18, weight: .bold)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(titleLabel)
+        NSLayoutConstraint.activate([
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 16)
+        ])
+        
+        let descriptionLabel = UILabel()
+        descriptionLabel.text = productData.contents
+        descriptionLabel.font = .systemFont(ofSize: 14, weight: .regular)
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(descriptionLabel)
+        NSLayoutConstraint.activate([
+            descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
+            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
+        ])
+        
+        
+        contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        contentView.heightAnchor.constraint(lessThanOrEqualTo: scrollView.heightAnchor).isActive = true
         
     }
     

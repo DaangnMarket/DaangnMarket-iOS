@@ -325,6 +325,16 @@ extension ProductViewController {
             interestLabel.centerYAnchor.constraint(equalTo: chattingLabel.centerYAnchor)
         ])
         
+        let viewLabel = UILabel()
+        viewLabel.text = "·  조회 \(productData.numberOfView)"
+        viewLabel.font = .systemFont(ofSize: 12, weight: .regular)
+        viewLabel.textColor = .systemGray5
+        viewLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(viewLabel)
+        NSLayoutConstraint.activate([
+            viewLabel.leadingAnchor.constraint(equalTo: interestLabel.trailingAnchor, constant: 8),
+            viewLabel.centerYAnchor.constraint(equalTo: chattingLabel.centerYAnchor)
+        ])
         
         contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         contentView.heightAnchor.constraint(lessThanOrEqualTo: scrollView.heightAnchor).isActive = true

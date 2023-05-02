@@ -267,7 +267,7 @@ extension ProductViewController {
         
         let categoryLabel = UILabel()
         categoryLabel.text = productData.category
-        categoryLabel.font = .systemFont(ofSize: 12, weight: .thin)
+        categoryLabel.font = .systemFont(ofSize: 12, weight: .regular)
         categoryLabel.textColor = .systemGray5
         let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
         let underlineAttributedString = NSAttributedString(string: categoryLabel.text ?? "", attributes: underlineAttribute)
@@ -277,6 +277,17 @@ extension ProductViewController {
         NSLayoutConstraint.activate([
             categoryLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             categoryLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8)
+        ])
+        
+        let createdLabel = UILabel()
+        createdLabel.text = "·  \(productData.createdAt)"
+        createdLabel.font = .systemFont(ofSize: 12, weight: .regular)
+        createdLabel.textColor = .systemGray5
+        createdLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(createdLabel)
+        NSLayoutConstraint.activate([
+            createdLabel.leadingAnchor.constraint(equalTo: categoryLabel.trailingAnchor, constant: 8),
+            createdLabel.centerYAnchor.constraint(equalTo: categoryLabel.centerYAnchor)
         ])
         
         let descriptionLabel = UILabel()
@@ -291,6 +302,7 @@ extension ProductViewController {
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
         ])
+        
         
         
         contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true

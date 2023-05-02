@@ -99,6 +99,7 @@ extension ProductViewController {
         view.addSubview(scrollView)
         
         setImageContainer()
+        setProfileContainer()
     }
     
     private func setImageContainer() {
@@ -117,7 +118,6 @@ extension ProductViewController {
         imageScrollView.contentSize = imageScrollView.frame.size
         imageContainerView.addSubview(imageScrollView)
         setProductImageView()
-        setProfileView()
     }
     
     private func setProductImageView() {
@@ -150,7 +150,7 @@ extension ProductViewController {
         imageContainerView.addSubview(pageControl)
     }
     
-    private func setProfileView() {
+    private func setProfileContainer() {
         profileView = UIView(frame: CGRect(x: 0, y: productImageView.frame.maxY, width: view.frame.width, height: 80))
         profileView.backgroundColor = .white
         scrollView.addSubview(profileView)

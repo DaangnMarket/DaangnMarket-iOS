@@ -47,6 +47,7 @@
 		B268CF0729FF995A007C9425 /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF0629FF995A007C9425 /* NoticeTableViewCell.swift */; };
 		B268CF0929FF9C27007C9425 /* NoticeTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF0829FF9C27007C9425 /* NoticeTableViewModel.swift */; };
 		B268CF0B29FFFC99007C9425 /* KeywordHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF0A29FFFC99007C9425 /* KeywordHeaderView.swift */; };
+		B268CF142A002334007C9425 /* RecentSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF132A002334007C9425 /* RecentSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */

@@ -40,6 +40,7 @@
 		AB88AD6B29EAFCA500FDF095 /* MyDaangnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88AD6A29EAFCA500FDF095 /* MyDaangnViewController.swift */; };
 		AB88AD6E29EAFD2100FDF095 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AB88AD6D29EAFD2100FDF095 /* SnapKit */; };
 		AB88AD7129EAFD2B00FDF095 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = AB88AD7029EAFD2B00FDF095 /* Then */; };
+		ABA6182C2A009DC10004B1D3 /* ModifyNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA6182B2A009DC10004B1D3 /* ModifyNicknameViewController.swift */; };
 		ABB2136229FBDBF4008672A2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136129FBDBF4008672A2 /* ProfileViewController.swift */; };
 		ABB2136929FD7075008672A2 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136829FD7075008672A2 /* ProfileHeaderView.swift */; };
 		ABB2136B29FD75FE008672A2 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136A29FD75FE008672A2 /* UIButton+.swift */; };
@@ -80,6 +81,7 @@
 		AB88AD6429EAFC4800FDF095 /* NearMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeViewController.swift; sourceTree = "<group>"; };
 		AB88AD6729EAFC8900FDF095 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		AB88AD6A29EAFCA500FDF095 /* MyDaangnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDaangnViewController.swift; sourceTree = "<group>"; };
+		ABA6182B2A009DC10004B1D3 /* ModifyNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyNicknameViewController.swift; sourceTree = "<group>"; };
 		ABB2136129FBDBF4008672A2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		ABB2136829FD7075008672A2 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		ABB2136A29FD75FE008672A2 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				ABB2136129FBDBF4008672A2 /* ProfileViewController.swift */,
+				ABA6182B2A009DC10004B1D3 /* ModifyNicknameViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				168F6E3F29F7B5A1001D023C /* ProductViewController.swift in Sources */,
 				AB88AD6229EAFC0A00FDF095 /* TownLifeViewController.swift in Sources */,
 				AB88AD5029EAF6D700FDF095 /* UIView+.swift in Sources */,
+				ABA6182C2A009DC10004B1D3 /* ModifyNicknameViewController.swift in Sources */,
 				AB519B9E29F041A20097877D /* MyDaangnModel.swift in Sources */,
 				AB519B9429F035570097877D /* UITableViewHeaderFooterView+.swift in Sources */,
 				AB88AD5829EAF7ED00FDF095 /* UIColor+.swift in Sources */,

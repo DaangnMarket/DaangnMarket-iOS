@@ -228,6 +228,19 @@ extension ProductViewController {
             mannerTemp.topAnchor.constraint(equalTo: tempImage.topAnchor),
         ])
         
+        let mannerProgress = UIProgressView(progressViewStyle: .default)
+        mannerProgress.translatesAutoresizingMaskIntoConstraints = false
+        profileView.addSubview(mannerProgress)
+        mannerProgress.trackTintColor = .systemGray5
+        mannerProgress.progress = Float(fetchProductData().mannerTemp) / 100
+        mannerProgress.progressTintColor = .systemBlue
+        profileView.addSubview(mannerProgress)
+        
+        NSLayoutConstraint.activate([
+            mannerProgress.trailingAnchor.constraint(equalTo: mannerTemp.trailingAnchor),
+            mannerProgress.bottomAnchor.constraint(equalTo: tempImage.bottomAnchor),
+            mannerProgress.widthAnchor.constraint(equalToConstant: 40)
+        ])
         
         
         

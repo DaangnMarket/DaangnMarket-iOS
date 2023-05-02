@@ -33,6 +33,27 @@ final class ModifyProfileViewController: UIViewController {
     private let topBarLineView = UIView().then {
         $0.backgroundColor = .daangnGray
     }
+    
+    private let profileImageView = UIImageView().then {
+        $0.backgroundColor = .daangnGray
+    }
+    
+    private let selectImageButton = UIButton().then {
+        $0.setImage(UIImage(systemName: "camera.circle"), for: .normal)
+        $0.tintColor = .darkGray
+    }
+    
+    private let nicknameLabel = UILabel().then {
+        $0.text = "닉네임"
+        $0.font = .systemFont(ofSize: 15, weight: .semibold)
+    }
+    
+    private let nicknameTextField = UITextField().then {
+        $0.placeholder = "닉네임을 입력해주세요."
+        $0.borderStyle = .roundedRect
+        $0.font = .systemFont(ofSize: 16)
+        $0.setLeftPadding(10)
+    }
 
     // MARK: - View Life Cycle
     
@@ -41,6 +62,10 @@ final class ModifyProfileViewController: UIViewController {
 
         setBackgroundColor()
         setLayout()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        setCornerRadius()
     }
 }
 
@@ -53,8 +78,9 @@ extension ModifyProfileViewController {
     }
     
     private func setLayout() {
-        view.addSubviews(topBarView, topBarLineView)
+        view.addSubviews(topBarView, topBarLineView, profileImageView, nicknameLabel, nicknameLabel, nicknameTextField)
         topBarView.addSubviews(backButton, topBarTitleLabel, completeButton)
+        profileImageView.addSubview(selectImageButton)
         
         topBarView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
@@ -81,5 +107,33 @@ extension ModifyProfileViewController {
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(1)
         }
+        
+        profileImageView.snp.makeConstraints {
+            $0.top.equalTo(topBarLineView.snp.bottom).offset(30)
+            $0.leading.equalTo(150)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(profileImageView.snp.width)
+        }
+        
+        selectImageButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
+        
+        nicknameLabel.snp.makeConstraints {
+            $0.top.equalTo(profileImageView.snp.bottom).offset(30)
+            $0.leading.equalToSuperview().offset(20)
+        }
+        
+        nicknameTextField.snp.makeConstraints {
+            $0.top.equalTo(nicknameLabel.snp.bottom).offset(10)
+            $0.leading.equalTo(nicknameLabel)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(50)
+        }
+    }
+    
+    private func setCornerRadius() {
+        profileImageView.layer.cornerRadius = profileImageView.frame.width / 2
     }
 }

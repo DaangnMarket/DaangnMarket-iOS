@@ -160,11 +160,10 @@ extension ProductViewController {
     }
     
     private func setProfileViewBorder() {
-        let borderLayer = CALayer()
-        borderLayer.frame = profileView.bounds
-        borderLayer.borderWidth = 2.0
-        borderLayer.borderColor = UIColor.systemGray5.cgColor
-        profileView.layer.addSublayer(borderLayer)
+        let bottomLine = CALayer()
+        bottomLine.frame = CGRect(x: 0.0, y: profileView.frame.size.height - 1.5, width: view.frame.size.width, height: 1.5)
+        bottomLine.backgroundColor = UIColor.gray.cgColor
+        profileView.layer.addSublayer(bottomLine)
     }
     
     private func setProfileComponent() {
@@ -335,6 +334,8 @@ extension ProductViewController {
             viewLabel.leadingAnchor.constraint(equalTo: interestLabel.trailingAnchor, constant: 8),
             viewLabel.centerYAnchor.constraint(equalTo: chattingLabel.centerYAnchor)
         ])
+        
+        
         
         contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         contentView.heightAnchor.constraint(lessThanOrEqualTo: scrollView.heightAnchor).isActive = true

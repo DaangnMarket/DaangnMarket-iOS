@@ -217,6 +217,18 @@ extension ProductViewController {
             tempImage.heightAnchor.constraint(equalToConstant: 30)
         ])
         
+        let mannerTemp = UILabel()
+        mannerTemp.translatesAutoresizingMaskIntoConstraints = false
+        mannerTemp.text = "\(fetchProductData().mannerTemp)°C"
+        mannerTemp.textColor = .systemBlue
+        mannerTemp.font = .systemFont(ofSize: 14, weight: .bold)
+        profileView.addSubview(mannerTemp)
+        NSLayoutConstraint.activate([
+            mannerTemp.trailingAnchor.constraint(equalTo: tempImage.leadingAnchor, constant: -6),
+            mannerTemp.topAnchor.constraint(equalTo: tempImage.topAnchor),
+        ])
+        
+        
         
         
     }

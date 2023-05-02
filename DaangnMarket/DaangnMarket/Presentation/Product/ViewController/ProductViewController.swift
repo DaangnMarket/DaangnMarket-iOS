@@ -232,14 +232,14 @@ extension ProductViewController {
         mannerProgress.translatesAutoresizingMaskIntoConstraints = false
         profileView.addSubview(mannerProgress)
         mannerProgress.trackTintColor = .systemGray5
-        mannerProgress.progress = Float(fetchProductData().mannerTemp) / 100
+        mannerProgress.progress = fetchProductData().mannerTemp / 100
         mannerProgress.progressTintColor = .systemBlue
         profileView.addSubview(mannerProgress)
         
         NSLayoutConstraint.activate([
             mannerProgress.trailingAnchor.constraint(equalTo: mannerTemp.trailingAnchor),
             mannerProgress.bottomAnchor.constraint(equalTo: tempImage.bottomAnchor),
-            mannerProgress.widthAnchor.constraint(equalToConstant: 40)
+            mannerProgress.widthAnchor.constraint(equalToConstant: 50)
         ])
         
         
@@ -314,7 +314,7 @@ extension ProductViewController {
 extension ProductViewController {
     
     func fetchProductData() -> ProductModel {
-        var productData = ProductModel(id: 1, images:["bicycle", "hare", "bicycle"],  profileImage: UIImage(systemName: "person") ?? UIImage(systemName: "person")!, nickname: "효자동 쿨거래남", address: "효자동", mannerTemp: 46, title: "자전거 급하게 팝니다", category: "중고", createdAt: "한 시간 전", contents: "급한 사정으로 급하게 자전거 급처분합니다. 관심있으신 분들은 얼른 연락주세요", numberOfChat: 3, numberOfInterest: 4, numberOfView: 23, price: 50000)
+        var productData = ProductModel(id: 1, images:["bicycle", "hare", "bicycle"],  profileImage: UIImage(systemName: "person") ?? UIImage(systemName: "person")!, nickname: "효자동 쿨거래남", address: "효자동", mannerTemp: 46.0, title: "자전거 급하게 팝니다", category: "중고", createdAt: "한 시간 전", contents: "급한 사정으로 급하게 자전거 급처분합니다. 관심있으신 분들은 얼른 연락주세요", numberOfChat: 3, numberOfInterest: 4, numberOfView: 23, price: 50000)
         return productData
     }
 }

@@ -33,6 +33,7 @@ final class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         setBackgroundColor()
+        setNavigationBar()
         setLayout()
         setDelegate()
         register()
@@ -45,6 +46,24 @@ extension SearchViewController {
     
     private func setBackgroundColor() {
         view.backgroundColor = .white
+    }
+    
+    private func setNavigationBar() {
+        // Search Bar
+        let searchBar = UISearchBar()
+        // TODO: 지금 선택한 동네 알아야함
+        searchBar.placeholder = "어느동 근처에서 검색"
+        let emptyImage = UIImage()
+        searchBar.setImage(emptyImage, for: .search, state: .normal)
+        
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"),
+                                         style: .plain,
+                                         target: navigationController,
+                                         action: #selector(UINavigationController.popViewController(animated:)))
+        navigationItem.leftBarButtonItem = backButton
+        // navigationController?.interactivePopGestureRecognizer?.delegate = self
+        navigationItem.titleView = searchBar
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
     
     private func setLayout() {
@@ -106,7 +125,7 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
 }
 
 // MARK: - UICollectionViewDataSource
-    
+
 extension SearchViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

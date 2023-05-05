@@ -9,7 +9,6 @@ import UIKit
 
 struct ProductModel {
     
-    var id: Int
     var images: [String]
     var profileImage: UIImage
     var nickname: String
@@ -25,3 +24,5 @@ struct ProductModel {
     var price: Int
     
 }
+
+//GET - id 

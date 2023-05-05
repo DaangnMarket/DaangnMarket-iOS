@@ -15,3 +15,6 @@ struct OtherProductModel {
     var price: Int
     
 }
+
+
+//GET - userId

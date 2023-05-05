@@ -11,8 +11,8 @@ class ProductViewController: UIViewController {
 
     //MARK: - UI Components
     
-    var homeData: Int = 0
-    var homeUserId: Int = 0
+    var homeData: Int = 0   //GET - id할 때 사용
+    var homeUserId: Int = 0     //GET - userId할 때 사용
     var scrollView: UIScrollView!
     var productImageView = UIView()
     var pageControl: UIPageControl!
@@ -374,7 +374,7 @@ extension ProductViewController {
 extension ProductViewController {
     
     func fetchProductData() -> ProductModel {
-        var productData = ProductModel(id: 1, images:["bicycle", "hare", "bicycle"],  profileImage: UIImage(systemName: "person") ?? UIImage(systemName: "person")!, nickname: "효자동 쿨거래남", address: "효자동", mannerTemp: 46.0, title: "자전거 급하게 팝니다", category: "중고", createdAt: "한 시간 전", contents: "급한 사정으로 급하게 자전거 급처분합니다. 관심있으신 분들은 얼른 연락주세요", numberOfChat: 3, numberOfInterest: 4, numberOfView: 23, price: 50000)
+        var productData = ProductModel(images:["bicycle", "hare", "bicycle"],  profileImage: UIImage(systemName: "person") ?? UIImage(systemName: "person")!, nickname: "효자동 쿨거래남", address: "효자동", mannerTemp: 46.0, title: "자전거 급하게 팝니다", category: "중고", createdAt: "한 시간 전", contents: "급한 사정으로 급하게 자전거 급처분합니다. 관심있으신 분들은 얼른 연락주세요", numberOfChat: 3, numberOfInterest: 4, numberOfView: 23, price: 50000)
         return productData
     }
 }

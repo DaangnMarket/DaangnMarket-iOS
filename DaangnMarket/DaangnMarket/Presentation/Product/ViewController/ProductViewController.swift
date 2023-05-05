@@ -498,8 +498,8 @@ extension ProductViewController: UICollectionViewDataSource {
             }
             headerView.titleLabel.text = "\(fetchData.nickname)님의 판매 상품"
             headerView.titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-            headerView.headerImageView.image = UIImage(systemName: "chevron.right") // 이미지 설정
-
+            headerView.headerImageView.image = UIImage(systemName: "chevron.right")
+            headerView.addGestureRecognizer()
             return headerView
         default:
             fatalError("Unsupported supplementary view type")

@@ -25,7 +25,7 @@ class ProductViewController: UIViewController {
     let profileContainerHeight: CGFloat = 80
     let pageControlHeight: CGFloat = 50
     var contentViewHeight: Int = 0
-    let otherProductHeight: CGFloat = 250
+    var otherProductHeight: CGFloat = 250
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -246,7 +246,7 @@ extension ProductViewController {
             mannerProgress.widthAnchor.constraint(equalToConstant: 50)
         ])
     }
- 
+    
     private func setContentContainer() {
         scrollView.addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -255,7 +255,7 @@ extension ProductViewController {
             contentView.topAnchor.constraint(equalTo: profileView.bottomAnchor),
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
         ])
-  
+        
         let productData = fetchProductData()
         let titleLabel = UILabel()
         titleLabel.text = productData.title
@@ -267,7 +267,7 @@ extension ProductViewController {
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 16)
         ])
-                
+        
         let categoryLabel = UILabel()
         categoryLabel.text = productData.category
         categoryLabel.font = .systemFont(ofSize: 12, weight: .regular)
@@ -334,7 +334,7 @@ extension ProductViewController {
         viewLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(viewLabel)
         NSLayoutConstraint.activate([
-//            viewLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor),
+            //            viewLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor),
             viewLabel.leadingAnchor.constraint(equalTo: interestLabel.trailingAnchor, constant: 8),
             viewLabel.centerYAnchor.constraint(equalTo: chattingLabel.centerYAnchor),
             viewLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
@@ -347,8 +347,11 @@ extension ProductViewController {
         
         contentViewHeight = Int(contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height)
     }
-
+    
     private func setOtherProductContainer() {
+        
+        setOtherProductHeight()
+        
         anotherProductView = UIView(frame: CGRect(x: 0, y: imageContainerHeight + CGFloat(contentViewHeight) + profileContainerHeight + pageControlHeight, width: scrollView.frame.width, height: otherProductHeight))
         anotherProductView.backgroundColor = .green
         
@@ -363,6 +366,18 @@ extension ProductViewController {
         anotherProductView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         anotherProductView.heightAnchor.constraint(lessThanOrEqualTo: scrollView.heightAnchor).isActive = true
         
+    }
+    
+    private func setOtherProductHeight() {
+        let fetchOtherProductNumber = fetchUserProductData().count
+        
+        if fetchOtherProductNumber == 0 {
+            otherProductHeight = 0
+        } else if fetchOtherProductNumber == 1 || fetchOtherProductNumber == 2 {
+            otherProductHeight = 170
+        } else {
+            otherProductHeight = 250
+        }
     }
 
     

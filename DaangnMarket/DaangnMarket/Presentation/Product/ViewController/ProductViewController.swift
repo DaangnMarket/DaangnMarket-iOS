@@ -19,6 +19,7 @@ class ProductViewController: UIViewController {
     var imageScrollView: UIScrollView!
     var profileView = UIView()
     var contentView = UIView()
+    var anotherProductView = UIView()
     let imageContainerHeight: CGFloat = 300
     let profileContainerHeight: CGFloat = 80
     
@@ -90,7 +91,7 @@ extension ProductViewController {
         scrollView = UIScrollView()
         scrollView.frame = view.safeAreaLayoutGuide.layoutFrame // safe area에 맞게 배치
         scrollView.isPagingEnabled = false
-        scrollView.backgroundColor = .red
+        scrollView.backgroundColor = .white
         scrollView.contentInsetAdjustmentBehavior = .never
         scrollView.delegate = self
         scrollView.contentSize = CGSize(width: scrollView.frame.width, height: scrollView.frame.height)
@@ -161,7 +162,7 @@ extension ProductViewController {
     
     private func setProfileViewBorder() {
         let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0.0, y: profileView.frame.size.height - 1.5, width: view.frame.size.width, height: 1.5)
+        bottomLine.frame = CGRect(x: 0.0, y: profileView.frame.size.height - 1.5, width: profileView.frame.size.width, height: 1.5)
         bottomLine.backgroundColor = UIColor.gray.cgColor
         profileView.layer.addSublayer(bottomLine)
     }
@@ -299,7 +300,6 @@ extension ProductViewController {
             descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             descriptionLabel.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 20),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
         ])
         
         let chattingLabel = UILabel()
@@ -332,10 +332,15 @@ extension ProductViewController {
         contentView.addSubview(viewLabel)
         NSLayoutConstraint.activate([
             viewLabel.leadingAnchor.constraint(equalTo: interestLabel.trailingAnchor, constant: 8),
-            viewLabel.centerYAnchor.constraint(equalTo: chattingLabel.centerYAnchor)
+            viewLabel.centerYAnchor.constraint(equalTo: chattingLabel.centerYAnchor),
+            viewLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
         ])
         
-        
+        let bottomLine = CALayer()
+        bottomLine.frame = CGRect(x: 0.0, y: contentView.frame.size.height - 1.5, width: contentView.frame.size.width, height: 1.5)
+        bottomLine.backgroundColor = UIColor.gray.cgColor
+        contentView.layer.addSublayer(bottomLine)
+        contentView.backgroundColor = .green
         
         contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         contentView.heightAnchor.constraint(lessThanOrEqualTo: scrollView.heightAnchor).isActive = true
@@ -373,11 +378,13 @@ extension ProductViewController {
     }
 }
 
+//MARK: - Product View Scroll Delegate
+
 extension ProductViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageWidth = scrollView.frame.width
         let currentPage = Int((scrollView.contentOffset.x + pageWidth / 2) / pageWidth)
         pageControl.currentPage = currentPage
     }
-    
+
 }

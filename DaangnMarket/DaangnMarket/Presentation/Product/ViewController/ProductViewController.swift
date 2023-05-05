@@ -160,17 +160,9 @@ extension ProductViewController {
         profileView.backgroundColor = .white
         scrollView.addSubview(profileView)
         
-        setProfileViewBorder()
         setProfileComponent()
     }
-    
-    private func setProfileViewBorder() {
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0.0, y: profileView.frame.size.height - 1.5, width: profileView.frame.size.width, height: 1.5)
-        bottomLine.backgroundColor = UIColor.gray.cgColor
-        profileView.layer.addSublayer(bottomLine)
-    }
-    
+
     private func setProfileComponent() {
         let productData = fetchProductData()
         let profileImageView = UIImageView()
@@ -249,6 +241,10 @@ extension ProductViewController {
     
     private func setContentContainer() {
         scrollView.addSubview(contentView)
+        contentView.layer.borderWidth = 1
+        contentView.layer.borderColor = UIColor.gray.cgColor
+        contentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+
         contentView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
@@ -358,19 +354,7 @@ extension ProductViewController {
         scrollView.addSubview(anotherProductView)
         
         setOtherProductTitle()
-//        let button = UIButton()
-//        button.setTitle("버튼 타이틀", for: .normal)
-//        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-//        anotherProductView.addSubview(button)
-//        button.translatesAutoresizingMaskIntoConstraints = false
-//
-//        NSLayoutConstraint.activate([
-//            button.topAnchor.constraint(equalTo: anotherProductView.topAnchor, constant: 8),
-//            button.leadingAnchor.constraint(equalTo: anotherProductView.leadingAnchor, constant: 16),
-//            button.widthAnchor.constraint(equalToConstant: 100),
-//            button.heightAnchor.constraint(equalToConstant: 50)
-//        ])
-        
+
         NSLayoutConstraint.activate([
             anotherProductView.topAnchor.constraint(equalTo: contentView.bottomAnchor),
             anotherProductView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -16),
@@ -404,7 +388,8 @@ extension ProductViewController {
         sellingListButton.tintColor = .black
         sellingListButton.imageView?.contentMode = .scaleAspectFit
         sellingListButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-        sellingListButton.backgroundColor = .red
+
+        sellingListButton.backgroundColor = .clear
         anotherProductView.addSubview(sellingListButton)
         sellingListButton.translatesAutoresizingMaskIntoConstraints = false
 

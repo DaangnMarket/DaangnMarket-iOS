@@ -383,7 +383,14 @@ extension ProductViewController {
 
 extension ProductViewController {
     
-    
+    func fetchUserProductData() -> [OtherProductModel] {
+        var dummy1 = OtherProductModel(id: 3, image: "flag.checkered.2.crossed", title: "포스코 동복 작업바지 34", price: 14000)
+        let dummy2 = OtherProductModel(id: 7, image: "externaldrive.badge.person.crop", title: "포스코 동복 작업바지 34", price: 14000)
+        let dummy3 = OtherProductModel(id: 8, image: "flag.checkered.2.crossed", title: "포스코 동복 작업바지 34", price: 14000)
+        let dummy4 = OtherProductModel(id: 12, image: "flag.checkered.2.crossed", title: "포스코 동복 작업바지 34", price: 14000)
+
+        return [dummy1, dummy2, dummy3, dummy4]
+    }
 }
 
 //MARK: - Product View Scroll Delegate

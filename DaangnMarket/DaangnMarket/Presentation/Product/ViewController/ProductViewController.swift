@@ -25,6 +25,7 @@ class ProductViewController: UIViewController {
     let profileContainerHeight: CGFloat = 80
     let pageControlHeight: CGFloat = 50
     var contentViewHeight: Int = 0
+    let otherProductHeight: CGFloat = 250
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -270,7 +271,7 @@ extension ProductViewController {
         let categoryLabel = UILabel()
         categoryLabel.text = productData.category
         categoryLabel.font = .systemFont(ofSize: 12, weight: .regular)
-        categoryLabel.textColor = .systemGray5
+        categoryLabel.textColor = .systemGray
         let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
         let underlineAttributedString = NSAttributedString(string: categoryLabel.text ?? "", attributes: underlineAttribute)
         categoryLabel.attributedText = underlineAttributedString
@@ -284,7 +285,7 @@ extension ProductViewController {
         let createdLabel = UILabel()
         createdLabel.text = "·  \(productData.createdAt)"
         createdLabel.font = .systemFont(ofSize: 12, weight: .regular)
-        createdLabel.textColor = .systemGray5
+        createdLabel.textColor = .systemGray
         createdLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(createdLabel)
         NSLayoutConstraint.activate([
@@ -307,7 +308,7 @@ extension ProductViewController {
         let chattingLabel = UILabel()
         chattingLabel.text = "채팅 \(productData.numberOfChat)"
         chattingLabel.font = .systemFont(ofSize: 12, weight: .regular)
-        chattingLabel.textColor = .systemGray5
+        chattingLabel.textColor = .systemGray
         chattingLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(chattingLabel)
         NSLayoutConstraint.activate([
@@ -318,7 +319,7 @@ extension ProductViewController {
         let interestLabel = UILabel()
         interestLabel.text = "·  관심 \(productData.numberOfInterest)"
         interestLabel.font = .systemFont(ofSize: 12, weight: .regular)
-        interestLabel.textColor = .systemGray5
+        interestLabel.textColor = .systemGray
         interestLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(interestLabel)
         NSLayoutConstraint.activate([
@@ -329,7 +330,7 @@ extension ProductViewController {
         let viewLabel = UILabel()
         viewLabel.text = "·  조회 \(productData.numberOfView)"
         viewLabel.font = .systemFont(ofSize: 12, weight: .regular)
-        viewLabel.textColor = .systemGray5
+        viewLabel.textColor = .systemGray
         viewLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(viewLabel)
         NSLayoutConstraint.activate([
@@ -339,33 +340,31 @@ extension ProductViewController {
             viewLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
         ])
         
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0.0, y: contentView.frame.size.height - 1.5, width: contentView.frame.size.width, height: 1.5)
-        bottomLine.backgroundColor = UIColor.gray.cgColor
-        contentView.layer.addSublayer(bottomLine)
         
         contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         contentView.heightAnchor.constraint(equalToConstant:
                                                 contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height).isActive = true
         
         contentViewHeight = Int(contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height)
-                
     }
-    
+
     private func setOtherProductContainer() {
-        anotherProductView = UIView(frame: CGRect(x: 0, y: imageContainerHeight + CGFloat(contentViewHeight) + profileContainerHeight + pageControlHeight, width: scrollView.frame.width, height: 180))
+        anotherProductView = UIView(frame: CGRect(x: 0, y: imageContainerHeight + CGFloat(contentViewHeight) + profileContainerHeight + pageControlHeight, width: scrollView.frame.width, height: otherProductHeight))
+        anotherProductView.backgroundColor = .green
         
         scrollView.addSubview(anotherProductView)
-        anotherProductView.backgroundColor = .red
         
         NSLayoutConstraint.activate([
             anotherProductView.topAnchor.constraint(equalTo: contentView.bottomAnchor),
             anotherProductView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -16),
+            anotherProductView.heightAnchor.constraint(equalToConstant: 200)
         ])
         
         anotherProductView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         anotherProductView.heightAnchor.constraint(lessThanOrEqualTo: scrollView.heightAnchor).isActive = true
+        
     }
+
     
     //MARK: - @objc Methods
     

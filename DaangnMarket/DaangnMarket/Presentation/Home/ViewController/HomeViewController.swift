@@ -173,6 +173,7 @@ extension HomeViewController: UITableViewDataSource {
         let productId = homeData[indexPath.row].id
         let productController = ProductViewController()
         productController.homeData = productId
+        productController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(productController, animated: true)
     }
     

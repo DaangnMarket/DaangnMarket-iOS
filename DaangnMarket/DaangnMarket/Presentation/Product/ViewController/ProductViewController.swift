@@ -23,7 +23,8 @@ class ProductViewController: UIViewController {
     var anotherProductView = UIView()
     let imageContainerHeight: CGFloat = 300
     let profileContainerHeight: CGFloat = 80
-    
+    let pageControlHeight: CGFloat = 50
+    var contentViewHeight: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,6 +102,7 @@ extension ProductViewController {
         setImageContainer()
         setProfileContainer()
         setContentContainer()
+        setOtherProductContainer()
     }
     
     private func setImageContainer() {
@@ -146,7 +148,7 @@ extension ProductViewController {
         let productData = fetchProductData()
         let imageCount = productData.images.count
         
-        pageControl = UIPageControl(frame: CGRect(x: 0, y: productImageView.frame.maxY - 50, width: scrollView.frame.width, height: 50))
+        pageControl = UIPageControl(frame: CGRect(x: 0, y: productImageView.frame.maxY - pageControlHeight, width: scrollView.frame.width, height: 50))
         pageControl.numberOfPages = imageCount
         pageControl.currentPage = 0
         imageContainerView.addSubview(pageControl)
@@ -243,7 +245,7 @@ extension ProductViewController {
             mannerProgress.widthAnchor.constraint(equalToConstant: 50)
         ])
     }
-    
+ 
     private func setContentContainer() {
         scrollView.addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -251,7 +253,6 @@ extension ProductViewController {
             contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             contentView.topAnchor.constraint(equalTo: profileView.bottomAnchor),
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -16) // 1
         ])
   
         let productData = fetchProductData()
@@ -265,7 +266,7 @@ extension ProductViewController {
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 16)
         ])
-        
+                
         let categoryLabel = UILabel()
         categoryLabel.text = productData.category
         categoryLabel.font = .systemFont(ofSize: 12, weight: .regular)
@@ -332,6 +333,7 @@ extension ProductViewController {
         viewLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(viewLabel)
         NSLayoutConstraint.activate([
+//            viewLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor),
             viewLabel.leadingAnchor.constraint(equalTo: interestLabel.trailingAnchor, constant: 8),
             viewLabel.centerYAnchor.constraint(equalTo: chattingLabel.centerYAnchor),
             viewLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
@@ -341,11 +343,28 @@ extension ProductViewController {
         bottomLine.frame = CGRect(x: 0.0, y: contentView.frame.size.height - 1.5, width: contentView.frame.size.width, height: 1.5)
         bottomLine.backgroundColor = UIColor.gray.cgColor
         contentView.layer.addSublayer(bottomLine)
-        contentView.backgroundColor = .green
         
         contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
-        contentView.heightAnchor.constraint(lessThanOrEqualTo: scrollView.heightAnchor).isActive = true
+        contentView.heightAnchor.constraint(equalToConstant:
+                                                contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height).isActive = true
         
+        contentViewHeight = Int(contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height)
+                
+    }
+    
+    private func setOtherProductContainer() {
+        anotherProductView = UIView(frame: CGRect(x: 0, y: imageContainerHeight + CGFloat(contentViewHeight) + profileContainerHeight + pageControlHeight, width: scrollView.frame.width, height: 180))
+        
+        scrollView.addSubview(anotherProductView)
+        anotherProductView.backgroundColor = .red
+        
+        NSLayoutConstraint.activate([
+            anotherProductView.topAnchor.constraint(equalTo: contentView.bottomAnchor),
+            anotherProductView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -16),
+        ])
+        
+        anotherProductView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        anotherProductView.heightAnchor.constraint(lessThanOrEqualTo: scrollView.heightAnchor).isActive = true
     }
     
     //MARK: - @objc Methods

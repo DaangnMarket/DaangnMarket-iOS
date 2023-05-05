@@ -26,6 +26,8 @@ class ProductViewController: UIViewController {
     let pageControlHeight: CGFloat = 50
     var contentViewHeight: Int = 0
     var otherProductHeight: CGFloat = 250
+    var priceTabHeight: CGFloat = 80
+    var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -352,12 +354,11 @@ extension ProductViewController {
         anotherProductView.backgroundColor = .green
         
         scrollView.addSubview(anotherProductView)
-        
-        setOtherProductTitle()
+        setOtherProductCollectionView()
 
         NSLayoutConstraint.activate([
             anotherProductView.topAnchor.constraint(equalTo: contentView.bottomAnchor),
-            anotherProductView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -16),
+            anotherProductView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -priceTabHeight),
         ])
         
         anotherProductView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
@@ -376,39 +377,31 @@ extension ProductViewController {
             otherProductHeight = 250
         }
     }
-    
-    private func setOtherProductTitle() {
-        let nickName = fetchProductData().nickname
+
+    private func setOtherProductCollectionView() {
+        let layout = UICollectionViewFlowLayout()
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        layout.headerReferenceSize = CGSize(width: collectionView.bounds.width, height: 50)
         
-        let sellingListButton = UIButton()
-        sellingListButton.setTitle("\(nickName)님의 판매 상품", for: .normal)
-        sellingListButton.setTitleColor(.black, for: .normal)
-        sellingListButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        sellingListButton.setImage(UIImage(systemName: "chevron.right"), for: .normal)
-        sellingListButton.tintColor = .black
-        sellingListButton.imageView?.contentMode = .scaleAspectFit
-        sellingListButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        anotherProductView.addSubview(collectionView)
 
-        sellingListButton.backgroundColor = .clear
-        anotherProductView.addSubview(sellingListButton)
-        sellingListButton.translatesAutoresizingMaskIntoConstraints = false
-
+        
         NSLayoutConstraint.activate([
-            sellingListButton.topAnchor.constraint(equalTo: anotherProductView.topAnchor),
-            sellingListButton.leadingAnchor.constraint(equalTo: anotherProductView.leadingAnchor),
-            sellingListButton.widthAnchor.constraint(equalToConstant: anotherProductView.frame.width),
-            sellingListButton.trailingAnchor.constraint(equalTo: anotherProductView.trailingAnchor),
-            sellingListButton.heightAnchor.constraint(equalToConstant: 50)
+            collectionView.topAnchor.constraint(equalTo: anotherProductView.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: anotherProductView.leadingAnchor, constant: 10),
+            collectionView.bottomAnchor.constraint(equalTo: anotherProductView.bottomAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: anotherProductView.trailingAnchor, constant: -10)
         ])
         
-        let imageSize = sellingListButton.imageView?.image?.size ?? .zero
-        let titleSize = sellingListButton.titleLabel?.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)) ?? .zero
-        let emptySize = sellingListButton.frame.width - titleSize.width - imageSize.width
-        sellingListButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: emptySize)
-        sellingListButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: emptySize + titleSize.width - 8, bottom: 0, right: 0)
-        
-    }
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(OtherProductCollectionViewCell.self, forCellWithReuseIdentifier: "OtherProductCollectionViewCell")
+        collectionView.register(OtherProductCollectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: OtherProductCollectionHeaderView.reuseIdentifier)
 
+    }
+    
+    
     
     //MARK: - @objc Methods
     
@@ -451,9 +444,9 @@ extension ProductViewController {
     
     func fetchUserProductData() -> [OtherProductModel] {
         var dummy1 = OtherProductModel(id: 3, image: "flag.checkered.2.crossed", title: "포스코 동복 작업바지 34", price: 14000)
-        let dummy2 = OtherProductModel(id: 7, image: "externaldrive.badge.person.crop", title: "포스코 동복 작업바지 34", price: 14000)
-        let dummy3 = OtherProductModel(id: 8, image: "flag.checkered.2.crossed", title: "포스코 동복 작업바지 34", price: 14000)
-        let dummy4 = OtherProductModel(id: 12, image: "flag.checkered.2.crossed", title: "포스코 동복 작업바지 34", price: 14000)
+        let dummy2 = OtherProductModel(id: 7, image: "externaldrive.badge.person.crop", title: "뭔 림난미ㅏ웆비ㅏ우lasdnlknqwldknsa지 34", price: 510000)
+        let dummy3 = OtherProductModel(id: 8, image: "flag.checkered.2.crossed", title: "우4ㅣㅁ누이아ㅜㅂ지ㅏㅇ", price: 24000)
+        let dummy4 = OtherProductModel(id: 12, image: "flag.checkered.2.crossed", title: "포스코 동복 작업바지 34", price: 990000)
 
         return [dummy1, dummy2, dummy3, dummy4]
     }
@@ -468,4 +461,62 @@ extension ProductViewController: UIScrollViewDelegate {
         pageControl.currentPage = currentPage
     }
 
+}
+
+//MARK: - Other Product Collection View Delegate
+
+extension ProductViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let fetchDataNumber = fetchUserProductData().count
+        
+        return fetchDataNumber
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let fetchData = fetchUserProductData()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OtherProductCollectionViewCell", for: indexPath) as! OtherProductCollectionViewCell
+        
+        cell.imageView.image = UIImage(systemName: fetchData[indexPath.row].image)
+        cell.title.text = fetchData[indexPath.row].title
+        cell.price.text = "\(fetchData[indexPath.row].price)원"
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let fetchData = fetchUserProductData()
+        print("id \(fetchData[indexPath.row].id) Tapped")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let fetchData = fetchProductData()
+        
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: OtherProductCollectionHeaderView.reuseIdentifier, for: indexPath) as? OtherProductCollectionHeaderView else {
+                fatalError("Cannot dequeue reusable header view")
+            }
+            headerView.titleLabel.text = "\(fetchData.nickname)님의 판매 상품"
+            headerView.titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+            headerView.headerImageView.image = UIImage(systemName: "chevron.right") // 이미지 설정
+
+            return headerView
+        default:
+            fatalError("Unsupported supplementary view type")
+        }
+    }
+    
+}
+
+
+extension ProductViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: anotherProductView.frame.width / 2 - 20, height: 120)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 50)
+    }
+    
 }

@@ -357,10 +357,23 @@ extension ProductViewController {
         
         scrollView.addSubview(anotherProductView)
         
+        setOtherProductTitle()
+//        let button = UIButton()
+//        button.setTitle("버튼 타이틀", for: .normal)
+//        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+//        anotherProductView.addSubview(button)
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//
+//        NSLayoutConstraint.activate([
+//            button.topAnchor.constraint(equalTo: anotherProductView.topAnchor, constant: 8),
+//            button.leadingAnchor.constraint(equalTo: anotherProductView.leadingAnchor, constant: 16),
+//            button.widthAnchor.constraint(equalToConstant: 100),
+//            button.heightAnchor.constraint(equalToConstant: 50)
+//        ])
+        
         NSLayoutConstraint.activate([
             anotherProductView.topAnchor.constraint(equalTo: contentView.bottomAnchor),
             anotherProductView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -16),
-            anotherProductView.heightAnchor.constraint(equalToConstant: 200)
         ])
         
         anotherProductView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
@@ -378,6 +391,37 @@ extension ProductViewController {
         } else {
             otherProductHeight = 250
         }
+    }
+    
+    private func setOtherProductTitle() {
+        let nickName = fetchProductData().nickname
+        
+        let sellingListButton = UIButton()
+        sellingListButton.setTitle("\(nickName)님의 판매 상품", for: .normal)
+        sellingListButton.setTitleColor(.black, for: .normal)
+        sellingListButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        sellingListButton.setImage(UIImage(systemName: "chevron.right"), for: .normal)
+        sellingListButton.tintColor = .black
+        sellingListButton.imageView?.contentMode = .scaleAspectFit
+        sellingListButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        sellingListButton.backgroundColor = .red
+        anotherProductView.addSubview(sellingListButton)
+        sellingListButton.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            sellingListButton.topAnchor.constraint(equalTo: anotherProductView.topAnchor),
+            sellingListButton.leadingAnchor.constraint(equalTo: anotherProductView.leadingAnchor),
+            sellingListButton.widthAnchor.constraint(equalToConstant: anotherProductView.frame.width),
+            sellingListButton.trailingAnchor.constraint(equalTo: anotherProductView.trailingAnchor),
+            sellingListButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        let imageSize = sellingListButton.imageView?.image?.size ?? .zero
+        let titleSize = sellingListButton.titleLabel?.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)) ?? .zero
+        let emptySize = sellingListButton.frame.width - titleSize.width - imageSize.width
+        sellingListButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: emptySize)
+        sellingListButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: emptySize + titleSize.width - 8, bottom: 0, right: 0)
+        
     }
 
     
@@ -398,6 +442,10 @@ extension ProductViewController {
     
     @objc fileprivate func declareButtonDidTap() {
         print("shareButtonDidTap() called")
+    }
+    
+    @objc fileprivate func buttonTapped() {
+        print("tapped()")
     }
     
 }

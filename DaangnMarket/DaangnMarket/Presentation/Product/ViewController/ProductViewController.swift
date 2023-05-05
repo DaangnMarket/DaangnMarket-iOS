@@ -374,7 +374,7 @@ extension ProductViewController {
         } else if fetchOtherProductNumber == 1 || fetchOtherProductNumber == 2 {
             otherProductHeight = 170
         } else {
-            otherProductHeight = 250
+            otherProductHeight = 300
         }
     }
 

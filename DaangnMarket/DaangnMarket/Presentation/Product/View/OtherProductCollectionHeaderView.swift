@@ -29,8 +29,7 @@ class OtherProductCollectionHeaderView: UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(titleLabel)
-        addSubview(headerImageView)
+        addSubviews(titleLabel, headerImageView)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         headerImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     
     var homeTableView = UITableView()
     var homeData: [HomeTableViewModel] = []
-    var homeCityData = HomeCityName(cityName: ["효자동", "삼성동"])
+    var homeCityData = HomeCityName(cityName: ["효자동"])
     
     struct Cells {
         static let tableViewCell = "HomeTableViewCell"
@@ -127,8 +127,15 @@ extension HomeViewController {
     
     @objc fileprivate func cityButtonDidTap() {
         print("cityButtonDidTap() called")
-//        let searchVC = SearchViewController()
-//        self.navigationController?.pushViewController(searchVC, animated: true)
+        if homeCityData.cityName.count == 1 {
+            let myAddressVC = MyAddressViewController()
+            let navigationController = UINavigationController(rootViewController: myAddressVC)
+            navigationController.modalPresentationStyle = .fullScreen
+            navigationController.modalTransitionStyle = .coverVertical
+            self.present(navigationController, animated: true, completion: nil)
+        } else if homeCityData.cityName.count == 2 {
+            print("2222222")
+        }
     }
 }
 

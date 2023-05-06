@@ -10,6 +10,10 @@ import UIKit
 import SnapKit
 import Then
 
+protocol MyDaangnActionProtocol {
+    func viewProfileButtonDidTap()
+}
+
 final class MyProfileHeaderView: UIView {
     
     // MARK: - UI Components
@@ -70,6 +74,10 @@ final class MyProfileHeaderView: UIView {
         $0.distribution = .fillEqually
         $0.spacing = 15
     }
+    
+    // MARK: - Properties
+    
+    var delegate: MyDaangnActionProtocol?
 
     // MARK: - Initializer
     
@@ -78,6 +86,7 @@ final class MyProfileHeaderView: UIView {
         
         setBackgroundColor()
         setLayout()
+        setAddTarget()
     }
     
     required init?(coder: NSCoder) {
@@ -164,5 +173,15 @@ extension MyProfileHeaderView {
         button.configuration  = config
         
         return button
+    }
+    
+    private func setAddTarget() {
+        showProfileButton.addTarget(self, action: #selector(showProfileButtonDidTap), for: .touchUpInside)
+    }
+    
+    // MARK: - @objc Methods
+    
+    @objc private func showProfileButtonDidTap() {
+        delegate?.viewProfileButtonDidTap()
     }
 }

@@ -60,6 +60,7 @@ extension ProfileViewController {
     
     private func setTableViewHeader() -> UIView {
         let header = ProfileHeaderView()
+        header.delegate = self
         let width = UIScreen.main.bounds.width
         header.frame = CGRect(x: 0, y: 0, width: width, height: 310)
         return header
@@ -112,5 +113,16 @@ extension ProfileViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+}
+
+// MARK: - ProfileActionProtocol
+
+extension ProfileViewController: ProfileActionProtocol {
+    
+    func modifyProfileButtonDidTap() {
+        let modifyNicknameVC = ModifyProfileViewController()
+        modifyNicknameVC.modalPresentationStyle = .overFullScreen
+        present(modifyNicknameVC, animated: true)
     }
 }

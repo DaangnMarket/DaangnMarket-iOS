@@ -168,12 +168,18 @@ extension ProductViewController {
     private func setProfileComponent() {
         let productData = fetchProductData()
         let profileImageView = UIImageView()
+        let nameLabel = UILabel()
+        let addressLabel = UILabel()
+        let tempImage = UIImageView()
+        let mannerTemp = UILabel()
+        let mannerProgress = UIProgressView(progressViewStyle: .default)
+        
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
         profileImageView.image = productData.profileImage
         profileImageView.backgroundColor = .systemGray5
         profileImageView.layer.cornerRadius = 24
         profileImageView.layer.masksToBounds = true
-        profileView.addSubview(profileImageView)
+        profileView.addSubviews(profileImageView, nameLabel, addressLabel, tempImage, mannerTemp, mannerProgress)
         NSLayoutConstraint.activate([
             profileImageView.centerYAnchor.constraint(equalTo: profileView.centerYAnchor),
             profileImageView.leadingAnchor.constraint(equalTo: profileView.leadingAnchor, constant: 8),
@@ -181,33 +187,26 @@ extension ProductViewController {
             profileImageView.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-        let nameLabel = UILabel()
         nameLabel.text = productData.nickname
         nameLabel.font = .systemFont(ofSize: 14, weight: .medium)
         nameLabel.textColor = .black
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        profileView.addSubview(nameLabel)
         NSLayoutConstraint.activate([
             nameLabel.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 8),
             nameLabel.topAnchor.constraint(equalTo: profileImageView.topAnchor, constant: 4)
         ])
         
-        let addressLabel = UILabel()
         addressLabel.text = productData.address
         addressLabel.font = .systemFont(ofSize: 12, weight: .thin)
         addressLabel.textColor = .gray
         addressLabel.translatesAutoresizingMaskIntoConstraints = false
-        profileView.addSubview(addressLabel)
         NSLayoutConstraint.activate([
             addressLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 6),
             addressLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
         ])
         
-        
-        let tempImage = UIImageView()
         tempImage.image = UIImage(systemName: "face.smiling")
         tempImage.translatesAutoresizingMaskIntoConstraints = false
-        profileView.addSubview(tempImage)
         NSLayoutConstraint.activate([
             tempImage.trailingAnchor.constraint(equalTo: profileView.trailingAnchor, constant: -8),
             tempImage.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor),
@@ -215,24 +214,19 @@ extension ProductViewController {
             tempImage.heightAnchor.constraint(equalToConstant: 30)
         ])
         
-        let mannerTemp = UILabel()
         mannerTemp.translatesAutoresizingMaskIntoConstraints = false
         mannerTemp.text = "\(fetchProductData().mannerTemp)°C"
         mannerTemp.textColor = .systemBlue
         mannerTemp.font = .systemFont(ofSize: 14, weight: .bold)
-        profileView.addSubview(mannerTemp)
         NSLayoutConstraint.activate([
             mannerTemp.trailingAnchor.constraint(equalTo: tempImage.leadingAnchor, constant: -6),
             mannerTemp.topAnchor.constraint(equalTo: tempImage.topAnchor),
         ])
         
-        let mannerProgress = UIProgressView(progressViewStyle: .default)
         mannerProgress.translatesAutoresizingMaskIntoConstraints = false
-        profileView.addSubview(mannerProgress)
         mannerProgress.trackTintColor = .systemGray5
         mannerProgress.progress = fetchProductData().mannerTemp / 100
         mannerProgress.progressTintColor = .systemBlue
-        profileView.addSubview(mannerProgress)
         
         NSLayoutConstraint.activate([
             mannerProgress.trailingAnchor.constraint(equalTo: mannerTemp.trailingAnchor),
@@ -256,17 +250,24 @@ extension ProductViewController {
         
         let productData = fetchProductData()
         let titleLabel = UILabel()
+        let categoryLabel = UILabel()
+        let createdLabel = UILabel()
+        let descriptionLabel = UILabel()
+        let chattingLabel = UILabel()
+        let interestLabel = UILabel()
+        let viewLabel = UILabel()
+
+        
         titleLabel.text = productData.title
         titleLabel.font = .systemFont(ofSize: 20, weight: .bold)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(titleLabel)
+        contentView.addSubviews(titleLabel, categoryLabel, createdLabel, descriptionLabel, chattingLabel, interestLabel, viewLabel)
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 16)
         ])
         
-        let categoryLabel = UILabel()
         categoryLabel.text = productData.category
         categoryLabel.font = .systemFont(ofSize: 12, weight: .regular)
         categoryLabel.textColor = .systemGray
@@ -274,70 +275,57 @@ extension ProductViewController {
         let underlineAttributedString = NSAttributedString(string: categoryLabel.text ?? "", attributes: underlineAttribute)
         categoryLabel.attributedText = underlineAttributedString
         categoryLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(categoryLabel)
         NSLayoutConstraint.activate([
             categoryLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             categoryLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 14)
         ])
         
-        let createdLabel = UILabel()
         createdLabel.text = "·  \(productData.createdAt)"
         createdLabel.font = .systemFont(ofSize: 12, weight: .regular)
         createdLabel.textColor = .systemGray
         createdLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(createdLabel)
         NSLayoutConstraint.activate([
             createdLabel.leadingAnchor.constraint(equalTo: categoryLabel.trailingAnchor, constant: 8),
             createdLabel.centerYAnchor.constraint(equalTo: categoryLabel.centerYAnchor)
         ])
         
-        let descriptionLabel = UILabel()
         descriptionLabel.text = productData.contents
         descriptionLabel.font = .systemFont(ofSize: 16, weight: .regular)
         descriptionLabel.numberOfLines = 0
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(descriptionLabel)
         NSLayoutConstraint.activate([
             descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             descriptionLabel.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 20),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
         ])
         
-        let chattingLabel = UILabel()
         chattingLabel.text = "채팅 \(productData.numberOfChat)"
         chattingLabel.font = .systemFont(ofSize: 12, weight: .regular)
         chattingLabel.textColor = .systemGray
         chattingLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(chattingLabel)
         NSLayoutConstraint.activate([
             chattingLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             chattingLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20)
         ])
         
-        let interestLabel = UILabel()
         interestLabel.text = "·  관심 \(productData.numberOfInterest)"
         interestLabel.font = .systemFont(ofSize: 12, weight: .regular)
         interestLabel.textColor = .systemGray
         interestLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(interestLabel)
         NSLayoutConstraint.activate([
             interestLabel.leadingAnchor.constraint(equalTo: chattingLabel.trailingAnchor, constant: 8),
             interestLabel.centerYAnchor.constraint(equalTo: chattingLabel.centerYAnchor)
         ])
         
-        let viewLabel = UILabel()
         viewLabel.text = "·  조회 \(productData.numberOfView)"
         viewLabel.font = .systemFont(ofSize: 12, weight: .regular)
         viewLabel.textColor = .systemGray
         viewLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(viewLabel)
         NSLayoutConstraint.activate([
-            //            viewLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor),
             viewLabel.leadingAnchor.constraint(equalTo: interestLabel.trailingAnchor, constant: 8),
             viewLabel.centerYAnchor.constraint(equalTo: chattingLabel.centerYAnchor),
             viewLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
         ])
-        
         
         contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         contentView.heightAnchor.constraint(equalToConstant:

@@ -25,10 +25,10 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         setBackgroundColor()
-        homeNavigationRightBar()
-//        homeNavigationLeftBar()
-        homeData = fetchHomeTableViewData()
-        configureTableView()
+//        homeNavigationRightBar()
+////        homeNavigationLeftBar()
+//        homeData = fetchHomeTableViewData()
+//        configureTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {

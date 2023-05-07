@@ -62,6 +62,7 @@ final class ModifyProfileViewController: UIViewController {
 
         setBackgroundColor()
         setLayout()
+        setAddTarget()
     }
     
     override func viewDidLayoutSubviews() {
@@ -135,5 +136,21 @@ extension ModifyProfileViewController {
     
     private func setCornerRadius() {
         profileImageView.layer.cornerRadius = profileImageView.frame.width / 2
+    }
+    
+    private func setAddTarget() {
+        backButton.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
+        completeButton.addTarget(self, action: #selector(completeButtonDidTap), for: .touchUpInside)
+    }
+    
+    // MARK: - @objc Methods
+    
+    @objc private func backButtonDidTap() {
+        dismiss(animated: true)
+    }
+    
+    @objc private func completeButtonDidTap() {
+        // 알림창
+        dismiss(animated: true)
     }
 }

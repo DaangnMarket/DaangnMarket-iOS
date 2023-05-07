@@ -36,6 +36,7 @@ final class ModifyProfileViewController: UIViewController {
     
     private let profileImageView = UIImageView().then {
         $0.backgroundColor = .daangnGray
+        $0.isUserInteractionEnabled = true
     }
     
     private let selectImageButton = UIButton().then {
@@ -141,6 +142,7 @@ extension ModifyProfileViewController {
     private func setAddTarget() {
         backButton.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
         completeButton.addTarget(self, action: #selector(completeButtonDidTap), for: .touchUpInside)
+        selectImageButton.addTarget(self, action: #selector(selectImageButtonDidTap), for: .touchUpInside)
     }
     
     // MARK: - @objc Methods
@@ -152,5 +154,14 @@ extension ModifyProfileViewController {
     @objc private func completeButtonDidTap() {
         // 알림창
         dismiss(animated: true)
+    }
+    
+    @objc private func selectImageButtonDidTap() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let selectAction = UIAlertAction(title: "앨범에서 선택", style: .default)
+        let deleteAction = UIAlertAction(title: "프로필 사진 삭제", style: .destructive)
+        let cancelAction = UIAlertAction(title: "닫기", style: .cancel)
+        alert.addActions(selectAction, deleteAction, cancelAction)
+        present(alert, animated: true)
     }
 }

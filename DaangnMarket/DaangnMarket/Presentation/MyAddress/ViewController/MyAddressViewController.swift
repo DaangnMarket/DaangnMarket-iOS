@@ -5,9 +5,11 @@
 //  Created by KimTaeHyung on 2023/04/27.
 //
 
+import CoreLocation
 import UIKit
 
-class MyAddressViewController: UIViewController {
+
+class MyAddressViewController: UIViewController, MTMapViewDelegate {
     
     //MARK: - UI Components
     
@@ -17,8 +19,10 @@ class MyAddressViewController: UIViewController {
     private var firstButton = UIButton()
     private var secondButton = UIButton()
     private var homeCityData = HomeCityName(cityName: ["효자동"])
-
-    
+    var kakaoMap: MTMapView?
+    var locationManager: CLLocationManager!
+    var mapPoint1: MTMapPoint?
+    var poiItem1: MTMapPOIItem?
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -63,6 +67,8 @@ extension MyAddressViewController {
         
         view.addSubview(mapView)
         
+        setKakaoMap()
+        
         NSLayoutConstraint.activate([
             mapView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -70,6 +76,40 @@ extension MyAddressViewController {
             mapView.heightAnchor.constraint(equalToConstant: view.bounds.height * 0.6)
         ])
 
+    }
+    
+    private func setKakaoMap() {
+        kakaoMap = MTMapView(frame: mapView.bounds)
+        if let kakaoMap = kakaoMap {
+            kakaoMap.delegate = self
+            kakaoMap.baseMapType = .standard
+            
+            // 현재 위치 트래킹
+//            kakaoMap.showCurrentLocationMarker = true
+//            kakaoMap.currentLocationTrackingMode = .onWithoutHeading
+            
+            // 마커 추가
+//            self.mapPoint1 = MTMapPoint(geoCoord: MTMapPointGeo(latitude:  37.585568, longitude: 127.019148))
+//            poiItem1 = MTMapPOIItem()
+//            poiItem1?.markerType = MTMapPOIItemMarkerType.bluePin
+//            poiItem1?.mapPoint = mapPoint1
+//            poiItem1?.itemName = "아무데나 찍어봄"
+//            kakaoMap.add(poiItem1)
+            
+            mapView.addSubview(kakaoMap)
+        }
+    }
+
+    // Custom: 현 위치 트래킹 함수
+    func kakaoMap(_ mapView: MTMapView!, updateCurrentLocation location: MTMapPoint!, withAccuracy accuracy: MTMapLocationAccuracy) {
+        let currentLocation = location?.mapPointGeo()
+        if let latitude = currentLocation?.latitude, let longitude = currentLocation?.longitude{
+            print("MTMapView updateCurrentLocation (\(latitude),\(longitude)) accuracy (\(accuracy))")
+        }
+    }
+    
+    func kakaoMap(_ mapView: MTMapView?, updateDeviceHeading headingAngle: MTMapRotationAngle) {
+        print("MTMapView updateDeviceHeading (\(headingAngle)) degrees")
     }
     
     private func setMyAddressView() {

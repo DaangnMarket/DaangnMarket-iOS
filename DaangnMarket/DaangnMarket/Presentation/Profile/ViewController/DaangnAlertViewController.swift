@@ -71,7 +71,7 @@ extension DaangnAlertViewController {
     // MARK: - Custom Methods
     
     private func setBackgroundColor() {
-        view.backgroundColor = .black
+        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     }
     
     private func setLayout() {
@@ -82,7 +82,6 @@ extension DaangnAlertViewController {
         alertView.snp.makeConstraints {
             $0.center.equalToSuperview()
             $0.leading.equalToSuperview().offset(45)
-//            $0.height.equalTo(130)
         }
         
         alertTextLabel.snp.makeConstraints {

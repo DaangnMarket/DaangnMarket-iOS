@@ -155,8 +155,9 @@ extension ModifyProfileViewController {
     }
     
     @objc private func completeButtonDidTap() {
-        // 알림창
-        dismiss(animated: true)
+        let alertVC = DaangnAlertViewController()
+        alertVC.modalPresentationStyle = .overFullScreen
+        present(alertVC, animated: false)
     }
     
     @objc private func selectImageButtonDidTap() {

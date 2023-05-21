@@ -121,8 +121,8 @@ extension ProfileViewController: UITableViewDelegate {
 extension ProfileViewController: ProfileActionProtocol {
     
     func modifyProfileButtonDidTap() {
-        let modifyNicknameVC = ModifyProfileViewController()
-        modifyNicknameVC.modalPresentationStyle = .overFullScreen
-        present(modifyNicknameVC, animated: true)
+        let navVC = UINavigationController(rootViewController: ModifyProfileViewController())
+        navVC.modalPresentationStyle = .overFullScreen
+        present(navVC, animated: true)
     }
 }

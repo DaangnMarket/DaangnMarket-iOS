@@ -47,6 +47,7 @@
 		ABB2136929FD7075008672A2 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136829FD7075008672A2 /* ProfileHeaderView.swift */; };
 		ABB2136B29FD75FE008672A2 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136A29FD75FE008672A2 /* UIButton+.swift */; };
 		ABB2136D29FE4E37008672A2 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136C29FE4E37008672A2 /* ProfileTableViewCell.swift */; };
+		ABE7CA7C2A176204001EA9A6 /* DaangnAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE7CA7B2A176204001EA9A6 /* DaangnAlertViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		ABB2136829FD7075008672A2 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		ABB2136A29FD75FE008672A2 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		ABB2136C29FE4E37008672A2 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		ABE7CA7B2A176204001EA9A6 /* DaangnAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaangnAlertViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -394,6 +396,7 @@
 			children = (
 				ABB2136129FBDBF4008672A2 /* ProfileViewController.swift */,
 				ABA6182B2A009DC10004B1D3 /* ModifyProfileViewController.swift */,
+				ABE7CA7B2A176204001EA9A6 /* DaangnAlertViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				AB88AD5D29EAFA9D00FDF095 /* HomeViewController.swift in Sources */,
 				16B4853929ED1B7D0009520B /* SearchViewController.swift in Sources */,
 				AB88AD5429EAF72500FDF095 /* UITableViewCell+.swift in Sources */,
+				ABE7CA7C2A176204001EA9A6 /* DaangnAlertViewController.swift in Sources */,
 				AB022D342A076C0200DC3C5F /* UIAlertController+.swift in Sources */,
 				AB519B9229F034E50097877D /* MySectionHeaderView.swift in Sources */,
 				ABA6182E2A00C57E0004B1D3 /* UITextField+.swift in Sources */,

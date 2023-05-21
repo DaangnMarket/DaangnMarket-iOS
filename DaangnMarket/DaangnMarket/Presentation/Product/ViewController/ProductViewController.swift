@@ -14,6 +14,7 @@ class ProductViewController: UIViewController {
     var homeData: Int = 0   //GET - id할 때 사용
     var homeUserId: Int = 0     //GET - userId할 때 사용
     var scrollView: UIScrollView!
+    var likeView = UIView()
     var productImageView = UIView()
     var pageControl: UIPageControl!
     var imageContainerView = UIView()
@@ -25,7 +26,7 @@ class ProductViewController: UIViewController {
     let profileContainerHeight: CGFloat = 80
     let pageControlHeight: CGFloat = 50
     var contentViewHeight: Int = 0
-    var otherProductHeight: CGFloat = 250
+    var otherProductHeight: CGFloat = 300
     var priceTabHeight: CGFloat = 80
     var collectionView: UICollectionView!
     
@@ -36,7 +37,8 @@ class ProductViewController: UIViewController {
         navigationLeftBar()
         navigationRightBar()
 
-        setScrollView()        
+        setScrollView()
+        setLikeView()
     }
     
 
@@ -339,7 +341,6 @@ extension ProductViewController {
         setOtherProductHeight()
         
         anotherProductView = UIView(frame: CGRect(x: 0, y: imageContainerHeight + CGFloat(contentViewHeight) + profileContainerHeight + pageControlHeight, width: scrollView.frame.width, height: otherProductHeight))
-        anotherProductView.backgroundColor = .green
         
         scrollView.addSubview(anotherProductView)
         setOtherProductCollectionView()
@@ -389,7 +390,38 @@ extension ProductViewController {
 
     }
     
+    private func setLikeView() {
+        likeView.translatesAutoresizingMaskIntoConstraints = false
+        likeView.backgroundColor = .white
+        
+        view.addSubview(likeView)
+        NSLayoutConstraint.activate([
+            likeView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            likeView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            likeView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            likeView.heightAnchor.constraint(equalToConstant: 60) // 뷰의 높이를 설정해주세요
+        ])
+        
+        setLikeButton()
+    }
     
+    private func setLikeButton() {
+        let heartButton = UIButton(type: .custom)
+        let heartImage = UIImage(systemName: "heart")
+        
+        heartButton.setImage(heartImage, for: .normal)
+        heartButton.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
+        heartButton.contentMode = .scaleAspectFill
+        heartButton.clipsToBounds = true
+        heartButton.tintColor = .gray
+        
+        heartButton.layer.borderWidth = 1
+        heartButton.layer.borderColor = UIColor.systemGray6.cgColor
+        heartButton.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
+        heartButton.addTarget(self, action: #selector(heartButtonDidTap), for: .touchUpInside)
+        
+        likeView.addSubview(heartButton)
+    }
     
     //MARK: - @objc Methods
     
@@ -414,6 +446,9 @@ extension ProductViewController {
         print("tapped()")
     }
     
+    @objc fileprivate func heartButtonDidTap() {
+        print("heart Button tapped()")
+    }
 }
 
 //MARK: - Product Collection View Dummy Data

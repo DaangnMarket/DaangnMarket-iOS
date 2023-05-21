@@ -156,6 +156,7 @@ extension ModifyProfileViewController {
     
     @objc private func completeButtonDidTap() {
         let alertVC = DaangnAlertViewController()
+        alertVC.delegate = self
         alertVC.modalPresentationStyle = .overFullScreen
         present(alertVC, animated: false)
     }
@@ -187,5 +188,19 @@ extension ModifyProfileViewController {
         }
 
         errorMessageLabel.text = nicknameCheck.errorMessage
+    }
+}
+
+// MARK: - DaangnAlertViewDelegate
+
+extension ModifyProfileViewController: DaangnAlertViewDelegate {
+    
+    func cancelButtonDidTap() {
+        dismiss(animated: false)
+    }
+    
+    func changeButtonDidTap() {
+        print("프로필 변경")
+        dismiss(animated: true) { self.dismiss(animated: false) }
     }
 }

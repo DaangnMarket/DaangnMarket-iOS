@@ -10,6 +10,11 @@ import UIKit
 import SnapKit
 import Then
 
+protocol DaangnAlertViewDelegate {
+    func cancelButtonDidTap()
+    func changeButtonDidTap()
+}
+
 final class DaangnAlertViewController: UIViewController {
     
     private let alertView = UIView().then {
@@ -55,6 +60,10 @@ final class DaangnAlertViewController: UIViewController {
         $0.distribution = .fillEqually
         $0.spacing = 10
     }
+    
+    // MARK: - Properties
+    
+    var delegate: DaangnAlertViewDelegate?
 
     // MARK: - View Life Cycle
     
@@ -63,6 +72,7 @@ final class DaangnAlertViewController: UIViewController {
         
         setBackgroundColor()
         setLayout()
+        setAddTarget()
     }
 }
 
@@ -98,5 +108,20 @@ extension DaangnAlertViewController {
             $0.centerX.equalToSuperview()
             $0.height.equalTo(35)
         }
+    }
+    
+    private func setAddTarget() {
+        cancelButton.addTarget(self, action: #selector(cancelButtonDidTap), for: .touchUpInside)
+        changeButton.addTarget(self, action: #selector(changeButtonDidTap), for: .touchUpInside)
+    }
+    
+    // MARK: - @objc Methods
+    
+    @objc private func cancelButtonDidTap() {
+        delegate?.cancelButtonDidTap()
+    }
+    
+    @objc private func changeButtonDidTap() {
+        delegate?.changeButtonDidTap()
     }
 }

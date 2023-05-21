@@ -439,6 +439,7 @@ extension ProductViewController {
         chatButton.layer.cornerRadius = 6
         chatButton.setTitleColor(.white, for: .normal)
         chatButton.backgroundColor = .orange
+        chatButton.addTarget(self, action: #selector(chatButtonDidTap), for: .touchUpInside)
         
         likeView.addSubviews(priceLbl, chatButton)
         
@@ -477,6 +478,10 @@ extension ProductViewController {
     
     @objc fileprivate func heartButtonDidTap() {
         print("heart Button tapped()")
+    }
+    
+    @objc fileprivate func chatButtonDidTap() {
+        print("chat button tapped()")
     }
 }
 

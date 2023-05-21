@@ -10,30 +10,50 @@ import UIKit
 import SnapKit
 import Then
 
-enum AlertType {
-    case cancelAndChange
-}
-
 final class DaangnAlertViewController: UIViewController {
     
     private let alertView = UIView().then {
         $0.backgroundColor = .white
+        $0.layer.cornerRadius = 10
     }
     
     private let alertTextLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 17)
-        $0.text = "테스트"
+        $0.font = .systemFont(ofSize: 15)
+        $0.textColor = .darkGray
+        $0.text = "닉네임은 30일마다 1번만 수정할 수 있어\n요. 정말 수정하시겠어요?"
         $0.numberOfLines = 0
     }
     
     private let cancelButton = UIButton().then {
-        $0.backgroundColor = .red
-        $0.setTitle("취소", for: .normal)
+        var attString = AttributedString("취소")
+        attString.font = .systemFont(ofSize: 13, weight: .bold)
+        attString.foregroundColor = .darkGray
+        var config = UIButton.Configuration.plain()
+        config.attributedTitle = attString
+        
+        $0.backgroundColor = .white
+        $0.layer.borderColor = UIColor.systemGray4.cgColor
+        $0.layer.borderWidth = 1
+        $0.layer.cornerRadius = 4
+        $0.configuration = config
     }
     
     private let changeButton = UIButton().then {
-        $0.backgroundColor = .red
-        $0.setTitle("변경", for: .normal)
+        var attString = AttributedString("변경")
+        attString.font = .systemFont(ofSize: 13, weight: .bold)
+        attString.foregroundColor = .white
+        var config = UIButton.Configuration.plain()
+        config.attributedTitle = attString
+        
+        $0.backgroundColor = .orange
+        $0.layer.cornerRadius = 4
+        $0.configuration = config
+    }
+    
+    private let buttonStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.distribution = .fillEqually
+        $0.spacing = 10
     }
 
     // MARK: - View Life Cycle
@@ -56,9 +76,28 @@ extension DaangnAlertViewController {
     
     private func setLayout() {
         view.addSubviews(alertView)
+        alertView.addSubviews(alertTextLabel, buttonStackView)
+        buttonStackView.addArrangedSubViews(cancelButton, changeButton)
         
         alertView.snp.makeConstraints {
             $0.center.equalToSuperview()
+            $0.leading.equalToSuperview().offset(45)
+//            $0.height.equalTo(130)
+        }
+        
+        alertTextLabel.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().offset(20)
+            $0.leading.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(-20)
+        }
+        
+        buttonStackView.snp.makeConstraints {
+            $0.top.equalTo(alertTextLabel.snp.bottom).offset(20)
+            $0.bottom.equalToSuperview().offset(-20)
+            $0.leading.equalToSuperview().offset(20)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(35)
         }
     }
 }

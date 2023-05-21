@@ -394,6 +394,7 @@ extension ProductViewController {
     private func setLikeView() {
         likeView.translatesAutoresizingMaskIntoConstraints = false
         likeView.backgroundColor = .white
+        likeView.layer.borderWidth = 0.5
         
         view.addSubview(likeView)
         NSLayoutConstraint.activate([
@@ -426,16 +427,30 @@ extension ProductViewController {
     
     private func setPriceAndChat() {
         let priceLbl = UILabel()
-        priceLbl.translatesAutoresizingMaskIntoConstraints = false
+        let chatButton  = UIButton()
         let fetchData = fetchProductData()
+
+        priceLbl.translatesAutoresizingMaskIntoConstraints = false
         priceLbl.text = "\(fetchData.price)원"
         
+        chatButton.translatesAutoresizingMaskIntoConstraints = false
+        chatButton.setTitle("채팅하기", for: .normal)
+        chatButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
+        chatButton.layer.cornerRadius = 6
+        chatButton.setTitleColor(.white, for: .normal)
+        chatButton.backgroundColor = .orange
         
-        likeView.addSubview(priceLbl)
+        likeView.addSubviews(priceLbl, chatButton)
+        
         NSLayoutConstraint.activate([
             priceLbl.leadingAnchor.constraint(equalTo: heartButton.trailingAnchor, constant: 20),
-            priceLbl.centerYAnchor.constraint(equalTo: likeView.centerYAnchor)
+            priceLbl.centerYAnchor.constraint(equalTo: likeView.centerYAnchor),
+            
+            chatButton.leadingAnchor.constraint(equalTo: priceLbl.trailingAnchor, constant: 20),
+            chatButton.trailingAnchor.constraint(equalTo: likeView.trailingAnchor, constant: -20),
+            chatButton.centerYAnchor.constraint(equalTo: likeView.centerYAnchor)
         ])
+        
     }
     
     //MARK: - @objc Methods
@@ -445,8 +460,7 @@ extension ProductViewController {
     }
 
     @objc fileprivate func homeButtonDidTap() {
-        let homeVC = HomeViewController()
-        self.navigationController?.pushViewController(homeVC, animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc fileprivate func shareButtonDidTap() {

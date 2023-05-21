@@ -29,6 +29,7 @@ class ProductViewController: UIViewController {
     var otherProductHeight: CGFloat = 300
     var priceTabHeight: CGFloat = 80
     var collectionView: UICollectionView!
+    let heartButton = UIButton(type: .custom)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -403,10 +404,10 @@ extension ProductViewController {
         ])
         
         setLikeButton()
+        setPriceAndChat()
     }
     
     private func setLikeButton() {
-        let heartButton = UIButton(type: .custom)
         let heartImage = UIImage(systemName: "heart")
         
         heartButton.setImage(heartImage, for: .normal)
@@ -421,6 +422,20 @@ extension ProductViewController {
         heartButton.addTarget(self, action: #selector(heartButtonDidTap), for: .touchUpInside)
         
         likeView.addSubview(heartButton)
+    }
+    
+    private func setPriceAndChat() {
+        let priceLbl = UILabel()
+        priceLbl.translatesAutoresizingMaskIntoConstraints = false
+        let fetchData = fetchProductData()
+        priceLbl.text = "\(fetchData.price)원"
+        
+        
+        likeView.addSubview(priceLbl)
+        NSLayoutConstraint.activate([
+            priceLbl.leadingAnchor.constraint(equalTo: heartButton.trailingAnchor, constant: 20),
+            priceLbl.centerYAnchor.constraint(equalTo: likeView.centerYAnchor)
+        ])
     }
     
     //MARK: - @objc Methods

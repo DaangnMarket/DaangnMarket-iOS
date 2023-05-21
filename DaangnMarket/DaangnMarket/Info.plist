@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>위치를 받기 위한 권한 요청입니다.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>위치를 받기 위한 권한 요청입니다.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>위치를 사용합니다.</string>
+	<key>KAKAO_APP_KEY</key>
+	<string>15db7ebaebc07529680c095608af6c9e</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

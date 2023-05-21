@@ -147,16 +147,16 @@ extension HomeViewController {
     //MARK: - Custom Methods
     
     func fetchHomeTableViewData() -> [HomeTableViewModel] {
-        let dummyData1 = HomeTableViewModel(id: 1, title: "포항시 효자동 ㅁ니아ㅜㅁ니ㅏ룸지라ㅜㄴ미ㅏ루", image: (UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill"))!, address: "효자동", createdAt: "3시간 전", price: 100000, likes: 3, numberOfChat: 4)
-        let dummyData2 = HomeTableViewModel(id: 2, title: "물건 싸게 팝니당미나움ㄴ", image: UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill")!, address: "연일읍", createdAt: "1시간 전", price: 20000, likes: 4, numberOfChat: 12)
-        let dummyData3 = HomeTableViewModel(id: 3, title: "ㅁ니ㅏ움니아당미나움ㄴ", image: UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill")!, address: "연일읍", createdAt: "1시간 전", price: 20000, likes: 4, numberOfChat: 12)
-        let dummyData4 = HomeTableViewModel(id: 4, title: "ㅁ니ㅏ움니아당미나움ㄴ", image: UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill")!, address: "연일읍", createdAt: "1시간 전", price: 20000, likes: 6, numberOfChat: 2)
-        let dummyData5 = HomeTableViewModel(id: 5, title: "미나웁지ㅏ비ㅔㄷ쟈ㅜㅈ데ㅑㅜㅎ", image: UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill")!, address: "연일읍", createdAt: "1시간 전", price: 20000, likes: 5, numberOfChat: 2)
-        let dummyData6 = HomeTableViewModel(id: 6, title: "바ㅓㅈ바주디ㅏ주기ㅏㅜ민라ㅜ민", image: UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill")!, address: "효자동", createdAt: "1시간 전", price: 20000, likes: 5, numberOfChat: 2)
-        let dummyData7 = HomeTableViewModel(id: 5, title: "미나웁지ㅏ비ㅔㄷ쟈ㅜㅈ데ㅑㅜㅎ", image: UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill")!, address: "연일읍", createdAt: "1시간 전", price: 20000, likes: 5, numberOfChat: 2)
-        let dummyData8 = HomeTableViewModel(id: 5, title: "미나웁지ㅏ비ㅔㄷ쟈ㅜㅈ데ㅑㅜㅎ", image: UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill")!, address: "연일읍", createdAt: "1시간 전", price: 20000, likes: 5, numberOfChat: 2)
-        let dummyData9 = HomeTableViewModel(id: 5, title: "미나웁지ㅏ비ㅔㄷ쟈ㅜㅈ데ㅑㅜㅎ", image: UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill")!, address: "연일읍", createdAt: "1시간 전", price: 20000, likes: 5, numberOfChat: 2)
-        let dummyData10 = HomeTableViewModel(id: 5, title: "미나웁지ㅏ비ㅔㄷ쟈ㅜㅈ데ㅑㅜㅎ", image: UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill")!, address: "연일읍", createdAt: "1시간 전", price: 20000, likes: 5, numberOfChat: 2)
+        let dummyData1 = HomeTableViewModel(id: 1, title: "포항시 효자동 ㅁ니아ㅜㅁ니ㅏ룸지라ㅜㄴ미ㅏ루", image: (UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill"))!, address: "효자동", createdAt: "3시간 전", price: 100000, likes: 3, numberOfChat: 4, userId: 32)
+        let dummyData2 = HomeTableViewModel(id: 2, title: "물건 싸게 팝니당미나움ㄴ", image: UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill")!, address: "연일읍", createdAt: "1시간 전", price: 20000, likes: 4, numberOfChat: 12, userId: 52)
+        let dummyData3 = HomeTableViewModel(id: 3, title: "ㅁ니ㅏ움니아당미나움ㄴ", image: UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill")!, address: "연일읍", createdAt: "1시간 전", price: 20000, likes: 4, numberOfChat: 12, userId: 12565)
+        let dummyData4 = HomeTableViewModel(id: 4, title: "ㅁ니ㅏ움니아당미나움ㄴ", image: UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill")!, address: "연일읍", createdAt: "1시간 전", price: 20000, likes: 6, numberOfChat: 2, userId: 56)
+        let dummyData5 = HomeTableViewModel(id: 5, title: "미나웁지ㅏ비ㅔㄷ쟈ㅜㅈ데ㅑㅜㅎ", image: UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill")!, address: "연일읍", createdAt: "1시간 전", price: 20000, likes: 5, numberOfChat: 2, userId: 5)
+        let dummyData6 = HomeTableViewModel(id: 6, title: "바ㅓㅈ바주디ㅏ주기ㅏㅜ민라ㅜ민", image: UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill")!, address: "효자동", createdAt: "1시간 전", price: 20000, likes: 5, numberOfChat: 2, userId: 2532)
+        let dummyData7 = HomeTableViewModel(id: 5, title: "미나웁지ㅏ비ㅔㄷ쟈ㅜㅈ데ㅑㅜㅎ", image: UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill")!, address: "연일읍", createdAt: "1시간 전", price: 20000, likes: 5, numberOfChat: 2, userId: 87)
+        let dummyData8 = HomeTableViewModel(id: 5, title: "미나웁지ㅏ비ㅔㄷ쟈ㅜㅈ데ㅑㅜㅎ", image: UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill")!, address: "연일읍", createdAt: "1시간 전", price: 20000, likes: 5, numberOfChat: 2, userId: 51)
+        let dummyData9 = HomeTableViewModel(id: 5, title: "미나웁지ㅏ비ㅔㄷ쟈ㅜㅈ데ㅑㅜㅎ", image: UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill")!, address: "연일읍", createdAt: "1시간 전", price: 20000, likes: 5, numberOfChat: 2, userId: 23)
+        let dummyData10 = HomeTableViewModel(id: 5, title: "미나웁지ㅏ비ㅔㄷ쟈ㅜㅈ데ㅑㅜㅎ", image: UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill")!, address: "연일읍", createdAt: "1시간 전", price: 20000, likes: 5, numberOfChat: 2, userId: 7)
         
         return [dummyData1, dummyData2, dummyData3, dummyData4, dummyData5, dummyData6, dummyData7, dummyData8, dummyData9, dummyData10]
     }
@@ -178,9 +178,12 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let productId = homeData[indexPath.row].id
+        let productUserId = homeData[indexPath.row].userId
         let productController = ProductViewController()
         productController.homeData = productId
+        productController.homeUserId = productUserId
         
+        productController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(productController, animated: true)
     }
     

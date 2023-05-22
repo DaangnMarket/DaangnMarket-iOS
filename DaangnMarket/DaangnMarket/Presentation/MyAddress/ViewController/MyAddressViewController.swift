@@ -84,17 +84,17 @@ extension MyAddressViewController {
             kakaoMap.delegate = self
             kakaoMap.baseMapType = .standard
             
-            // 현재 위치 트래킹
-            //            kakaoMap.showCurrentLocationMarker = true
-            //            kakaoMap.currentLocationTrackingMode = .onWithoutHeading
+//             현재 위치 트래킹
+                        kakaoMap.showCurrentLocationMarker = true
+                        kakaoMap.currentLocationTrackingMode = .onWithoutHeading
             
-            // 마커 추가
-            //            self.mapPoint1 = MTMapPoint(geoCoord: MTMapPointGeo(latitude:  37.585568, longitude: 127.019148))
-            //            poiItem1 = MTMapPOIItem()
-            //            poiItem1?.markerType = MTMapPOIItemMarkerType.bluePin
-            //            poiItem1?.mapPoint = mapPoint1
-            //            poiItem1?.itemName = "아무데나 찍어봄"
-            //            kakaoMap.add(poiItem1)
+//             마커 추가
+                        self.mapPoint1 = MTMapPoint(geoCoord: MTMapPointGeo(latitude:  37.585568, longitude: 127.019148))
+                        poiItem1 = MTMapPOIItem()
+                        poiItem1?.markerType = MTMapPOIItemMarkerType.bluePin
+                        poiItem1?.mapPoint = mapPoint1
+                        poiItem1?.itemName = "아무데나 찍어봄"
+                        kakaoMap.add(poiItem1)
             
             mapView.addSubview(kakaoMap)
         }

@@ -64,6 +64,7 @@
 		AB02A5C829EAF3E00044AF79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB02A5C629EAF3E00044AF79 /* LaunchScreen.storyboard */; };
 		AB105CC029F24066008A0C40 /* MyProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB105CBF29F24066008A0C40 /* MyProfileHeaderView.swift */; };
 		AB1185CF2A1B8DF400BA236E /* DaumMap.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1185CE2A1B8DF400BA236E /* DaumMap.xcframework */; };
+		AB1185D12A1BA2CD00BA236E /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1185D02A1BA2CD00BA236E /* WishListViewController.swift */; };
 		AB519B8C29F01FC70097877D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B8B29F01FC70097877D /* SettingViewController.swift */; };
 		AB519B9029F032A90097877D /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B8F29F032A90097877D /* MyTableViewCell.swift */; };
 		AB519B9229F034E50097877D /* MySectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B9129F034E50097877D /* MySectionHeaderView.swift */; };
@@ -167,6 +168,7 @@
 		AB02A5C929EAF3E00044AF79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB105CBF29F24066008A0C40 /* MyProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileHeaderView.swift; sourceTree = "<group>"; };
 		AB1185CE2A1B8DF400BA236E /* DaumMap.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = DaumMap.xcframework; sourceTree = "<group>"; };
+		AB1185D02A1BA2CD00BA236E /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		AB519B8B29F01FC70097877D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		AB519B8F29F032A90097877D /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		AB519B9129F034E50097877D /* MySectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySectionHeaderView.swift; sourceTree = "<group>"; };
@@ -494,6 +496,7 @@
 			children = (
 				AB88AD6A29EAFCA500FDF095 /* MyDaangnViewController.swift */,
 				AB519B8B29F01FC70097877D /* SettingViewController.swift */,
+				AB1185D02A1BA2CD00BA236E /* WishListViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -839,6 +842,7 @@
 				AB88AD5229EAF6F800FDF095 /* UIStackView+.swift in Sources */,
 				1640722F29F03F50006DED01 /* HomeTableViewModel.swift in Sources */,
 				B268CF122A0020A1007C9425 /* RecentSearchesHeaderView.swift in Sources */,
+				AB1185D12A1BA2CD00BA236E /* WishListViewController.swift in Sources */,
 				ABB2136B29FD75FE008672A2 /* UIButton+.swift in Sources */,
 				AB88AD5D29EAFA9D00FDF095 /* HomeViewController.swift in Sources */,
 				16B4853929ED1B7D0009520B /* SearchViewController.swift in Sources */,

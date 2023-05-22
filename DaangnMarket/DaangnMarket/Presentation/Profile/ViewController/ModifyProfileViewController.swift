@@ -10,6 +10,10 @@ import UIKit
 import SnapKit
 import Then
 
+enum ProfileImageType {
+    case exist, none
+}
+
 enum NickNameCheck {
     case original
     case empty
@@ -68,6 +72,7 @@ final class ModifyProfileViewController: UIViewController {
     // MARK: - Properties
     
     var nicknameCheck: NickNameCheck = .original
+    var profileImageType: ProfileImageType = .none
 
     // MARK: - View Life Cycle
     
@@ -134,6 +139,9 @@ extension ModifyProfileViewController {
     private func setAddTarget() {
         selectImageButton.addTarget(self, action: #selector(selectImageButtonDidTap), for: .touchUpInside)
         nicknameTextField.addTarget(self, action: #selector(nickNameTextFieldDidChanged), for: .editingChanged)
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(selectImageButtonDidTap))
+        profileImageView.addGestureRecognizer(gesture)
     }
     
     private func setNavigationBar() {
@@ -166,11 +174,17 @@ extension ModifyProfileViewController {
         let selectAction = UIAlertAction(title: "앨범에서 선택", style: .default) { action in
             
         }
-        let deleteAction = UIAlertAction(title: "프로필 사진 삭제", style: .destructive) { action in
-            print("프로필 사진 삭제 버튼 tap")
-        }
         let cancelAction = UIAlertAction(title: "닫기", style: .cancel)
-        alert.addActions(selectAction, deleteAction, cancelAction)
+        
+        switch profileImageType {
+        case .exist:
+            let deleteAction = UIAlertAction(title: "프로필 사진 삭제", style: .destructive) { action in
+                print("프로필 사진 삭제 버튼 tap")
+            }
+            alert.addActions(selectAction, deleteAction, cancelAction)
+        case .none:
+            alert.addActions(selectAction, cancelAction)
+        }
         present(alert, animated: true)
     }
     

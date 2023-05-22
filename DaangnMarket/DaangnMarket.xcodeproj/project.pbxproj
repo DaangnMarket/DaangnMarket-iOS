@@ -55,6 +55,7 @@
 		168F6E3F29F7B5A1001D023C /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168F6E3E29F7B5A1001D023C /* ProductViewController.swift */; };
 		16B4853929ED1B7D0009520B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B4853829ED1B7D0009520B /* SearchViewController.swift */; };
 		16B4853C29ED2CC00009520B /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B4853B29ED2CC00009520B /* NoticeViewController.swift */; };
+		16D918752A1B5D7A00758B2E /* SearchAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D918742A1B5D7A00758B2E /* SearchAddressViewController.swift */; };
 		AB02A5BC29EAF3DF0044AF79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02A5BB29EAF3DF0044AF79 /* AppDelegate.swift */; };
 		AB02A5BE29EAF3DF0044AF79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02A5BD29EAF3DF0044AF79 /* SceneDelegate.swift */; };
 		AB02A5C329EAF3DF0044AF79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB02A5C129EAF3DF0044AF79 /* Main.storyboard */; };
@@ -153,6 +154,7 @@
 		168F6E3E29F7B5A1001D023C /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		16B4853829ED1B7D0009520B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		16B4853B29ED2CC00009520B /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		16D918742A1B5D7A00758B2E /* SearchAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewController.swift; sourceTree = "<group>"; };
 		AB02A5B829EAF3DF0044AF79 /* DaangnMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaangnMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB02A5BB29EAF3DF0044AF79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB02A5BD29EAF3DF0044AF79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -420,6 +422,38 @@
 			path = Notice;
 			sourceTree = "<group>";
 		};
+		16D918702A1B5D5200758B2E /* SearchAddress */ = {
+			isa = PBXGroup;
+			children = (
+				16D918732A1B5D6C00758B2E /* ViewController */,
+				16D918722A1B5D6600758B2E /* View */,
+				16D918712A1B5D6200758B2E /* Model */,
+			);
+			path = SearchAddress;
+			sourceTree = "<group>";
+		};
+		16D918712A1B5D6200758B2E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		16D918722A1B5D6600758B2E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		16D918732A1B5D6C00758B2E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				16D918742A1B5D7A00758B2E /* SearchAddressViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		AB02A5AF29EAF3DF0044AF79 = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +534,7 @@
 		AB88AD4C29EAF67E00FDF095 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				16D918702A1B5D5200758B2E /* SearchAddress */,
 				1671AD552A05278D00428151 /* Test */,
 				163FC66729FA2851002CDD2E /* MyAddress */,
 				168F6E3A29F7B57A001D023C /* Product */,
@@ -820,6 +855,7 @@
 				AB56598F29FB994F00A359A8 /* UIViewController+.swift in Sources */,
 				1640723329F04BB8006DED01 /* HomeTableViewCell.swift in Sources */,
 				AB02A5BE29EAF3DF0044AF79 /* SceneDelegate.swift in Sources */,
+				16D918752A1B5D7A00758B2E /* SearchAddressViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

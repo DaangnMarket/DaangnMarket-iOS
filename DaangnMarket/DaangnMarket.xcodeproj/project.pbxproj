@@ -20,7 +20,6 @@
 		168F6E3F29F7B5A1001D023C /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168F6E3E29F7B5A1001D023C /* ProductViewController.swift */; };
 		16B4853929ED1B7D0009520B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B4853829ED1B7D0009520B /* SearchViewController.swift */; };
 		16B4853C29ED2CC00009520B /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B4853B29ED2CC00009520B /* NoticeViewController.swift */; };
-		AB022D342A076C0200DC3C5F /* UIAlertController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB022D332A076C0200DC3C5F /* UIAlertController+.swift */; };
 		16D918752A1B5D7A00758B2E /* SearchAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D918742A1B5D7A00758B2E /* SearchAddressViewController.swift */; };
 		16D918E12A1B754700758B2E /* map_pinup_custom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D918BC2A1B754600758B2E /* map_pinup_custom@3x.png */; };
 		16D918E22A1B754700758B2E /* map_pin_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D918BD2A1B754600758B2E /* map_pin_custom.png */; };
@@ -57,12 +56,14 @@
 		16D919012A1B758600758B2E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1651BDBD2A15294300DF1588 /* libc++.tbd */; };
 		16D919022A1B759300758B2E /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1651BDBF2A15295100DF1588 /* libxml2.tbd */; };
 		16D919032A1B759C00758B2E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1651BDC12A15295C00DF1588 /* libsqlite3.tbd */; };
+		AB022D342A076C0200DC3C5F /* UIAlertController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB022D332A076C0200DC3C5F /* UIAlertController+.swift */; };
 		AB02A5BC29EAF3DF0044AF79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02A5BB29EAF3DF0044AF79 /* AppDelegate.swift */; };
 		AB02A5BE29EAF3DF0044AF79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02A5BD29EAF3DF0044AF79 /* SceneDelegate.swift */; };
 		AB02A5C329EAF3DF0044AF79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB02A5C129EAF3DF0044AF79 /* Main.storyboard */; };
 		AB02A5C529EAF3E00044AF79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB02A5C429EAF3E00044AF79 /* Assets.xcassets */; };
 		AB02A5C829EAF3E00044AF79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB02A5C629EAF3E00044AF79 /* LaunchScreen.storyboard */; };
 		AB105CC029F24066008A0C40 /* MyProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB105CBF29F24066008A0C40 /* MyProfileHeaderView.swift */; };
+		AB1185CF2A1B8DF400BA236E /* DaumMap.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1185CE2A1B8DF400BA236E /* DaumMap.xcframework */; };
 		AB519B8C29F01FC70097877D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B8B29F01FC70097877D /* SettingViewController.swift */; };
 		AB519B9029F032A90097877D /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B8F29F032A90097877D /* MyTableViewCell.swift */; };
 		AB519B9229F034E50097877D /* MySectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B9129F034E50097877D /* MySectionHeaderView.swift */; };
@@ -165,6 +166,7 @@
 		AB02A5C729EAF3E00044AF79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB02A5C929EAF3E00044AF79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB105CBF29F24066008A0C40 /* MyProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileHeaderView.swift; sourceTree = "<group>"; };
+		AB1185CE2A1B8DF400BA236E /* DaumMap.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = DaumMap.xcframework; sourceTree = "<group>"; };
 		AB519B8B29F01FC70097877D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		AB519B8F29F032A90097877D /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		AB519B9129F034E50097877D /* MySectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySectionHeaderView.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				16D919002A1B757E00758B2E /* QuartzCore.framework in Frameworks */,
 				16D918FD2A1B756700758B2E /* OpenGLES.framework in Frameworks */,
 				1651BDBA2A15292F00DF1588 /* CoreLocation.framework in Frameworks */,
+				AB1185CF2A1B8DF400BA236E /* DaumMap.xcframework in Frameworks */,
 				AB88AD6E29EAFD2100FDF095 /* SnapKit in Frameworks */,
 				16D918FC2A1B754700758B2E /* DaumMap.framework in Frameworks */,
 				16D919022A1B759300758B2E /* libxml2.tbd in Frameworks */,
@@ -401,6 +404,7 @@
 			children = (
 				16D918BB2A1B754600758B2E /* Resources */,
 				16D918E02A1B754600758B2E /* DaumMap.framework */,
+				AB1185CE2A1B8DF400BA236E /* DaumMap.xcframework */,
 			);
 			path = DaumMap.embeddedframework;
 			sourceTree = "<group>";
@@ -1008,7 +1012,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 49256BK4G3;
+				DEVELOPMENT_TEAM = N3H5YNSQ64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaangnMarket/Framework/DaumMap.embeddedframework",

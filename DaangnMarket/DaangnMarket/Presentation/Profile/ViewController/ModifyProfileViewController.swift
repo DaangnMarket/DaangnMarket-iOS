@@ -178,8 +178,8 @@ extension ModifyProfileViewController {
         
         switch profileImageType {
         case .exist:
-            let deleteAction = UIAlertAction(title: "프로필 사진 삭제", style: .destructive) { action in
-                print("프로필 사진 삭제 버튼 tap")
+            let deleteAction = UIAlertAction(title: "프로필 사진 삭제", style: .destructive) { _ in
+                self.deleteProfileImageButtonDidTap()
             }
             alert.addActions(selectAction, deleteAction, cancelAction)
         case .none:
@@ -202,6 +202,10 @@ extension ModifyProfileViewController {
         }
 
         errorMessageLabel.text = nicknameCheck.errorMessage
+    }
+    
+    @objc private func deleteProfileImageButtonDidTap() {
+        print("프로필 이미지 삭제")
     }
 }
 

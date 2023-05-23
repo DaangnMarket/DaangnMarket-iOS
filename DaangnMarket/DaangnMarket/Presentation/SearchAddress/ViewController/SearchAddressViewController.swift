@@ -13,15 +13,16 @@ class SearchAddressViewController: UIViewController {
     
     let searchBar = UISearchBar()
     let emptyImage = UIImage()
-
     let currentLocationButton = UIButton()
-
+    
+    let addressListView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setBackgroundColor()
         setNavigationBar()
+        setAddressListView()
 
     }
     
@@ -69,6 +70,17 @@ extension SearchAddressViewController {
             currentLocationButton.heightAnchor.constraint(equalToConstant: 40) // Set a specific height for the button
         ])
         
+    }
+    
+    private func setAddressListView() {
+        addressListView.backgroundColor = .red
+        view.addSubview(addressListView)
+        
+        NSLayoutConstraint.activate([
+            addressListView.topAnchor.constraint(equalTo: currentLocationButton.bottomAnchor, constant: 20)
+        ])
+        
+        let titleLbl = UILabel()
     }
     
     //MARK: - @objc Methods

@@ -18,9 +18,7 @@ final class SellListViewController: UIViewController {
         $0.backgroundColor = .gray
     }
     
-    private let segmentedControl = UISegmentedControl(items: ["판매중", "거래완료", "숨김"]).then {
-        $0.selectedSegmentIndex = 0
-    }
+    private let segmentedControl = UnderlineSegmentedControl(items: ["판매중", "거래완료", "숨김"])
     
     lazy var pageViewController: UIPageViewController = {
         let vc = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
@@ -48,7 +46,7 @@ final class SellListViewController: UIViewController {
         setBackgroundColor()
         setLayout()
         setAddTarget()
-        setSegmentedIndex()
+        setSegmentedControl()
     }
 }
 
@@ -88,6 +86,15 @@ extension SellListViewController {
     private func setSegmentedIndex() {
         segmentedControl.selectedSegmentIndex = 0
         segmentedValueChanged(segmentedControl)
+    }
+    
+    private func setSegmentedControl() {
+        setSegmentedIndex()
+    
+        segmentedControl.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
+        segmentedControl.setBackgroundImage(UIImage(), for: .selected, barMetrics: .default)
+        segmentedControl.setBackgroundImage(UIImage(), for: .highlighted, barMetrics: .default)
+        segmentedControl.setDividerImage(UIImage(), forLeftSegmentState: .selected, rightSegmentState: .normal, barMetrics: .default)
     }
 
     // MARK: - @objc Methods

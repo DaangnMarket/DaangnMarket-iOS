@@ -69,6 +69,7 @@
 		AB1185FF2A1DC34200BA236E /* SellingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1185FE2A1DC34200BA236E /* SellingViewController.swift */; };
 		AB1186012A1DC34800BA236E /* SoldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1186002A1DC34800BA236E /* SoldViewController.swift */; };
 		AB1186092A1FAF4100BA236E /* HideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1186082A1FAF4100BA236E /* HideViewController.swift */; };
+		AB11860B2A1FB0A300BA236E /* UnderlineSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11860A2A1FB0A300BA236E /* UnderlineSegmentedControl.swift */; };
 		AB519B8C29F01FC70097877D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B8B29F01FC70097877D /* SettingViewController.swift */; };
 		AB519B9029F032A90097877D /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B8F29F032A90097877D /* MyTableViewCell.swift */; };
 		AB519B9229F034E50097877D /* MySectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B9129F034E50097877D /* MySectionHeaderView.swift */; };
@@ -177,6 +178,7 @@
 		AB1185FE2A1DC34200BA236E /* SellingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingViewController.swift; sourceTree = "<group>"; };
 		AB1186002A1DC34800BA236E /* SoldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldViewController.swift; sourceTree = "<group>"; };
 		AB1186082A1FAF4100BA236E /* HideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideViewController.swift; sourceTree = "<group>"; };
+		AB11860A2A1FB0A300BA236E /* UnderlineSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineSegmentedControl.swift; sourceTree = "<group>"; };
 		AB519B8B29F01FC70097877D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		AB519B8F29F032A90097877D /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		AB519B9129F034E50097877D /* MySectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySectionHeaderView.swift; sourceTree = "<group>"; };
@@ -520,6 +522,7 @@
 				AB519B9129F034E50097877D /* MySectionHeaderView.swift */,
 				AB519BA129F046A30097877D /* MyLineFooterView.swift */,
 				AB105CBF29F24066008A0C40 /* MyProfileHeaderView.swift */,
+				AB11860A2A1FB0A300BA236E /* UnderlineSegmentedControl.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -851,6 +854,7 @@
 				AB1186092A1FAF4100BA236E /* HideViewController.swift in Sources */,
 				ABB2136229FBDBF4008672A2 /* ProfileViewController.swift in Sources */,
 				AB519B9029F032A90097877D /* MyTableViewCell.swift in Sources */,
+				AB11860B2A1FB0A300BA236E /* UnderlineSegmentedControl.swift in Sources */,
 				AB88AD5F29EAFBDB00FDF095 /* TabBarController.swift in Sources */,
 				AB88AD5229EAF6F800FDF095 /* UIStackView+.swift in Sources */,
 				1640722F29F03F50006DED01 /* HomeTableViewModel.swift in Sources */,

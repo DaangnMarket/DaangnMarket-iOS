@@ -47,6 +47,7 @@ final class SellListViewController: UIViewController {
         setLayout()
         setAddTarget()
         setSegmentedControl()
+        setNavigationBar()
     }
 }
 
@@ -96,10 +97,21 @@ extension SellListViewController {
         segmentedControl.setBackgroundImage(UIImage(), for: .highlighted, barMetrics: .default)
         segmentedControl.setDividerImage(UIImage(), forLeftSegmentState: .selected, rightSegmentState: .normal, barMetrics: .default)
     }
+    
+    private func setNavigationBar() {
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backButtonDidTap))
+        backButton.tintColor = .black
+        
+        navigationItem.leftBarButtonItem = backButton
+    }
 
     // MARK: - @objc Methods
 
     @objc private func segmentedValueChanged(_ sender: UISegmentedControl) {
         self.currentPage = sender.selectedSegmentIndex
+    }
+    
+    @objc private func backButtonDidTap() {
+        navigationController?.popViewController(animated: true)
     }
 }

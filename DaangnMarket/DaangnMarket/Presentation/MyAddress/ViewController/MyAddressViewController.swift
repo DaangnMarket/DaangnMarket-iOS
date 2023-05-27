@@ -23,6 +23,9 @@ class MyAddressViewController: UIViewController, MTMapViewDelegate {
     var locationManager: CLLocationManager!
     var mapPoint1: MTMapPoint?
     var poiItem1: MTMapPOIItem?
+    let firstLabel = UILabel()
+    let secondLabel = UILabel()
+
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -84,17 +87,17 @@ extension MyAddressViewController {
             kakaoMap.delegate = self
             kakaoMap.baseMapType = .standard
             
-//             현재 위치 트래킹
-                        kakaoMap.showCurrentLocationMarker = true
-                        kakaoMap.currentLocationTrackingMode = .onWithoutHeading
-            
-//             마커 추가
-                        self.mapPoint1 = MTMapPoint(geoCoord: MTMapPointGeo(latitude:  37.585568, longitude: 127.019148))
-                        poiItem1 = MTMapPOIItem()
-                        poiItem1?.markerType = MTMapPOIItemMarkerType.bluePin
-                        poiItem1?.mapPoint = mapPoint1
-                        poiItem1?.itemName = "아무데나 찍어봄"
-                        kakaoMap.add(poiItem1)
+////             현재 위치 트래킹
+//                        kakaoMap.showCurrentLocationMarker = true
+//                        kakaoMap.currentLocationTrackingMode = .onWithoutHeading
+//
+////             마커 추가
+//                        self.mapPoint1 = MTMapPoint(geoCoord: MTMapPointGeo(latitude:  37.585568, longitude: 127.019148))
+//                        poiItem1 = MTMapPOIItem()
+//                        poiItem1?.markerType = MTMapPOIItemMarkerType.bluePin
+//                        poiItem1?.mapPoint = mapPoint1
+//                        poiItem1?.itemName = "아무데나 찍어봄"
+//                        kakaoMap.add(poiItem1)
             
             mapView.addSubview(kakaoMap)
         }
@@ -227,7 +230,64 @@ extension MyAddressViewController {
     }
     
     private func twoCitySelected() {
+        let xmarkImage = UIImage(systemName: "xmark")?.withRenderingMode(.alwaysTemplate)
+        let closeButton = UIImageView(image: xmarkImage)
+        let secondCloseButton = UIImageView(image: xmarkImage)
+        let xmarkTapGesture = UITapGestureRecognizer(target: self, action: #selector(closeButtonDidTapWhenTwoOfOne))
+        let secondXmarkTapGesture = UITapGestureRecognizer(target: self, action: #selector(closeButtonDidTapWhenTwoOfTwo))
+
+        closeButton.tintColor = .white
+        closeButton.addGestureRecognizer(xmarkTapGesture)
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.isUserInteractionEnabled = true
         
+        secondCloseButton.tintColor = .black
+        secondCloseButton.addGestureRecognizer(secondXmarkTapGesture)
+        secondCloseButton.translatesAutoresizingMaskIntoConstraints = false
+        secondCloseButton.isUserInteractionEnabled = true
+        
+        firstLabel.translatesAutoresizingMaskIntoConstraints = false
+        firstLabel.text = homeCityData.cityName[0]
+        firstLabel.textColor = .white
+        
+        secondLabel.translatesAutoresizingMaskIntoConstraints = false
+        secondLabel.text = homeCityData.cityName[1]
+        secondLabel.textColor = .black
+        
+        
+        firstView.backgroundColor = .orange
+        firstView.layer.cornerRadius = 6
+        firstView.addSubviews(firstLabel, closeButton)
+        
+        secondView.backgroundColor = .systemGray6
+        secondView.layer.cornerRadius = 6
+
+        secondView.addSubviews(secondLabel, secondCloseButton)
+        
+        NSLayoutConstraint.activate([
+            firstLabel.leadingAnchor.constraint(equalTo: firstView.leadingAnchor, constant: 8),
+            firstLabel.trailingAnchor.constraint(equalTo: firstView.trailingAnchor),
+            firstLabel.topAnchor.constraint(equalTo: firstView.topAnchor),
+            firstLabel.bottomAnchor.constraint(equalTo: firstView.bottomAnchor),
+            
+            secondLabel.leadingAnchor.constraint(equalTo: secondView.leadingAnchor, constant: 8),
+            secondLabel.trailingAnchor.constraint(equalTo: secondView.trailingAnchor),
+            secondLabel.topAnchor.constraint(equalTo: secondView.topAnchor),
+            secondLabel.bottomAnchor.constraint(equalTo: secondView.bottomAnchor),
+            
+            closeButton.trailingAnchor.constraint(equalTo: firstView.trailingAnchor, constant: -8),
+            closeButton.centerYAnchor.constraint(equalTo: firstView.centerYAnchor),
+            closeButton.widthAnchor.constraint(equalToConstant: 20),
+            closeButton.heightAnchor.constraint(equalToConstant: 20),
+            
+            secondCloseButton.trailingAnchor.constraint(equalTo: secondView.trailingAnchor, constant: -8),
+            secondCloseButton.centerYAnchor.constraint(equalTo: secondView.centerYAnchor),
+            secondCloseButton.widthAnchor.constraint(equalToConstant: 20),
+            secondCloseButton.heightAnchor.constraint(equalToConstant: 20)
+            
+
+            
+        ])
     }
     
     //MARK: - @objc Methods
@@ -263,7 +323,50 @@ extension MyAddressViewController {
         present(alertController, animated: false, completion: nil)
     }
     
+    @objc fileprivate func closeButtonDidTapWhenTwoOfOne() {
+        let alertController = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default) { _ in
+            let searchAddressVC = SearchAddressViewController()
+            self.navigationController?.pushViewController(searchAddressVC, animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        
+        let messageText = firstLabel.text ?? ""
+        let boldFont = UIFont.boldSystemFont(ofSize: 16)
+        let attributes: [NSAttributedString.Key: Any] = [.font: boldFont]
+        let attributedString = NSAttributedString(string: "'\(messageText)'을 삭제하시겠어요?", attributes: attributes)
+        
+        alertController.setValue(attributedString, forKey: "attributedMessage")
+        
+        present(alertController, animated: false, completion: nil)
+    }
+    
+    @objc fileprivate func closeButtonDidTapWhenTwoOfTwo() {
+        let alertController = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default) { _ in
+            let searchAddressVC = SearchAddressViewController()
+            self.navigationController?.pushViewController(searchAddressVC, animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        
+        let messageText = secondLabel.text ?? ""
+        let boldFont = UIFont.boldSystemFont(ofSize: 16)
+        let attributes: [NSAttributedString.Key: Any] = [.font: boldFont]
+        let attributedString = NSAttributedString(string: "'\(messageText)'을 삭제하시겠어요?", attributes: attributes)
+        
+        alertController.setValue(attributedString, forKey: "attributedMessage")
+        
+        present(alertController, animated: false, completion: nil)
+    }
+    
     @objc fileprivate func plusButtonDidTap() {
-        print("plus Button()")
+        let searchAddressVC = SearchAddressViewController()
+        self.navigationController?.pushViewController(searchAddressVC, animated: true)
     }
 }

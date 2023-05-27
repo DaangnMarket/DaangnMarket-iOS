@@ -2,7 +2,7 @@
 //  TestViewController.swift
 //  DaangnMarket
 //
-//  Created by KimTaeHyung on 2023/05/05.
+//  Created by 김민 on 2023/05/27.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ class TestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+
         // Do any additional setup after loading the view.
     }
     

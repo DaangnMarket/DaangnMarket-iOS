@@ -132,7 +132,9 @@ extension MyDaangnViewController: UITableViewDataSource {
                 wishListVC.hidesBottomBarWhenPushed = true
                 navigationController?.pushViewController(wishListVC, animated: true)
             case 1:
-                print("판매 내역")
+                let sellListVC = SellListViewController()
+                sellListVC.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(sellListVC, animated: true)
             case 2:
                 print("구매 내역")
             default:

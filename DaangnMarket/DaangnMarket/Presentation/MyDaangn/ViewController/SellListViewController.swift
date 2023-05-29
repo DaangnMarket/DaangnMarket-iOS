@@ -14,8 +14,27 @@ final class SellListViewController: UIViewController {
     
     // MARK: - UI Components
     
-    private let headerView = UIView().then {
-        $0.backgroundColor = .gray
+    private let headerView = UIView()
+    private let titleLabel = UILabel().then {
+        $0.text = "나의 판매내역"
+        $0.font = .systemFont(ofSize: 20, weight: .bold)
+    }
+    private let writeButton = UIButton().then {
+        var attString = AttributedString("글쓰기")
+        attString.font = .systemFont(ofSize: 13, weight: .bold)
+        attString.foregroundColor = .black
+        
+        var config = UIButton.Configuration.plain()
+        config.attributedTitle = attString
+        
+        $0.configuration = config
+        $0.backgroundColor = .systemGray6
+        $0.layer.cornerRadius = 5
+    }
+    
+    private let profileImageView = UIImageView().then {
+        $0.backgroundColor = .systemGray5
+        $0.layer.cornerRadius = 30
     }
     
     private let segmentedControl = UnderlineSegmentedControl(items: ["판매중", "거래완료", "숨김"])
@@ -61,6 +80,7 @@ extension SellListViewController {
     
     private func setLayout() {
         view.addSubviews(headerView, segmentedControl, pageViewController.view)
+        headerView.addSubviews(titleLabel, writeButton, profileImageView)
         
         headerView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
@@ -77,6 +97,22 @@ extension SellListViewController {
             $0.top.equalTo(segmentedControl.snp.bottom)
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.bottom.equalToSuperview()
+        }
+        
+        titleLabel.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(20)
+            $0.leading.equalToSuperview().offset(15)
+        }
+        
+        writeButton.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(10)
+            $0.leading.equalTo(titleLabel)
+        }
+        
+        profileImageView.snp.makeConstraints {
+            $0.trailing.equalTo(-15)
+            $0.centerY.equalToSuperview()
+            $0.width.height.equalTo(60)
         }
     }
     

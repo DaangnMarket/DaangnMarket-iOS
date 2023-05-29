@@ -70,7 +70,7 @@ extension ChatViewController {
     func configureTableView() {
         view.addSubview(chatTableView)
         setTableViewDelegate()
-        chatTableView.rowHeight = 80
+        chatTableView.rowHeight = 100
         chatTableView.register(ChattingTableViewCell.self, forCellReuseIdentifier: Cells.tableViewCell)
         chatTableView.pin(to: view)
     }
@@ -98,10 +98,10 @@ extension ChatViewController {
     //MARK: - Custom Methods
 
     func fetchChattingTableViewData() -> [ChattingTableViewModel] {
-        let dummy1 = ChattingTableViewModel(id: 1, nickname: "알파고", profile: (UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill"))!, address: "삼성동", createdAt: "6달 전", latestMsg: "영수증은 없습니다 ^_^", productImage: (UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill"))!)
-        let dummy2 = ChattingTableViewModel(id: 1, nickname: "다파라", profile: (UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill"))!, address: "삼성동", createdAt: "6달 전", latestMsg: "영수증은 없습니다 ^_^", productImage: (UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill"))!)
-        let dummy3 = ChattingTableViewModel(id: 1, nickname: "motoro", profile: (UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill"))!, address: "삼성동", createdAt: "6달 전", latestMsg: "영수증은 없습니다 ^_^", productImage: (UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill"))!)
-        let dummy4 = ChattingTableViewModel(id: 1, nickname: "서지", profile: (UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill"))!, address: "삼성동", createdAt: "6달 전", latestMsg: "영수증은 없습니다 ^_^", productImage: (UIImage(systemName: "square.fill") ?? UIImage(systemName: "app.fill"))!)
+        let dummy1 = ChattingTableViewModel(id: 1, nickname: "알파고", profile: (UIImage(systemName: "person.crop.circle") ?? UIImage(systemName: "app.fill"))!, address: "삼성동", createdAt: "6달 전", latestMsg: "영수증은 없습니다 ^_^", productImage: (UIImage(systemName: "doc.plaintext") ?? UIImage(systemName: "app.fill"))!)
+        let dummy2 = ChattingTableViewModel(id: 1, nickname: "다파라", profile: (UIImage(systemName: "person.crop.circle") ?? UIImage(systemName: "app.fill"))!, address: "삼성동", createdAt: "6달 전", latestMsg: "영수증은 없습니다 ^_^", productImage: (UIImage(systemName: "doc.plaintext") ?? UIImage(systemName: "app.fill"))!)
+        let dummy3 = ChattingTableViewModel(id: 1, nickname: "motoro", profile: (UIImage(systemName: "person.crop.circle") ?? UIImage(systemName: "app.fill"))!, address: "삼성동", createdAt: "6달 전", latestMsg: "영수증은 없습니다 ^_^", productImage: (UIImage(systemName: "doc.plaintext") ?? UIImage(systemName: "app.fill"))!)
+        let dummy4 = ChattingTableViewModel(id: 1, nickname: "서지", profile: (UIImage(systemName: "person.crop.circle") ?? UIImage(systemName: "app.fill"))!, address: "삼성동", createdAt: "6달 전", latestMsg: "영수증은 없습니다 ^_^", productImage: (UIImage(systemName: "doc.plaintext") ?? UIImage(systemName: "app.fill"))!)
         
         return [dummy1, dummy2, dummy3, dummy4]
     }

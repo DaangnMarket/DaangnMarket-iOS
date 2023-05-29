@@ -54,7 +54,7 @@ extension ChattingTableViewCell {
     func set(chattingTableViewModel: ChattingTableViewModel) {
         chatNickname.text = chattingTableViewModel.nickname
         chatLocation.text = chattingTableViewModel.address
-        chatCreateAt.text = chattingTableViewModel.createdAt
+        chatCreateAt.text = " · \(chattingTableViewModel.createdAt)"
         chatProfile.image = chattingTableViewModel.profile
         chatLastestMsg.text = chattingTableViewModel.latestMsg
         chatProductImage.image = chattingTableViewModel.productImage
@@ -63,20 +63,23 @@ extension ChattingTableViewCell {
     func configureChatNickname() {
         chatNickname.numberOfLines = 0
         chatNickname.adjustsFontSizeToFitWidth = true
+        chatNickname.font = UIFont.systemFont(ofSize: 16, weight: .bold)
     }
     
     func configureChatLocation() {
         chatLocation.numberOfLines = 0
         chatLocation.adjustsFontSizeToFitWidth = true
+        chatLocation.font = UIFont.systemFont(ofSize: 14, weight: .light)
     }
     
     func configureChatCreatedAt() {
         chatCreateAt.numberOfLines = 0
         chatCreateAt.adjustsFontSizeToFitWidth = true
+        chatCreateAt.font = UIFont.systemFont(ofSize: 14, weight: .light)
     }
     
     func configureChatProfile() {
-        chatProfile.layer.cornerRadius = 20
+        chatProfile.contentMode = .scaleAspectFit
         chatProfile.clipsToBounds = true
     }
     
@@ -86,36 +89,60 @@ extension ChattingTableViewCell {
     }
     
     func configureChatProductImage() {
-        chatProductImage.layer.cornerRadius = 20
+        chatProductImage.contentMode = .scaleAspectFit
         chatProductImage.clipsToBounds = true
     }
     
     func setNicknameConstraints() {
         chatNickname.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            chatNickname.topAnchor.constraint(equalTo: topAnchor, constant: 12),
-            chatNickname.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 12)
-            
+            chatNickname.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            chatNickname.leadingAnchor.constraint(equalTo: chatProfile.trailingAnchor, constant: 8)
+
         ])
     }
     
     func setLocationConstraints() {
-        
+        chatLocation.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            chatLocation.leadingAnchor.constraint(equalTo: chatNickname.trailingAnchor, constant: 4),
+            chatLocation.bottomAnchor.constraint(equalTo: chatNickname.bottomAnchor)
+        ])
     }
     
     func setCreatedAtConstraints() {
-        
+        chatCreateAt.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            chatCreateAt.bottomAnchor.constraint(equalTo: chatLocation.bottomAnchor),
+            chatCreateAt.leadingAnchor.constraint(equalTo: chatLocation.trailingAnchor, constant: 4)
+        ])
     }
     
     func setProfileConstraints() {
-        
+        chatProfile.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            chatProfile.topAnchor.constraint(equalTo: topAnchor, constant: 4),
+            chatProfile.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
+            chatProfile.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            chatProfile.widthAnchor.constraint(equalToConstant: 60)
+        ])
     }
     
     func setLastestMsgConstraints() {
-        
+        chatLastestMsg.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            chatLastestMsg.leadingAnchor.constraint(equalTo: chatNickname.leadingAnchor),
+            chatLastestMsg.topAnchor.constraint(equalTo: chatNickname.bottomAnchor, constant: 16)
+        ])
     }
     
     func setProductImageConstraints() {
-        
+        chatProductImage.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            chatProductImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            chatProductImage.topAnchor.constraint(equalTo: topAnchor, constant: 4),
+            chatProductImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 4),
+            chatProductImage.widthAnchor.constraint(equalToConstant: 50)       
+        ])
     }
 }

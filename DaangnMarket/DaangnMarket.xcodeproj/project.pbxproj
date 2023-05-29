@@ -17,6 +17,8 @@
 		1671AD522A04F90600428151 /* OtherProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1671AD512A04F90600428151 /* OtherProductCollectionViewCell.swift */; };
 		1671AD542A051F8500428151 /* OtherProductCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1671AD532A051F8500428151 /* OtherProductCollectionHeaderView.swift */; };
 		168F6E3F29F7B5A1001D023C /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168F6E3E29F7B5A1001D023C /* ProductViewController.swift */; };
+		16A96C002A248E2F00876471 /* ChattingTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A96BFF2A248E2F00876471 /* ChattingTableViewModel.swift */; };
+		16A96C022A248ECC00876471 /* ChattingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A96C012A248ECC00876471 /* ChattingTableViewCell.swift */; };
 		16B4853929ED1B7D0009520B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B4853829ED1B7D0009520B /* SearchViewController.swift */; };
 		16B4853C29ED2CC00009520B /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B4853B29ED2CC00009520B /* NoticeViewController.swift */; };
 		16D918752A1B5D7A00758B2E /* SearchAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D918742A1B5D7A00758B2E /* SearchAddressViewController.swift */; };
@@ -123,6 +125,8 @@
 		1671AD512A04F90600428151 /* OtherProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		1671AD532A051F8500428151 /* OtherProductCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProductCollectionHeaderView.swift; sourceTree = "<group>"; };
 		168F6E3E29F7B5A1001D023C /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		16A96BFF2A248E2F00876471 /* ChattingTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingTableViewModel.swift; sourceTree = "<group>"; };
+		16A96C012A248ECC00876471 /* ChattingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingTableViewCell.swift; sourceTree = "<group>"; };
 		16B4853829ED1B7D0009520B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		16B4853B29ED2CC00009520B /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		16D918742A1B5D7A00758B2E /* SearchAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewController.swift; sourceTree = "<group>"; };
@@ -347,6 +351,7 @@
 		16A96BFC2A246E4700876471 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				16A96BFF2A248E2F00876471 /* ChattingTableViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 		16A96BFD2A246E5500876471 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				16A96C012A248ECC00876471 /* ChattingTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -883,12 +889,14 @@
 				AB519B8C29F01FC70097877D /* SettingViewController.swift in Sources */,
 				B268CF0B29FFFC99007C9425 /* KeywordHeaderView.swift in Sources */,
 				AB88AD5629EAF73F00FDF095 /* UICollectionViewCell+.swift in Sources */,
+				16A96C002A248E2F00876471 /* ChattingTableViewModel.swift in Sources */,
 				AB105CC029F24066008A0C40 /* MyProfileHeaderView.swift in Sources */,
 				16B4853C29ED2CC00009520B /* NoticeViewController.swift in Sources */,
 				AB88AD6529EAFC4800FDF095 /* NearMeViewController.swift in Sources */,
 				AB1186292A22432D00BA236E /* TestViewController.swift in Sources */,
 				AB1186092A1FAF4100BA236E /* HideViewController.swift in Sources */,
 				ABB2136229FBDBF4008672A2 /* ProfileViewController.swift in Sources */,
+				16A96C022A248ECC00876471 /* ChattingTableViewCell.swift in Sources */,
 				AB519B9029F032A90097877D /* MyTableViewCell.swift in Sources */,
 				AB11860B2A1FB0A300BA236E /* UnderlineSegmentedControl.swift in Sources */,
 				AB88AD5F29EAFBDB00FDF095 /* TabBarController.swift in Sources */,

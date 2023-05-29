@@ -40,6 +40,31 @@ extension ChatViewController {
     }
     
     private func navigationRightBar() {
+        let qrImage = UIImage(systemName: "barcode.viewfinder")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        let qrButton = UIButton()
+        qrButton.setImage(qrImage, for: .normal)
+        qrButton.addTarget(self, action: #selector(qrButtonDidTap), for: .touchUpInside)
+        let qr = UIBarButtonItem(customView: qrButton)
+        
+        let noticeImage = UIImage(systemName: "bell")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        let noticeButton = UIButton()
+        noticeButton.setImage(noticeImage, for: .normal)
+        noticeButton.addTarget(self, action: #selector(noticeButtonDidTap), for: .touchUpInside)
+        let notice = UIBarButtonItem(customView: noticeButton)
+        
+        self.navigationItem.rightBarButtonItems = [notice, qr]
+        
+    }
+    
+    
+    
+    //MARK: @objc Methods
+    
+    @objc fileprivate func qrButtonDidTap() {
+        
+    }
+    
+    @objc fileprivate func noticeButtonDidTap() {
         
     }
 }

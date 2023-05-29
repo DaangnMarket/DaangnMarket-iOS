@@ -27,17 +27,8 @@ class HomeTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addSubview(homeImageView)
-        addSubview(homeTitle)
-        addSubview(homeLocation)
-        addSubview(homeTime)
-        addSubview(homePrice)
-        addSubview(homeLikeCount)
-        addSubview(homeChattingCount)
-        
-        addSubview(chatImage)
-        addSubview(likeImage)
-        
+        addSubviews(homeImageView, homeTitle, homeLocation, homeTime, homePrice, homeLikeCount, homeChattingCount, chatImage, likeImage)
+
         
         configureHomeImageView()
         configureHomeTitle()

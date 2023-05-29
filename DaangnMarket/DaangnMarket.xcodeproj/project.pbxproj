@@ -69,8 +69,8 @@
 		AB1186012A1DC34800BA236E /* SoldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1186002A1DC34800BA236E /* SoldViewController.swift */; };
 		AB1186092A1FAF4100BA236E /* HideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1186082A1FAF4100BA236E /* HideViewController.swift */; };
 		AB11860B2A1FB0A300BA236E /* UnderlineSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11860A2A1FB0A300BA236E /* UnderlineSegmentedControl.swift */; };
-		AB1186292A22432D00BA236E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1186282A22432D00BA236E /* TestViewController.swift */; };
 		AB1186132A22359400BA236E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1186122A22359400BA236E /* LoginViewController.swift */; };
+		AB1186292A22432D00BA236E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1186282A22432D00BA236E /* TestViewController.swift */; };
 		AB519B8C29F01FC70097877D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B8B29F01FC70097877D /* SettingViewController.swift */; };
 		AB519B9029F032A90097877D /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B8F29F032A90097877D /* MyTableViewCell.swift */; };
 		AB519B9229F034E50097877D /* MySectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B9129F034E50097877D /* MySectionHeaderView.swift */; };
@@ -179,8 +179,8 @@
 		AB1186002A1DC34800BA236E /* SoldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldViewController.swift; sourceTree = "<group>"; };
 		AB1186082A1FAF4100BA236E /* HideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideViewController.swift; sourceTree = "<group>"; };
 		AB11860A2A1FB0A300BA236E /* UnderlineSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineSegmentedControl.swift; sourceTree = "<group>"; };
-		AB1186282A22432D00BA236E /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		AB1186122A22359400BA236E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AB1186282A22432D00BA236E /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		AB519B8B29F01FC70097877D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		AB519B8F29F032A90097877D /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		AB519B9129F034E50097877D /* MySectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySectionHeaderView.swift; sourceTree = "<group>"; };
@@ -342,6 +342,28 @@
 				1671AD532A051F8500428151 /* OtherProductCollectionHeaderView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		16A96BFC2A246E4700876471 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		16A96BFD2A246E5500876471 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		16A96BFE2A246E5A00876471 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AB88AD6729EAFC8900FDF095 /* ChatViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		16B4853729ED1B6D0009520B /* Search */ = {
@@ -647,7 +669,9 @@
 		AB88AD6629EAFC5400FDF095 /* Chatting */ = {
 			isa = PBXGroup;
 			children = (
-				AB88AD6729EAFC8900FDF095 /* ChatViewController.swift */,
+				16A96BFE2A246E5A00876471 /* ViewController */,
+				16A96BFD2A246E5500876471 /* View */,
+				16A96BFC2A246E4700876471 /* Model */,
 			);
 			path = Chatting;
 			sourceTree = "<group>";
@@ -1068,7 +1092,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = min.DaangnMarket.clone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/gimmin/Desktop/🍏/DaangnMarket-iOS/DaangnMarket/DaangnMarket/Framework/KakaoMap-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kimtaehyung/Desktop/iOS/DaangnMarket/DaangnMarket-iOS/DaangnMarket/DaangnMarket/Framework/KakaoMap-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1102,7 +1126,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = min.DaangnMarket.clone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/gimmin/Desktop/🍏/DaangnMarket-iOS/DaangnMarket/DaangnMarket/Framework/KakaoMap-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kimtaehyung/Desktop/iOS/DaangnMarket/DaangnMarket-iOS/DaangnMarket/DaangnMarket/Framework/KakaoMap-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

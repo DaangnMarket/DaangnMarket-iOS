@@ -95,6 +95,7 @@ extension WriteUsedViewController {
         writeTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         writeTableView.register(WriteTitleTextCell.self, forCellReuseIdentifier: WriteTitleTextCell.cellIdentifier)
         writeTableView.register(WritePriceTextCell.self, forCellReuseIdentifier: WritePriceTextCell.cellIdentifier)
+        writeTableView.register(WriteDescriptionTextCell.self, forCellReuseIdentifier: WriteDescriptionTextCell.cellIdentifier)
     }
     
     // MARK: - @objc Methods
@@ -128,7 +129,7 @@ extension WriteUsedViewController: UITableViewDataSource {
         case 3:
             cell = tableView.dequeueReusableCell(withIdentifier: WritePriceTextCell.cellIdentifier, for: indexPath) as! WritePriceTextCell
         case 4:
-            cell = defaultCell(content: "설명", indexPath: indexPath)
+            cell = tableView.dequeueReusableCell(withIdentifier: WriteDescriptionTextCell.cellIdentifier, for: indexPath) as! WriteDescriptionTextCell
         default:
             cell = defaultCell(content: "개발중...", indexPath: indexPath)
         }

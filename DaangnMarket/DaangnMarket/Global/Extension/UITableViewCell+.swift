@@ -12,4 +12,8 @@ extension UITableViewCell {
     static var cellIdentifier: String {
         return String(describing: self)
     }
+    
+    var tableView: UITableView? {
+      return parentView(of: UITableView.self)
+    }
 }

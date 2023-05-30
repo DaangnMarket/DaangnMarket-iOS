@@ -100,12 +100,21 @@
 		ABB2136B29FD75FE008672A2 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136A29FD75FE008672A2 /* UIButton+.swift */; };
 		ABB2136D29FE4E37008672A2 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136C29FE4E37008672A2 /* ProfileTableViewCell.swift */; };
 		ABE7CA7C2A176204001EA9A6 /* DaangnAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE7CA7B2A176204001EA9A6 /* DaangnAlertViewController.swift */; };
+		B2137D7B2A259D9F001369E6 /* WriteTitleTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E835B82A1C76C200C6287F /* WriteTitleTextCell.swift */; };
+		B25EE8A12A067F12002F86EF /* WriteUsedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EE8A02A067F12002F86EF /* WriteUsedViewController.swift */; };
 		B268CF0729FF995A007C9425 /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF0629FF995A007C9425 /* NoticeTableViewCell.swift */; };
 		B268CF0929FF9C27007C9425 /* NoticeTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF0829FF9C27007C9425 /* NoticeTableViewModel.swift */; };
 		B268CF0B29FFFC99007C9425 /* KeywordHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF0A29FFFC99007C9425 /* KeywordHeaderView.swift */; };
 		B268CF102A001F3B007C9425 /* RecentSearchesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF0F2A001F3B007C9425 /* RecentSearchesCollectionViewCell.swift */; };
 		B268CF122A0020A1007C9425 /* RecentSearchesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF112A0020A1007C9425 /* RecentSearchesHeaderView.swift */; };
 		B268CF142A002334007C9425 /* RecentSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF132A002334007C9425 /* RecentSearch.swift */; };
+		B2BA297A2A236A2A00032665 /* TopAlignedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA29792A236A2A00032665 /* TopAlignedLabel.swift */; };
+		B2BA297C2A236E6200032665 /* WritePhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA297B2A236E6200032665 /* WritePhotosCell.swift */; };
+		B2BA297E2A2396BD00032665 /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA297D2A2396BD00032665 /* AddImageView.swift */; };
+		B2BA29802A25278F00032665 /* SelectedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA297F2A25278F00032665 /* SelectedImageView.swift */; };
+		B2BA29822A252CE100032665 /* NSMutableAttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA29812A252CE100032665 /* NSMutableAttributedString+.swift */; };
+		B2E835BB2A1CA90100C6287F /* WritePriceTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E835BA2A1CA90100C6287F /* WritePriceTextCell.swift */; };
+		B2E835BD2A1CB02B00C6287F /* WriteDescriptionTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E835BC2A1CB02B00C6287F /* WriteDescriptionTextCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -210,12 +219,21 @@
 		ABB2136A29FD75FE008672A2 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		ABB2136C29FE4E37008672A2 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		ABE7CA7B2A176204001EA9A6 /* DaangnAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaangnAlertViewController.swift; sourceTree = "<group>"; };
+		B25EE8A02A067F12002F86EF /* WriteUsedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteUsedViewController.swift; sourceTree = "<group>"; };
 		B268CF0629FF995A007C9425 /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		B268CF0829FF9C27007C9425 /* NoticeTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewModel.swift; sourceTree = "<group>"; };
 		B268CF0A29FFFC99007C9425 /* KeywordHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordHeaderView.swift; sourceTree = "<group>"; };
 		B268CF0F2A001F3B007C9425 /* RecentSearchesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesCollectionViewCell.swift; sourceTree = "<group>"; };
 		B268CF112A0020A1007C9425 /* RecentSearchesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesHeaderView.swift; sourceTree = "<group>"; };
 		B268CF132A002334007C9425 /* RecentSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearch.swift; sourceTree = "<group>"; };
+		B2BA29792A236A2A00032665 /* TopAlignedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlignedLabel.swift; sourceTree = "<group>"; };
+		B2BA297B2A236E6200032665 /* WritePhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePhotosCell.swift; sourceTree = "<group>"; };
+		B2BA297D2A2396BD00032665 /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
+		B2BA297F2A25278F00032665 /* SelectedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedImageView.swift; sourceTree = "<group>"; };
+		B2BA29812A252CE100032665 /* NSMutableAttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+.swift"; sourceTree = "<group>"; };
+		B2E835B82A1C76C200C6287F /* WriteTitleTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTitleTextCell.swift; sourceTree = "<group>"; };
+		B2E835BA2A1CA90100C6287F /* WritePriceTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePriceTextCell.swift; sourceTree = "<group>"; };
+		B2E835BC2A1CB02B00C6287F /* WriteDescriptionTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDescriptionTextCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -598,6 +616,7 @@
 				AB1186112A22357A00BA236E /* Login */,
 				AB1186272A22431900BA236E /* Test */,
 				16D918702A1B5D5200758B2E /* SearchAddress */,
+				B25EE89A2A0608E2002F86EF /* Write */,
 				163FC66729FA2851002CDD2E /* MyAddress */,
 				168F6E3A29F7B57A001D023C /* Product */,
 				AB88AD5929EAF98F00FDF095 /* TabBar */,
@@ -616,6 +635,7 @@
 		AB88AD4D29EAF6A200FDF095 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				B2BA29782A236A1400032665 /* Component */,
 				AB88AD4E29EAF6AA00FDF095 /* Extension */,
 			);
 			path = Global;
@@ -634,6 +654,7 @@
 				ABB2136A29FD75FE008672A2 /* UIButton+.swift */,
 				ABA6182D2A00C57E0004B1D3 /* UITextField+.swift */,
 				AB022D332A076C0200DC3C5F /* UIAlertController+.swift */,
+				B2BA29812A252CE100032665 /* NSMutableAttributedString+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -720,6 +741,44 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B25EE89A2A0608E2002F86EF /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				B25EE89C2A060912002F86EF /* Model */,
+				B25EE89B2A06090E002F86EF /* View */,
+				B25EE89D2A060919002F86EF /* ViewController */,
+			);
+			path = Write;
+			sourceTree = "<group>";
+		};
+		B25EE89B2A06090E002F86EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B2BA297B2A236E6200032665 /* WritePhotosCell.swift */,
+				B2E835B82A1C76C200C6287F /* WriteTitleTextCell.swift */,
+				B2E835BA2A1CA90100C6287F /* WritePriceTextCell.swift */,
+				B2E835BC2A1CB02B00C6287F /* WriteDescriptionTextCell.swift */,
+				B2BA297D2A2396BD00032665 /* AddImageView.swift */,
+				B2BA297F2A25278F00032665 /* SelectedImageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B25EE89C2A060912002F86EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B25EE89D2A060919002F86EF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B25EE8A02A067F12002F86EF /* WriteUsedViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		B268CF0329FF989A007C9425 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -768,6 +827,14 @@
 				B268CF112A0020A1007C9425 /* RecentSearchesHeaderView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B2BA29782A236A1400032665 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				B2BA29792A236A2A00032665 /* TopAlignedLabel.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -884,10 +951,13 @@
 				162B735D29FCBA6F0070214D /* ProductModel.swift in Sources */,
 				AB519B9429F035570097877D /* UITableViewHeaderFooterView+.swift in Sources */,
 				1671AD522A04F90600428151 /* OtherProductCollectionViewCell.swift in Sources */,
+				B2BA29822A252CE100032665 /* NSMutableAttributedString+.swift in Sources */,
+				B2BA297C2A236E6200032665 /* WritePhotosCell.swift in Sources */,
 				AB88AD5829EAF7ED00FDF095 /* UIColor+.swift in Sources */,
 				163305C829F69ACB00115E8B /* HomeCityName.swift in Sources */,
 				AB519B8C29F01FC70097877D /* SettingViewController.swift in Sources */,
 				B268CF0B29FFFC99007C9425 /* KeywordHeaderView.swift in Sources */,
+				B25EE8A12A067F12002F86EF /* WriteUsedViewController.swift in Sources */,
 				AB88AD5629EAF73F00FDF095 /* UICollectionViewCell+.swift in Sources */,
 				16A96C002A248E2F00876471 /* ChattingTableViewModel.swift in Sources */,
 				AB105CC029F24066008A0C40 /* MyProfileHeaderView.swift in Sources */,
@@ -895,12 +965,17 @@
 				AB88AD6529EAFC4800FDF095 /* NearMeViewController.swift in Sources */,
 				AB1186292A22432D00BA236E /* TestViewController.swift in Sources */,
 				AB1186092A1FAF4100BA236E /* HideViewController.swift in Sources */,
+				B2137D7B2A259D9F001369E6 /* WriteTitleTextCell.swift in Sources */,
 				ABB2136229FBDBF4008672A2 /* ProfileViewController.swift in Sources */,
 				16A96C022A248ECC00876471 /* ChattingTableViewCell.swift in Sources */,
+				B2BA297E2A2396BD00032665 /* AddImageView.swift in Sources */,
+				B2E835BB2A1CA90100C6287F /* WritePriceTextCell.swift in Sources */,
 				AB519B9029F032A90097877D /* MyTableViewCell.swift in Sources */,
 				AB11860B2A1FB0A300BA236E /* UnderlineSegmentedControl.swift in Sources */,
+				B2E835BD2A1CB02B00C6287F /* WriteDescriptionTextCell.swift in Sources */,
 				AB88AD5F29EAFBDB00FDF095 /* TabBarController.swift in Sources */,
 				AB88AD5229EAF6F800FDF095 /* UIStackView+.swift in Sources */,
+				B2BA297A2A236A2A00032665 /* TopAlignedLabel.swift in Sources */,
 				1640722F29F03F50006DED01 /* HomeTableViewModel.swift in Sources */,
 				B268CF122A0020A1007C9425 /* RecentSearchesHeaderView.swift in Sources */,
 				AB1185FF2A1DC34200BA236E /* SellingViewController.swift in Sources */,
@@ -924,6 +999,7 @@
 				AB1186132A22359400BA236E /* LoginViewController.swift in Sources */,
 				AB88AD6B29EAFCA500FDF095 /* MyDaangnViewController.swift in Sources */,
 				1671AD502A04942900428151 /* OtherProductModel.swift in Sources */,
+				B2BA29802A25278F00032665 /* SelectedImageView.swift in Sources */,
 				B268CF142A002334007C9425 /* RecentSearch.swift in Sources */,
 				ABB2136929FD7075008672A2 /* ProfileHeaderView.swift in Sources */,
 				B268CF0929FF9C27007C9425 /* NoticeTableViewModel.swift in Sources */,
@@ -1100,7 +1176,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = min.DaangnMarket.clone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kimtaehyung/Desktop/iOS/DaangnMarket/DaangnMarket-iOS/DaangnMarket/DaangnMarket/Framework/KakaoMap-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)$(PROJECT_DIR)/DaangnMarket/Framework/KakaoMap-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1134,7 +1210,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = min.DaangnMarket.clone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kimtaehyung/Desktop/iOS/DaangnMarket/DaangnMarket-iOS/DaangnMarket/DaangnMarket/Framework/KakaoMap-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)$(PROJECT_DIR)/DaangnMarket/Framework/KakaoMap-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

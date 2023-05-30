@@ -114,7 +114,12 @@ extension HomeViewController {
     
     @objc fileprivate func categoryButtonDidTap() {
         print("goToCategoryVC() called")
-//        let searchVC = SearchViewController()
+        let writeUsedVC = WriteUsedViewController()
+//        hidesBottomBarWhenPushed = true
+        let navigationController = UINavigationController(rootViewController: writeUsedVC)
+        navigationController.modalPresentationStyle = .fullScreen
+        navigationController.modalTransitionStyle = .coverVertical
+        present(navigationController, animated: true, completion: nil)
 //        self.navigationController?.pushViewController(searchVC, animated: true)
     }
     

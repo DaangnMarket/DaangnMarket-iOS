@@ -100,6 +100,10 @@
 		B268CF122A0020A1007C9425 /* RecentSearchesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF112A0020A1007C9425 /* RecentSearchesHeaderView.swift */; };
 		B268CF142A002334007C9425 /* RecentSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF132A002334007C9425 /* RecentSearch.swift */; };
 		B2BA297A2A236A2A00032665 /* TopAlignedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA29792A236A2A00032665 /* TopAlignedLabel.swift */; };
+		B2BA297C2A236E6200032665 /* WritePhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA297B2A236E6200032665 /* WritePhotosCell.swift */; };
+		B2BA297E2A2396BD00032665 /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA297D2A2396BD00032665 /* AddImageView.swift */; };
+		B2BA29802A25278F00032665 /* SelectedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA297F2A25278F00032665 /* SelectedImageView.swift */; };
+		B2BA29822A252CE100032665 /* NSMutableAttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA29812A252CE100032665 /* NSMutableAttributedString+.swift */; };
 		B2E835BB2A1CA90100C6287F /* WritePriceTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E835BA2A1CA90100C6287F /* WritePriceTextCell.swift */; };
 		B2E835BD2A1CB02B00C6287F /* WriteDescriptionTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E835BC2A1CB02B00C6287F /* WriteDescriptionTextCell.swift */; };
 /* End PBXBuildFile section */
@@ -205,6 +209,10 @@
 		B268CF112A0020A1007C9425 /* RecentSearchesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesHeaderView.swift; sourceTree = "<group>"; };
 		B268CF132A002334007C9425 /* RecentSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearch.swift; sourceTree = "<group>"; };
 		B2BA29792A236A2A00032665 /* TopAlignedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlignedLabel.swift; sourceTree = "<group>"; };
+		B2BA297B2A236E6200032665 /* WritePhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePhotosCell.swift; sourceTree = "<group>"; };
+		B2BA297D2A2396BD00032665 /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
+		B2BA297F2A25278F00032665 /* SelectedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedImageView.swift; sourceTree = "<group>"; };
+		B2BA29812A252CE100032665 /* NSMutableAttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+.swift"; sourceTree = "<group>"; };
 		B2E835B82A1C76C200C6287F /* WriteTitleTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTitleTextCell.swift; sourceTree = "<group>"; };
 		B2E835BA2A1CA90100C6287F /* WritePriceTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePriceTextCell.swift; sourceTree = "<group>"; };
 		B2E835BC2A1CB02B00C6287F /* WriteDescriptionTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDescriptionTextCell.swift; sourceTree = "<group>"; };
@@ -589,6 +597,7 @@
 				ABB2136A29FD75FE008672A2 /* UIButton+.swift */,
 				ABA6182D2A00C57E0004B1D3 /* UITextField+.swift */,
 				AB022D332A076C0200DC3C5F /* UIAlertController+.swift */,
+				B2BA29812A252CE100032665 /* NSMutableAttributedString+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -686,8 +695,12 @@
 		B25EE89B2A06090E002F86EF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B2BA297B2A236E6200032665 /* WritePhotosCell.swift */,
 				B2E835B82A1C76C200C6287F /* WriteTitleTextCell.swift */,
 				B2E835BA2A1CA90100C6287F /* WritePriceTextCell.swift */,
+				B2E835BC2A1CB02B00C6287F /* WriteDescriptionTextCell.swift */,
+				B2BA297D2A2396BD00032665 /* AddImageView.swift */,
+				B2BA297F2A25278F00032665 /* SelectedImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -879,6 +892,8 @@
 				162B735D29FCBA6F0070214D /* ProductModel.swift in Sources */,
 				AB519B9429F035570097877D /* UITableViewHeaderFooterView+.swift in Sources */,
 				1671AD522A04F90600428151 /* OtherProductCollectionViewCell.swift in Sources */,
+				B2BA29822A252CE100032665 /* NSMutableAttributedString+.swift in Sources */,
+				B2BA297C2A236E6200032665 /* WritePhotosCell.swift in Sources */,
 				AB88AD5829EAF7ED00FDF095 /* UIColor+.swift in Sources */,
 				163305C829F69ACB00115E8B /* HomeCityName.swift in Sources */,
 				AB519B8C29F01FC70097877D /* SettingViewController.swift in Sources */,
@@ -890,6 +905,7 @@
 				AB88AD6529EAFC4800FDF095 /* NearMeViewController.swift in Sources */,
 				B2137D7B2A259D9F001369E6 /* WriteTitleTextCell.swift in Sources */,
 				ABB2136229FBDBF4008672A2 /* ProfileViewController.swift in Sources */,
+				B2BA297E2A2396BD00032665 /* AddImageView.swift in Sources */,
 				B2E835BB2A1CA90100C6287F /* WritePriceTextCell.swift in Sources */,
 				AB519B9029F032A90097877D /* MyTableViewCell.swift in Sources */,
 				B2E835BD2A1CB02B00C6287F /* WriteDescriptionTextCell.swift in Sources */,
@@ -915,6 +931,7 @@
 				B268CF0729FF995A007C9425 /* NoticeTableViewCell.swift in Sources */,
 				AB88AD6B29EAFCA500FDF095 /* MyDaangnViewController.swift in Sources */,
 				1671AD502A04942900428151 /* OtherProductModel.swift in Sources */,
+				B2BA29802A25278F00032665 /* SelectedImageView.swift in Sources */,
 				B268CF142A002334007C9425 /* RecentSearch.swift in Sources */,
 				ABB2136929FD7075008672A2 /* ProfileHeaderView.swift in Sources */,
 				B268CF0929FF9C27007C9425 /* NoticeTableViewModel.swift in Sources */,

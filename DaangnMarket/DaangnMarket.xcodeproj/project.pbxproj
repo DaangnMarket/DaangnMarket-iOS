@@ -98,6 +98,7 @@
 		B268CF102A001F3B007C9425 /* RecentSearchesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF0F2A001F3B007C9425 /* RecentSearchesCollectionViewCell.swift */; };
 		B268CF122A0020A1007C9425 /* RecentSearchesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF112A0020A1007C9425 /* RecentSearchesHeaderView.swift */; };
 		B268CF142A002334007C9425 /* RecentSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF132A002334007C9425 /* RecentSearch.swift */; };
+		B2E835BB2A1CA90100C6287F /* WritePriceTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E835BA2A1CA90100C6287F /* WritePriceTextCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -201,6 +202,7 @@
 		B268CF112A0020A1007C9425 /* RecentSearchesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesHeaderView.swift; sourceTree = "<group>"; };
 		B268CF132A002334007C9425 /* RecentSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearch.swift; sourceTree = "<group>"; };
 		B2E835B82A1C76C200C6287F /* WriteTitleTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTitleTextCell.swift; sourceTree = "<group>"; };
+		B2E835BA2A1CA90100C6287F /* WritePriceTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePriceTextCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -679,6 +681,7 @@
 			isa = PBXGroup;
 			children = (
 				B2E835B82A1C76C200C6287F /* WriteTitleTextCell.swift */,
+				B2E835BA2A1CA90100C6287F /* WritePriceTextCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -873,6 +876,7 @@
 				AB88AD6529EAFC4800FDF095 /* NearMeViewController.swift in Sources */,
 				B2E835B92A1C76C200C6287F /* WriteTitleTextCell.swift in Sources */,
 				ABB2136229FBDBF4008672A2 /* ProfileViewController.swift in Sources */,
+				B2E835BB2A1CA90100C6287F /* WritePriceTextCell.swift in Sources */,
 				AB519B9029F032A90097877D /* MyTableViewCell.swift in Sources */,
 				AB88AD5F29EAFBDB00FDF095 /* TabBarController.swift in Sources */,
 				AB88AD5229EAF6F800FDF095 /* UIStackView+.swift in Sources */,

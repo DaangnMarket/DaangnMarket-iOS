@@ -1108,7 +1108,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = min.DaangnMarket.clone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kimtaehyung/Desktop/iOS/DaangnMarket/DaangnMarket-iOS/DaangnMarket/DaangnMarket/Framework/KakaoMap-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)$(PROJECT_DIR)/DaangnMarket/Framework/KakaoMap-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1142,7 +1142,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = min.DaangnMarket.clone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kimtaehyung/Desktop/iOS/DaangnMarket/DaangnMarket-iOS/DaangnMarket/DaangnMarket/Framework/KakaoMap-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)$(PROJECT_DIR)/DaangnMarket/Framework/KakaoMap-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

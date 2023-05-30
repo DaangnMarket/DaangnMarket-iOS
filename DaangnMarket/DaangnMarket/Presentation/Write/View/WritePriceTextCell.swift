@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class WritePriceTextCell: UITableViewCell {
+final class WritePriceTextCell: UITableViewCell {
     
     // MARK: - UI Components
     

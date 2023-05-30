@@ -99,7 +99,9 @@
 		B268CF102A001F3B007C9425 /* RecentSearchesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF0F2A001F3B007C9425 /* RecentSearchesCollectionViewCell.swift */; };
 		B268CF122A0020A1007C9425 /* RecentSearchesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF112A0020A1007C9425 /* RecentSearchesHeaderView.swift */; };
 		B268CF142A002334007C9425 /* RecentSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF132A002334007C9425 /* RecentSearch.swift */; };
+		B2BA297A2A236A2A00032665 /* TopAlignedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA29792A236A2A00032665 /* TopAlignedLabel.swift */; };
 		B2E835BB2A1CA90100C6287F /* WritePriceTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E835BA2A1CA90100C6287F /* WritePriceTextCell.swift */; };
+		B2E835BD2A1CB02B00C6287F /* WriteDescriptionTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E835BC2A1CB02B00C6287F /* WriteDescriptionTextCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -202,8 +204,10 @@
 		B268CF0F2A001F3B007C9425 /* RecentSearchesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesCollectionViewCell.swift; sourceTree = "<group>"; };
 		B268CF112A0020A1007C9425 /* RecentSearchesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesHeaderView.swift; sourceTree = "<group>"; };
 		B268CF132A002334007C9425 /* RecentSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearch.swift; sourceTree = "<group>"; };
+		B2BA29792A236A2A00032665 /* TopAlignedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlignedLabel.swift; sourceTree = "<group>"; };
 		B2E835B82A1C76C200C6287F /* WriteTitleTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTitleTextCell.swift; sourceTree = "<group>"; };
 		B2E835BA2A1CA90100C6287F /* WritePriceTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePriceTextCell.swift; sourceTree = "<group>"; };
+		B2E835BC2A1CB02B00C6287F /* WriteDescriptionTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDescriptionTextCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -566,6 +570,7 @@
 		AB88AD4D29EAF6A200FDF095 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				B2BA29782A236A1400032665 /* Component */,
 				AB88AD4E29EAF6AA00FDF095 /* Extension */,
 			);
 			path = Global;
@@ -752,6 +757,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B2BA29782A236A1400032665 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				B2BA29792A236A2A00032665 /* TopAlignedLabel.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -879,8 +892,10 @@
 				ABB2136229FBDBF4008672A2 /* ProfileViewController.swift in Sources */,
 				B2E835BB2A1CA90100C6287F /* WritePriceTextCell.swift in Sources */,
 				AB519B9029F032A90097877D /* MyTableViewCell.swift in Sources */,
+				B2E835BD2A1CB02B00C6287F /* WriteDescriptionTextCell.swift in Sources */,
 				AB88AD5F29EAFBDB00FDF095 /* TabBarController.swift in Sources */,
 				AB88AD5229EAF6F800FDF095 /* UIStackView+.swift in Sources */,
+				B2BA297A2A236A2A00032665 /* TopAlignedLabel.swift in Sources */,
 				1640722F29F03F50006DED01 /* HomeTableViewModel.swift in Sources */,
 				B268CF122A0020A1007C9425 /* RecentSearchesHeaderView.swift in Sources */,
 				ABB2136B29FD75FE008672A2 /* UIButton+.swift in Sources */,

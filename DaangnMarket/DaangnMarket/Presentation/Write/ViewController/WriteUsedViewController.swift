@@ -93,6 +93,7 @@ extension WriteUsedViewController {
     
     private func register() {
         writeTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        writeTableView.register(WriteTitleTextCell.self, forCellReuseIdentifier: WriteTitleTextCell.cellIdentifier)
     }
     
     // MARK: - @objc Methods
@@ -100,7 +101,7 @@ extension WriteUsedViewController {
     @objc private func closeButtonDidTap() {
         dismiss(animated: true, completion: nil)
     }
-            
+    
     @objc private func createButtonDidTap() {
         print("create button did tap")
     }
@@ -119,7 +120,7 @@ extension WriteUsedViewController: UITableViewDataSource {
         case 0:
             cell = defaultCell(content: "사진", indexPath: indexPath)
         case 1:
-            cell = defaultCell(content: "글 제목", indexPath: indexPath)
+            cell = tableView.dequeueReusableCell(withIdentifier: WriteTitleTextCell.cellIdentifier, for: indexPath) as! WriteTitleTextCell
         case 2:
             cell = defaultCell(content: "카테고리", indexPath: indexPath)
             cell.accessoryType = .checkmark
@@ -130,17 +131,18 @@ extension WriteUsedViewController: UITableViewDataSource {
         default:
             cell = defaultCell(content: "개발중...", indexPath: indexPath)
         }
+        cell.selectionStyle = .none
         return cell
     }
     
     private func defaultCell(content: String, indexPath: IndexPath) -> UITableViewCell {
         let cell = writeTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.selectionStyle = .none
         cell.textLabel?.text = content
         cell.textLabel?.textColor = .lightGray
         return cell
     }
 }
+
 
 // MARK: - UITableViewDelegate
 

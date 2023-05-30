@@ -200,6 +200,7 @@
 		B268CF0F2A001F3B007C9425 /* RecentSearchesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesCollectionViewCell.swift; sourceTree = "<group>"; };
 		B268CF112A0020A1007C9425 /* RecentSearchesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesHeaderView.swift; sourceTree = "<group>"; };
 		B268CF132A002334007C9425 /* RecentSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearch.swift; sourceTree = "<group>"; };
+		B2E835B82A1C76C200C6287F /* WriteTitleTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTitleTextCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -677,6 +678,7 @@
 		B25EE89B2A06090E002F86EF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B2E835B82A1C76C200C6287F /* WriteTitleTextCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -869,6 +871,7 @@
 				AB105CC029F24066008A0C40 /* MyProfileHeaderView.swift in Sources */,
 				16B4853C29ED2CC00009520B /* NoticeViewController.swift in Sources */,
 				AB88AD6529EAFC4800FDF095 /* NearMeViewController.swift in Sources */,
+				B2E835B92A1C76C200C6287F /* WriteTitleTextCell.swift in Sources */,
 				ABB2136229FBDBF4008672A2 /* ProfileViewController.swift in Sources */,
 				AB519B9029F032A90097877D /* MyTableViewCell.swift in Sources */,
 				AB88AD5F29EAFBDB00FDF095 /* TabBarController.swift in Sources */,

@@ -91,6 +91,7 @@
 		ABB2136B29FD75FE008672A2 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136A29FD75FE008672A2 /* UIButton+.swift */; };
 		ABB2136D29FE4E37008672A2 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB2136C29FE4E37008672A2 /* ProfileTableViewCell.swift */; };
 		ABE7CA7C2A176204001EA9A6 /* DaangnAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE7CA7B2A176204001EA9A6 /* DaangnAlertViewController.swift */; };
+		B2137D7B2A259D9F001369E6 /* WriteTitleTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E835B82A1C76C200C6287F /* WriteTitleTextCell.swift */; };
 		B25EE8A12A067F12002F86EF /* WriteUsedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EE8A02A067F12002F86EF /* WriteUsedViewController.swift */; };
 		B268CF0729FF995A007C9425 /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF0629FF995A007C9425 /* NoticeTableViewCell.swift */; };
 		B268CF0929FF9C27007C9425 /* NoticeTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268CF0829FF9C27007C9425 /* NoticeTableViewModel.swift */; };
@@ -874,7 +875,7 @@
 				AB105CC029F24066008A0C40 /* MyProfileHeaderView.swift in Sources */,
 				16B4853C29ED2CC00009520B /* NoticeViewController.swift in Sources */,
 				AB88AD6529EAFC4800FDF095 /* NearMeViewController.swift in Sources */,
-				B2E835B92A1C76C200C6287F /* WriteTitleTextCell.swift in Sources */,
+				B2137D7B2A259D9F001369E6 /* WriteTitleTextCell.swift in Sources */,
 				ABB2136229FBDBF4008672A2 /* ProfileViewController.swift in Sources */,
 				B2E835BB2A1CA90100C6287F /* WritePriceTextCell.swift in Sources */,
 				AB519B9029F032A90097877D /* MyTableViewCell.swift in Sources */,

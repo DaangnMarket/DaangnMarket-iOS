@@ -123,6 +123,25 @@ extension MyDaangnViewController: UITableViewDataSource {
         cell.setDataBind(myDaangnMenus[indexPath.section][indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            switch indexPath.row {
+            case 0:
+                let wishListVC = WishListViewController()
+                wishListVC.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(wishListVC, animated: true)
+            case 1:
+                let sellListVC = SellListViewController()
+                sellListVC.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(sellListVC, animated: true)
+            case 2:
+                print("구매 내역")
+            default:
+                break
+            }
+        }
+    }
 }
 
 // MARK: - UITableViewDelegate
